@@ -9,18 +9,24 @@
 #include <stdio.h>
 #include "Funcoes.h"
 #include <time.h>
+#include <stdlib.h>
 
 
 int main() {
     
+    int r=0;
     
-    
-    printf("ok\n");
-    
-    
-    
-    
-    
-    
+    //  Pagina de inicializacao:
+    if (interface(1)==1){
+        do{
+            switch (interface(2)) {
+                
+                    
+                    
+                    
+                    
+            }
+        } while (r==1);
+    }
     return 0;
 }

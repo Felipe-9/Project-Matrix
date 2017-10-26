@@ -10,12 +10,19 @@
 
 int     interface               (int rs) {
 
-    int r=1,tela=43;
+#define H 15
+#define L 90
+    
+    int r=1;
     
     switch (rs) {
         case 1: /* Pagina de Inicialisacao  */  {
             
-            Box2(9,10,
+            do{
+            
+            pbreak(50);
+            
+            Box(H,L,
                  "##             ##    ##                                     ##      #\n"
                  " #              #     #                                      #      #\n"
                  " ####   ###    #      #    ###        ##  ##  ###   ## ##   #    ####\n"
@@ -23,36 +30,24 @@ int     interface               (int rs) {
                  " #  # ######   #     #   #    #       # # #  #   #   #      #   #   #\n"
                  " #  # #        #     #   #   #        ####   #   #  #      ##   #  ##\n"
                  "## ##  ####  #### #####  ####        ## ##   ####  ####   ####  #####\n");
-            
-            /*
-            Box(1, 71, 1);
-            printf("|  ##             ##    ##                                     ##      #  |\n"
-                   "|   #              #     #                                      #      #  |\n"
-                   "|   ####   ###    #      #    ###        ##  ##  ###   ## ##   #    ####  |\n"
-                   "|   #  #  #   #   #     #    #  ##       # ###  ##  #   ##     #   ## ##  |\n"
-                   "|   #  # ######   #     #   #    #       # # #  #   #   #      #   #   #  |\n"
-                   "|   #  # #        #     #   #   #        ####   #   #  #      ##   #  ##  |\n"
-                   "|  ## ##  ####  #### #####  ####        ## ##   ####  ####   ####  #####  |\n");
-            Box (3,71,1);
             printf("\n\t\t\t\t1 - INITIALIZE PROGRAM\n"
-                   "\t\t\t\t0 - SAIR\n");
+                   "\t\t\t\t0 - SAIR\n\n$ ");
             scanf("%d",&rs);
             pbreak(50);
-            */
+                
+            } while (rs!=0&&rs!=1);
             
         } break;
         case 2: /* Menu inicial             */  {
             
             do{
-                Box (1,tela,1);
-                printf("|      Menu Principal                         |\n");
-                Box (2,tela,1);
-                printf("|  1 - Editar Valores                         |\n"
-                       "|  2 - Operacoes                              |\n"
-                       "|  3 - Mostrar Matrizes                       |\n");
-                Box (2,tela,3);
-                printf("|  4 - Sair                                   |\n");
-                Box (3,tela,1);
+                Box (H,L,
+                     "Menu Principal\n"
+                     "1 - Editar Valores\n"
+                     "2 - Operacoes\n"
+                     "3 - Mostrar Matrizes\n"
+                     "0 - Sair\n");
+                
                 printf("\n$ ");
                 scanf("%d",&rs);
                 pbreak(50);
@@ -60,46 +55,41 @@ int     interface               (int rs) {
                     case 1: rs = interface(3); r=0; break;
                     case 2: rs = interface(4); r=0; break;
                     case 3: rs = interface(5); r=0; break;
-                    case 4: r=0;
+                    case 0: r=0;
                 }
-            } while (r==1);
+            } while (r!=0);
         } break;
         case 3: /* Menu de Edicao           */  {
             
             r=1;
             do{
-                Box (1,tela,1);
-                printf("|  Editar qual Matriz?                        |\n");
-                Box (2,tela,1);
-                printf("|  1 - Matriz A                               |\n"
-                       "|  2 - Matriz B                               |\n");
-                Box (2,tela,1);
-                printf("|  3 - Voltar                                 |\n");
-                Box (3,tela,1);
+                Box (H,L,
+                     "Editar qual Matriz?\n"
+                     "1 - Matriz A\n"
+                     "2 - Matriz B\n"
+                     "0 - Voltar\n");
+                
                 printf("$ ");
                 scanf("%d",&rs);
                 pbreak(50);
                 
                 switch (rs) {
-                    case 1: rs = interface(7); r=0; break;
-                    case 2: rs = interface(8); r=0; break;
-                    case 3: rs = interface(2); r=0; break;
+                    case 1: rs = interface(6); r=0; break;
+                    case 2: rs = interface(7); r=0; break;
+                    case 0: rs = interface(2); r=0; break;
                 }
-            } while (r==1);
+            } while (r!=0);
         } break;
         case 4: /* Menu de Operacoes        */  {
             
             r=1;
             do{
-                Box(1,tela,1);
-                printf("|  Realizar quais opercaoes com matrizes?     |\n");
-                Box(2,tela,1);
-                printf("|  1 - Somar        ( A + B )                 |\n"
-                       "|  2 - Subtrair     ( A - B )                 |\n"
-                       "|  3 - Multiplicar  ( A * B )                 |\n");
-                Box(2,tela,1);
-                printf("|  4 - Voltar                                 |\n");
-                Box(3,tela,1);
+                Box(H,L,
+                    "Realizar quais opercaoes com matrizes?\n"
+                    "1 - Somar        ( A + B )\n"
+                    "2 - Subtrair     ( A - B )\n"
+                    "3 - Multiplicar  ( A * B )\n"
+                    "0 - Voltar\n");
                 printf("\n$ ");
                 scanf("%d",&rs);
                 pbreak(50);
@@ -108,21 +98,19 @@ int     interface               (int rs) {
                     case 1: rs = 99; r=0; break;
                     case 2: rs = 99; r=0; break;
                     case 3: rs = 99; r=0; break;
-                    case 4: interface(2); r=0; break;
+                    case 0: interface(2); r=0; break;
                 }
-            } while (r==1);
+            } while (r!=0);
         } break;
         case 5: /* Menu Show                */  {
             
             r=1;
             do{
-                Box(1,tela,1);
-                printf("|  1 - Mostrar matriz A                       |\n"
-                       "|  2 - Mostrar matriz B                       |\n"
-                       "|  3 - Mostrar matriz C                       |\n");
-                Box(2,tela,1);
-                printf("|  4 - Voltar                                 |\n");
-                Box(3,tela,1);
+                Box(H,L,
+                    "1 - Mostrar matriz A\n"
+                    "2 - Mostrar matriz B\n"
+                    "3 - Mostrar matriz C\n"
+                    "0 - Voltar\n");
                 printf("\n$ ");
                 scanf("%d",&rs);
                 pbreak(50);
@@ -131,144 +119,133 @@ int     interface               (int rs) {
                     case 1: rs = 99; r=0; break;
                     case 2: rs = 99; r=0; break;
                     case 3: rs = 99; r=0; break;
-                    case 4: interface(2); r=0; break;
+                    case 0: interface(2); r=0; break;
                 }
             
-            } while (r==1);
+            } while (r!=0);
         } break;
-        case 6: /* Menu Edicao geral        */  {
+        case 6: /* Menu Edicao de A        */  {
+         
+            do{
+            Box(H,L,
+                "Para a matriz A:\n\n"
+                "1 - Alterar as dimensoes da matriz   2 - Alterar todos os valores em sequencia\n"
+                "3 - Alterar um valor especifico      4 - Inverter a matriz\n"
+                "5 - Transpor a matriz                6 - substituir por uma matriz identidade\n"
+                "0 - Voltar");
             
-            Box(2,tela,1);
-            printf("|  1 - Alterar as dimensoes da matriz         |\n"
-                   "|  2 - Alterar todos os valores em sequencia  |\n"
-                   "|  3 - Alterar um valor especifico            |\n"
-                   "|  4 - Inverter a matriz                      |\n"
-                   "|  5 - Transpor a matriz                      |\n"
-                   "|  6 - substituir por uma matriz identidade   |\n");
-            Box(2,tela,1);
-            printf("|  7 - Voltar                                 |\n");
-            Box(3,tela,1);
             printf("\n$ ");
             scanf("%d",&rs);
             pbreak(50);
             
+            switch(rs){
+                case 1: rs = 99; r=0; break;
+                case 2: rs = 99; r=0; break;
+                case 3: rs = 99; r=0; break;
+                case 4: rs = 99; r=0; break;
+                case 5: rs = 99; r=0; break;
+                case 6: rs = 99; r=0; break;
+                case 0: rs = interface(3); r=0; break;
+            }
+        } while (r!=0);
         } break;
-        case 7: /* Menu Edicao de A         */  {
+        case 7: /* Menu Edicao de B        */  {
             
-            r=1;
             do{
-                Box(1, tela, 1);
-                printf("|  Para a matriz A:                           |\n");
-                switch(interface(6)){
+                Box(H,L,
+                    "Para a matriz B:\n\n"
+                    "1 - Alterar as dimensoes da matriz   2 - Alterar todos os valores em sequencia\n"
+                    "3 - Alterar um valor especifico      4 - Inverter a matriz\n"
+                    "5 - Transpor a matriz                6 - substituir por uma matriz identidade\n"
+                    "0 - Voltar");
+                
+                printf("\n$ ");
+                scanf("%d",&rs);
+                pbreak(50);
+                
+                switch(rs){
                     case 1: rs = 99; r=0; break;
                     case 2: rs = 99; r=0; break;
                     case 3: rs = 99; r=0; break;
                     case 4: rs = 99; r=0; break;
                     case 5: rs = 99; r=0; break;
                     case 6: rs = 99; r=0; break;
-                    case 7: rs = interface(3); r=0; break;
+                    case 0: rs = interface(3); r=0; break;
                 }
-            } while (r==1);
-            
-        } break;
-        case 8: /* Menu Edicao de B         */  {
-            
-            r=1;
-            do{
-                Box(1, tela, 1);
-                printf("|  Para a matriz B:                           |\n");
-                switch(interface(6)){
-                    case 1: rs = 99; r=0; break;
-                    case 2: rs = 99; r=0; break;
-                    case 3: rs = 99; r=0; break;
-                    case 4: rs = 99; r=0; break;
-                    case 5: rs = 99; r=0; break;
-                    case 6: rs = 99; r=0; break;
-                    case 7: rs = interface(3); r=0; break;
-                }
-            } while (r==1);
-            
+            } while (r!=0);
         } break;
     }
     
     return rs;
     
 }
-void    Box    (int n, int x, int y) {
+void    Box   (int h,int l, char txt[100]){
     
-    int i,j,r=0,c3=0;
-    
-    if(n==3){
-        c3=1;
-        r=1;
-    }
-    
-    do{
-        switch (n) {
-            case 1: /*  inicio      */  {
-                for (i=1;i<=x+4;i++){
-                    printf("_");
-                }
-                printf("\n");
-                
-            }
-            case 2: /*  Meio vasio  */  {
-                
-                for (i=1;i<=y;i++){
-                    printf("|");
-                    for (j=1;j<=x+2;j++){
-                        printf(" ");
-                    }
-                    printf("|\n");
-                }
-            }   if (c3==0) { break; }
-            case 3: /*  Fim         */  {
-                
-                printf("|");
-                for (i=1;i<=x+2;i++){
-                    printf("_");
-                }
-                printf("|\n");
-                r=0;
-            } break;
-        }
-    } while (r==1);
-}
-void    Box2   (int h,int l, char txt[100]){
-    
-    int i,j,k=0,start=0;
+    int i=1,j,k=0;
+    char line[100];
     FILE *box;
     
-    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/Materiais/A\&L\ Prog/Projetos/Project-Matrix/Project\ Matrix/.box/texto.txt", "w");
-    fprintf(box, txt);
+    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/Materiais/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/.Resources/box/texto.txt", "w");
+    
+    fprintf(box, "%s", txt);
     
     fclose(box);
     
-    fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/Materiais/A\&L\ Prog/Projetos/Project-Matrix/Project\ Matrix/.box/texto.txt", "r");
+    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/Materiais/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/.Resources/box/texto.txt", "r");
     
-    do{
-        for (i=0;i<strlen(txt);i++){
-            switch (j) {
-                case 1: printf("_"); break;
-                case 2: printf("|  ");
-                    do{
-                        fscanf(box, "%s",txt[i]);
-                        printf("%s",txt[i]);
-                        k++;
-                    } while (txt[i]!='\n');
-                    do{
+    while (i<=3){
+        switch (i) {
+            case 1: {
+                
+                for(j=0;j<l;j++){
+                    printf("_");
+                } printf("\n");
+                
+                printf("|");
+                for (j=2;j<l;j++){
+                    printf(" ");
+                }
+                printf("|\n");
+                
+            } break;
+            case 2: {
+                k=4;
+                while(fgets(line, sizeof(line), box)){
+                    line[strlen(line)-1]='\0';
+                    k++;
+                    printf("|  ");
+                    printf("%s",line);
+                    for (j=strlen(line);j<l-6;j++){
                         printf(" ");
-                    } while (k!=(l-4));
-                    printf("|\n");
-                    ; break;
-            }
+                    } printf("  |\n");
+                }
+                for (j=k;j<H;j++){
+                    printf("|  ");
+                    for (k=0;k<l-6;k++){
+                        printf(" ");
+                    } printf("  |\n");
+                }
+            } break;
+            case 3: {
+                
+                printf("|");
+                for (j=2;j<l;j++){
+                    printf(" ");
+                }
+                printf("|\n");
+                
+                printf("|");
+                for(j=2;j<l;j++){
+                    printf("_");
+                } printf("|\n");
+                
+            } break;
         }
-        i=0;
-        j++;
-    } while (j!=4);
+        i++;
+    }
     
-    printf("%d\n",l);
-}
+    
+    }
 void    pbreak               (int n) {
     
     while (n>0){

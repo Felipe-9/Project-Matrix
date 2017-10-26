@@ -12,8 +12,7 @@
 #include <stdio.h>
 
 /* Paginas do sistema       */  int     interface           (int);
-/* Detalhes de interface    */  void    Box       (int, int, int);
-/* Detalhes de Interface    */  void    Box2 (int, int, char txt[100]);
+/* Detalhes de Interface    */  void    Box (int, int, char txt[100]);
 /* Mudanca de Pagina        */  void    pbreak              (int);
 
 #endif /* Funcoes_h */

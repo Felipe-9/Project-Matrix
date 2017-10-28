@@ -7,7 +7,16 @@
 //
 
 #include "Funcoes.h"
-
+/**
+ * @brief Menu do usuário.
+ * @details Interfaçe de usuário.\n o guia pelo programa e define qual ação o programa irá realizar.
+ * @param[in] rs Define qual menu exibir.
+ * @param[out] rs 0 - retorna a um menu mais externo ou encerra o programa.
+ * @return numero de ação do programa.
+ * @see Box.
+ * @see pbreak.
+ * @warning rs recebe apenas numeros inteiros
+ */
 int     interface               (int rs) {
 
 #define H 15
@@ -51,7 +60,7 @@ int     interface               (int rs) {
                 printf("\n$ ");
                 scanf("%d",&rs);
                 pbreak(50);
-                switch (rs){
+                switch (rs){ // Define qual ação realizar
                     case 1: rs = interface(3); r=0; break;
                     case 2: rs = interface(4); r=0; break;
                     case 3: rs = interface(5); r=0; break;
@@ -73,7 +82,7 @@ int     interface               (int rs) {
                 scanf("%d",&rs);
                 pbreak(50);
                 
-                switch (rs) {
+                switch (rs) { // Define qual ação realizar
                     case 1: rs = interface(6); r=0; break;
                     case 2: rs = interface(7); r=0; break;
                     case 0: rs = interface(2); r=0; break;
@@ -94,7 +103,7 @@ int     interface               (int rs) {
                 scanf("%d",&rs);
                 pbreak(50);
                 
-                switch (rs) {
+                switch (rs) { // Define qual ação realizar
                     case 1: rs = 99; r=0; break;
                     case 2: rs = 99; r=0; break;
                     case 3: rs = 99; r=0; break;
@@ -115,7 +124,7 @@ int     interface               (int rs) {
                 scanf("%d",&rs);
                 pbreak(50);
                 
-                switch(rs){
+                switch(rs){ // Define qual ação realizar
                     case 1: rs = 99; r=0; break;
                     case 2: rs = 99; r=0; break;
                     case 3: rs = 99; r=0; break;
@@ -138,7 +147,7 @@ int     interface               (int rs) {
             scanf("%d",&rs);
             pbreak(50);
             
-            switch(rs){
+            switch(rs){ // Define qual ação realizar
                 case 1: rs = 99; r=0; break;
                 case 2: rs = 99; r=0; break;
                 case 3: rs = 99; r=0; break;
@@ -163,7 +172,7 @@ int     interface               (int rs) {
                 scanf("%d",&rs);
                 pbreak(50);
                 
-                switch(rs){
+                switch(rs){ // Define qual ação realizar
                     case 1: rs = 99; r=0; break;
                     case 2: rs = 99; r=0; break;
                     case 3: rs = 99; r=0; break;
@@ -180,31 +189,24 @@ int     interface               (int rs) {
     
 }
 /**
- * Uma funcao de interface, recebe dimensoes e imprime um texto na tela
- * @brief Esta funcao tem papel sintetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida.
+ * @brief Uma funcao de interface, recebe dimenções e um texto e o imprime na tela dentro de uma caixa.
+ * @details Esta funcao tem papel sintetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida.
  * @param h Define a altura da caixa.
  * @param l Define a largura da caixa.
- * @param txt texto que sera inserido dentro de uma caixa, linhas devem ser separadas por /n.
+ * @param txt texto que sera inserido dentro de uma caixa.\n
+ * A finalização de uma linha deve ser indicada por "\n".
  * @return imprime na tela o texto inserido dentro de uma caixa.
+ * @warning Dimensoes minimas no input - h = 4 + numero de linhas do texto; l = 6 + numero de caracteres da maior linha do texto.
  */
 void    Box   (int h,int l, char txt[100]){
-    
-    /**
-     * Variaveis de contagem
-     */
-    int i=1,j,k=0;
-    /**
-     * Um string que guarda e imprime cada linha do texto inserido na função
-     */
-    char line[100];
-    /**
-     * 
-     */
-    FILE *box;
+
+    int i=1,j,k=0; // Contadores
+    char line[100]; // Guarda e imprime linhas do texto inserido
+    FILE *box; // Guarda o texto inserido
     
     box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/.resources/box/texto.txt", "w");
     
-    fprintf(box, "%s", txt);
+    fprintf(box, "%s", txt); // Imprime o texto inserino no arquivo texto.txt
     
     fclose(box);
     
@@ -212,7 +214,7 @@ void    Box   (int h,int l, char txt[100]){
     
     while (i<=3){
         switch (i) {
-            case 1: {
+            case 1: /* Imprime a parte superior da caixa */ {
                 
                 for(j=0;j<l;j++){
                     printf("_");
@@ -225,7 +227,7 @@ void    Box   (int h,int l, char txt[100]){
                 printf("|\n");
                 
             } break;
-            case 2: {
+            case 2: /* Imprime o texto dentro da caixa */ {
                 k=4;
                 while(fgets(line, sizeof(line), box)){
                     line[strlen(line)-1]='\0';
@@ -243,7 +245,7 @@ void    Box   (int h,int l, char txt[100]){
                     } printf("  |\n");
                 }
             } break;
-            case 3: {
+            case 3: /* Imprime a parte inferior da caixa */ {
                 
                 printf("|");
                 for (j=2;j<l;j++){

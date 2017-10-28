@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="Screen Shot 2017-10-12 at 5.30.26 PM.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V1.3</span>
+   &#160;<span id="projectnumber">V2.0</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -94,18 +94,19 @@ $(document).ready(function(){initNavTree('_funcoes_8h.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a739f63ab2cc2e6e8342b0865fd675669"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_funcoes_8h.html#a739f63ab2cc2e6e8342b0865fd675669">interface</a> (int)</td></tr>
-<tr class="memdesc:a739f63ab2cc2e6e8342b0865fd675669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu do usuário.  <a href="#a739f63ab2cc2e6e8342b0865fd675669">More...</a><br /></td></tr>
-<tr class="separator:a739f63ab2cc2e6e8342b0865fd675669"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6bed4998fcbbaac4473ed861877e495"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_funcoes_8h.html#ae6bed4998fcbbaac4473ed861877e495">Box</a> (int, int, char txt[100])</td></tr>
-<tr class="memdesc:ae6bed4998fcbbaac4473ed861877e495"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uma funcao de interface, recebe dimenções e um texto e o imprime na tela dentro de uma caixa.  <a href="#ae6bed4998fcbbaac4473ed861877e495">More...</a><br /></td></tr>
-<tr class="separator:ae6bed4998fcbbaac4473ed861877e495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7248ff71438cf7fe3a6e20b5132c663"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_funcoes_8h.html#ad7248ff71438cf7fe3a6e20b5132c663">pbreak</a> (int)</td></tr>
-<tr class="separator:ad7248ff71438cf7fe3a6e20b5132c663"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05234ec9d8a9c75394d20c9d617675ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_funcoes_8h.html#a05234ec9d8a9c75394d20c9d617675ec">interface</a> (int rs)</td></tr>
+<tr class="memdesc:a05234ec9d8a9c75394d20c9d617675ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interfaçe do usuário.  <a href="#a05234ec9d8a9c75394d20c9d617675ec">More...</a><br /></td></tr>
+<tr class="separator:a05234ec9d8a9c75394d20c9d617675ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68eca3298eac437d000bfdb0bccc1f49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_funcoes_8h.html#a68eca3298eac437d000bfdb0bccc1f49">Box</a> (int h, int l, char txt[100])</td></tr>
+<tr class="memdesc:a68eca3298eac437d000bfdb0bccc1f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime texto inserido dentro de uma caixa.  <a href="#a68eca3298eac437d000bfdb0bccc1f49">More...</a><br /></td></tr>
+<tr class="separator:a68eca3298eac437d000bfdb0bccc1f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0148fefdb3991d391d75ca2fceabf04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_funcoes_8h.html#ae0148fefdb3991d391d75ca2fceabf04">pbreak</a> (int n)</td></tr>
+<tr class="memdesc:ae0148fefdb3991d391d75ca2fceabf04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quebra de linha.  <a href="#ae0148fefdb3991d391d75ca2fceabf04">More...</a><br /></td></tr>
+<tr class="separator:ae0148fefdb3991d391d75ca2fceabf04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ae6bed4998fcbbaac4473ed861877e495"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6bed4998fcbbaac4473ed861877e495">&#9670;&nbsp;</a></span>Box()</h2>
+<a id="a68eca3298eac437d000bfdb0bccc1f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68eca3298eac437d000bfdb0bccc1f49">&#9670;&nbsp;</a></span>Box()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -136,8 +137,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Uma funcao de interface, recebe dimenções e um texto e o imprime na tela dentro de uma caixa. </p>
-<p>Esta funcao tem papel sintetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Imprime texto inserido dentro de uma caixa. </p>
+<p>Esta funcao tem papel estetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">h</td><td>Define a altura da caixa. </td></tr>
     <tr><td class="paramname">l</td><td>Define a largura da caixa. </td></tr>
@@ -147,14 +148,15 @@ A finalização de uma linha deve ser indicada por "\n". </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>imprime na tela o texto inserido dentro de uma caixa. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Dimensoes minimas no input - h = 4 + numero de linhas do texto; l = 6 + numero de caracteres da maior linha do texto. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Dimensoes minimas no input - l = 6 + numero de caracteres da maior linha do texto.<br />
+h &lt; 4 + numero de linhas do texto, imprime o tamanho minimo da caixa para o texto inserido. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_funcoes_8c_source.html#l00201">201</a> of file <a class="el" href="_funcoes_8c_source.html">Funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_funcoes_8c_source.html#l00184">184</a> of file <a class="el" href="_funcoes_8c_source.html">Funcoes.c</a>.</p>
 
 </div>
 </div>
-<a id="a739f63ab2cc2e6e8342b0865fd675669"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a739f63ab2cc2e6e8342b0865fd675669">&#9670;&nbsp;</a></span>interface()</h2>
+<a id="a05234ec9d8a9c75394d20c9d617675ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05234ec9d8a9c75394d20c9d617675ec">&#9670;&nbsp;</a></span>interface()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -169,27 +171,25 @@ A finalização de uma linha deve ser indicada por "\n". </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Menu do usuário. </p>
-<p>Interfaçe de usuário.<br />
- o guia pelo programa e define qual ação o programa irá realizar. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Interfaçe do usuário. </p>
+<p>O guia pelo programa e define qual ação o programa irá realizar. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rs</td><td>Define qual menu exibir. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">rs</td><td>0 - retorna a um menu mais externo ou encerra o programa. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>numero de ação do programa. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="_funcoes_8c.html#a68eca3298eac437d000bfdb0bccc1f49" title="Uma funcao de interface, recebe dimenções e um texto e o imprime na tela dentro de uma caixa...">Box</a>. </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="_funcoes_8h.html#a68eca3298eac437d000bfdb0bccc1f49" title="Imprime texto inserido dentro de uma caixa. ">Box</a>. </dd>
 <dd>
-<a class="el" href="_funcoes_8c.html#ae0148fefdb3991d391d75ca2fceabf04">pbreak</a>. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>rs recebe apenas numeros inteiros </dd></dl>
+<a class="el" href="_funcoes_8h.html#ae0148fefdb3991d391d75ca2fceabf04" title="Quebra de linha. ">pbreak</a>. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>rs recebe apenas numeros inteiros. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_funcoes_8c_source.html#l00020">20</a> of file <a class="el" href="_funcoes_8c_source.html">Funcoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_funcoes_8c_source.html#l00011">11</a> of file <a class="el" href="_funcoes_8c_source.html">Funcoes.c</a>.</p>
 
 </div>
 </div>
-<a id="ad7248ff71438cf7fe3a6e20b5132c663"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7248ff71438cf7fe3a6e20b5132c663">&#9670;&nbsp;</a></span>pbreak()</h2>
+<a id="ae0148fefdb3991d391d75ca2fceabf04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0148fefdb3991d391d75ca2fceabf04">&#9670;&nbsp;</a></span>pbreak()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,13 +198,21 @@ A finalização de uma linha deve ser indicada por "\n". </td></tr>
           <td class="memname">void pbreak </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_funcoes_8c_source.html#l00268">268</a> of file <a class="el" href="_funcoes_8c_source.html">Funcoes.c</a>.</p>
+<p>Quebra de linha. </p>
+<p>Função estética. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Numero de linhas que vai pular no terminal. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="_funcoes_8c_source.html#l00251">251</a> of file <a class="el" href="_funcoes_8c_source.html">Funcoes.c</a>.</p>
 
 </div>
 </div>

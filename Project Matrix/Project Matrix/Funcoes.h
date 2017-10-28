@@ -11,8 +11,33 @@
 
 #include <stdio.h>
 
-/* Paginas do sistema       */  int     interface           (int);
-/* Detalhes de Interface    */  void    Box (int, int, char txt[100]);
-/* Mudanca de Pagina        */  void    pbreak              (int);
+/**
+ * @brief Interfaçe do usuário.
+ * @details O guia pelo programa e define qual ação o programa irá realizar.
+ * @param[in] rs Define qual menu exibir.
+ * @return numero de ação do programa.
+ * @see Box.
+ * @see pbreak.
+ * @warning rs recebe apenas numeros inteiros.
+ */
+int     interface                        (int rs);
+/**
+ * @brief Imprime texto inserido dentro de uma caixa.
+ * @details Esta funcao tem papel estetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida.
+ * @param h Define a altura da caixa.
+ * @param l Define a largura da caixa.
+ * @param txt texto que sera inserido dentro de uma caixa.\n
+ * A finalização de uma linha deve ser indicada por "\n".
+ * @return imprime na tela o texto inserido dentro de uma caixa.
+ * @warning Dimensoes minimas no input - l = 6 + numero de caracteres da maior linha do texto.\n
+ * h < 4 + numero de linhas do texto, imprime o tamanho minimo da caixa para o texto inserido.
+ */
+void    Box         (int h, int l, char txt[100]);
+/**
+ * @brief Quebra de linha.
+ * @details Função estética.
+ * @param n Numero de linhas que vai pular no terminal.
+ **/
+void    pbreak                            (int n);
 
 #endif /* Funcoes_h */

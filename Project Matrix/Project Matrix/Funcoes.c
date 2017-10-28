@@ -7,19 +7,10 @@
 //
 
 #include "Funcoes.h"
-/**
- * @brief Menu do usuário.
- * @details Interfaçe de usuário.\n o guia pelo programa e define qual ação o programa irá realizar.
- * @param[in] rs Define qual menu exibir.
- * @param[out] rs 0 - retorna a um menu mais externo ou encerra o programa.
- * @return numero de ação do programa.
- * @see Box.
- * @see pbreak.
- * @warning rs recebe apenas numeros inteiros
- */
+
 int     interface               (int rs) {
 
-#define H 15
+#define H 10
 #define L 90
     
     int r=1;
@@ -31,7 +22,7 @@ int     interface               (int rs) {
             
             pbreak(50);
             
-            Box(H,L,
+            Box(0,75,
                  "##             ##    ##                                     ##      #\n"
                  " #              #     #                                      #      #\n"
                  " ####   ###    #      #    ###        ##  ##  ###   ## ##   #    ####\n"
@@ -50,8 +41,9 @@ int     interface               (int rs) {
         case 2: /* Menu inicial             */  {
             
             do{
+                pbreak(50);
                 Box (H,L,
-                     "Menu Principal\n"
+                     "Menu Principal\n\n"
                      "1 - Editar Valores\n"
                      "2 - Operacoes\n"
                      "3 - Mostrar Matrizes\n"
@@ -59,12 +51,12 @@ int     interface               (int rs) {
                 
                 printf("\n$ ");
                 scanf("%d",&rs);
-                pbreak(50);
+                
                 switch (rs){ // Define qual ação realizar
                     case 1: rs = interface(3); r=0; break;
                     case 2: rs = interface(4); r=0; break;
                     case 3: rs = interface(5); r=0; break;
-                    case 0: r=0;
+                    case 0: rs = 0; r=0; break;
                 }
             } while (r!=0);
         } break;
@@ -72,15 +64,15 @@ int     interface               (int rs) {
             
             r=1;
             do{
+                pbreak(50);
                 Box (H,L,
-                     "Editar qual Matriz?\n"
+                     "Editar qual Matriz?\n\n"
                      "1 - Matriz A\n"
                      "2 - Matriz B\n"
                      "0 - Voltar\n");
                 
-                printf("$ ");
+                printf("\n$ ");
                 scanf("%d",&rs);
-                pbreak(50);
                 
                 switch (rs) { // Define qual ação realizar
                     case 1: rs = interface(6); r=0; break;
@@ -93,20 +85,20 @@ int     interface               (int rs) {
             
             r=1;
             do{
+                pbreak(50);
                 Box(H,L,
-                    "Realizar quais opercaoes com matrizes?\n"
+                    "Realizar quais opercaoes com matrizes?\n\n"
                     "1 - Somar        ( A + B )\n"
                     "2 - Subtrair     ( A - B )\n"
                     "3 - Multiplicar  ( A * B )\n"
                     "0 - Voltar\n");
                 printf("\n$ ");
                 scanf("%d",&rs);
-                pbreak(50);
                 
                 switch (rs) { // Define qual ação realizar
-                    case 1: rs = 99; r=0; break;
-                    case 2: rs = 99; r=0; break;
-                    case 3: rs = 99; r=0; break;
+                    case 1: rs =  1; r=0; break;
+                    case 2: rs =  2; r=0; break;
+                    case 3: rs =  3; r=0; break;
                     case 0: interface(2); r=0; break;
                 }
             } while (r!=0);
@@ -115,19 +107,20 @@ int     interface               (int rs) {
             
             r=1;
             do{
+                pbreak(50);
                 Box(H,L,
+                    "Mostrar qual Matriz?\n\n"
                     "1 - Mostrar matriz A\n"
                     "2 - Mostrar matriz B\n"
                     "3 - Mostrar matriz C\n"
                     "0 - Voltar\n");
                 printf("\n$ ");
                 scanf("%d",&rs);
-                pbreak(50);
                 
                 switch(rs){ // Define qual ação realizar
-                    case 1: rs = 99; r=0; break;
-                    case 2: rs = 99; r=0; break;
-                    case 3: rs = 99; r=0; break;
+                    case 1: rs =  4; r=0; break;
+                    case 2: rs =  5; r=0; break;
+                    case 3: rs =  6; r=0; break;
                     case 0: interface(2); r=0; break;
                 }
             
@@ -136,24 +129,24 @@ int     interface               (int rs) {
         case 6: /* Menu Edicao de A        */  {
          
             do{
+                pbreak(50);
             Box(H,L,
                 "Para a matriz A:\n\n"
                 "1 - Alterar as dimensoes da matriz   2 - Alterar todos os valores em sequencia\n"
                 "3 - Alterar um valor especifico      4 - Inverter a matriz\n"
-                "5 - Transpor a matriz                6 - substituir por uma matriz identidade\n"
-                "0 - Voltar");
+                "5 - Transpor a matriz                6 - Substituir pela matriz C\n"
+                "0 - Voltar\n");
             
             printf("\n$ ");
             scanf("%d",&rs);
-            pbreak(50);
             
             switch(rs){ // Define qual ação realizar
-                case 1: rs = 99; r=0; break;
-                case 2: rs = 99; r=0; break;
-                case 3: rs = 99; r=0; break;
-                case 4: rs = 99; r=0; break;
-                case 5: rs = 99; r=0; break;
-                case 6: rs = 99; r=0; break;
+                case 1: rs =  7; r=0; break;
+                case 2: rs =  8; r=0; break;
+                case 3: rs =  9; r=0; break;
+                case 4: rs = 10; r=0; break;
+                case 5: rs = 11; r=0; break;
+                case 6: rs = 12; r=0; break;
                 case 0: rs = interface(3); r=0; break;
             }
         } while (r!=0);
@@ -161,24 +154,24 @@ int     interface               (int rs) {
         case 7: /* Menu Edicao de B        */  {
             
             do{
+                pbreak(50);
                 Box(H,L,
                     "Para a matriz B:\n\n"
                     "1 - Alterar as dimensoes da matriz   2 - Alterar todos os valores em sequencia\n"
                     "3 - Alterar um valor especifico      4 - Inverter a matriz\n"
-                    "5 - Transpor a matriz                6 - substituir por uma matriz identidade\n"
-                    "0 - Voltar");
+                    "5 - Transpor a matriz                6 - Substituir pela matriz C\n"
+                    "0 - Voltar\n");
                 
                 printf("\n$ ");
                 scanf("%d",&rs);
-                pbreak(50);
                 
                 switch(rs){ // Define qual ação realizar
-                    case 1: rs = 99; r=0; break;
-                    case 2: rs = 99; r=0; break;
-                    case 3: rs = 99; r=0; break;
-                    case 4: rs = 99; r=0; break;
-                    case 5: rs = 99; r=0; break;
-                    case 6: rs = 99; r=0; break;
+                    case 1: rs = 13; r=0; break;
+                    case 2: rs = 14; r=0; break;
+                    case 3: rs = 15; r=0; break;
+                    case 4: rs = 16; r=0; break;
+                    case 5: rs = 17; r=0; break;
+                    case 6: rs = 18; r=0; break;
                     case 0: rs = interface(3); r=0; break;
                 }
             } while (r!=0);
@@ -188,16 +181,6 @@ int     interface               (int rs) {
     return rs;
     
 }
-/**
- * @brief Uma funcao de interface, recebe dimenções e um texto e o imprime na tela dentro de uma caixa.
- * @details Esta funcao tem papel sintetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida.
- * @param h Define a altura da caixa.
- * @param l Define a largura da caixa.
- * @param txt texto que sera inserido dentro de uma caixa.\n
- * A finalização de uma linha deve ser indicada por "\n".
- * @return imprime na tela o texto inserido dentro de uma caixa.
- * @warning Dimensoes minimas no input - h = 4 + numero de linhas do texto; l = 6 + numero de caracteres da maior linha do texto.
- */
 void    Box   (int h,int l, char txt[100]){
 
     int i=1,j,k=0; // Contadores
@@ -238,7 +221,7 @@ void    Box   (int h,int l, char txt[100]){
                         printf(" ");
                     } printf("  |\n");
                 }
-                for (j=k;j<H;j++){
+                for (j=k;j<h;j++){
                     printf("|  ");
                     for (k=0;k<l-6;k++){
                         printf(" ");

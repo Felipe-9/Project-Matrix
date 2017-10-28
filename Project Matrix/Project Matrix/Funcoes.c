@@ -179,19 +179,36 @@ int     interface               (int rs) {
     return rs;
     
 }
+/**
+ * Uma funcao de interface, recebe dimensoes e imprime um texto na tela
+ * @brief Esta funcao tem papel sintetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida.
+ * @param h Define a altura da caixa.
+ * @param l Define a largura da caixa.
+ * @param txt texto que sera inserido dentro de uma caixa, linhas devem ser separadas por /n.
+ * @return imprime na tela o texto inserido dentro de uma caixa.
+ */
 void    Box   (int h,int l, char txt[100]){
     
+    /**
+     * Variaveis de contagem
+     */
     int i=1,j,k=0;
+    /**
+     * Um string que guarda e imprime cada linha do texto inserido na função
+     */
     char line[100];
+    /**
+     * 
+     */
     FILE *box;
     
-    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/Materiais/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/.Resources/box/texto.txt", "w");
+    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/.resources/box/texto.txt", "w");
     
     fprintf(box, "%s", txt);
     
     fclose(box);
     
-    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/Materiais/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/.Resources/box/texto.txt", "r");
+    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/.resources/box/texto.txt", "r");
     
     while (i<=3){
         switch (i) {

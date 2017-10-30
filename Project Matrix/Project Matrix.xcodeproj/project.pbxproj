@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		814A28391FA7BBF900485E6D /* interface.c in Sources */ = {isa = PBXBuildFile; fileRef = 814A28381FA7BBF900485E6D /* interface.c */; };
 		81AD45631F91A11600D8FAA6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 81AD45621F91A11600D8FAA6 /* main.c */; };
-		81AD456B1F91A12E00D8FAA6 /* Funcoes.c in Sources */ = {isa = PBXBuildFile; fileRef = 81AD456A1F91A12E00D8FAA6 /* Funcoes.c */; };
+		81AD456B1F91A12E00D8FAA6 /* funcoes.c in Sources */ = {isa = PBXBuildFile; fileRef = 81AD456A1F91A12E00D8FAA6 /* funcoes.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		814A28371FA7BBF900485E6D /* interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
+		814A28381FA7BBF900485E6D /* interface.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = interface.c; sourceTree = "<group>"; };
 		81AD455F1F91A11600D8FAA6 /* Project Matrix */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Project Matrix"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AD45621F91A11600D8FAA6 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
-		81AD45691F91A12E00D8FAA6 /* Funcoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Funcoes.h; sourceTree = "<group>"; };
-		81AD456A1F91A12E00D8FAA6 /* Funcoes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Funcoes.c; sourceTree = "<group>"; };
+		81AD45691F91A12E00D8FAA6 /* funcoes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = funcoes.h; sourceTree = "<group>"; };
+		81AD456A1F91A12E00D8FAA6 /* funcoes.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = funcoes.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				81AD45621F91A11600D8FAA6 /* main.c */,
-				81AD45691F91A12E00D8FAA6 /* Funcoes.h */,
-				81AD456A1F91A12E00D8FAA6 /* Funcoes.c */,
+				814A28371FA7BBF900485E6D /* interface.h */,
+				814A28381FA7BBF900485E6D /* interface.c */,
+				81AD45691F91A12E00D8FAA6 /* funcoes.h */,
+				81AD456A1F91A12E00D8FAA6 /* funcoes.c */,
 			);
 			path = "Project Matrix";
 			sourceTree = "<group>";
@@ -125,7 +130,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AD45631F91A11600D8FAA6 /* main.c in Sources */,
-				81AD456B1F91A12E00D8FAA6 /* Funcoes.c in Sources */,
+				814A28391FA7BBF900485E6D /* interface.c in Sources */,
+				81AD456B1F91A12E00D8FAA6 /* funcoes.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

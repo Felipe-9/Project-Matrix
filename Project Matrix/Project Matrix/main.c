@@ -7,44 +7,55 @@
 //
 
 #include <stdio.h>
-#include "Funcoes.h"
+#include "funcoes.h"
+#include "interface.h"
 #include <time.h>
 #include <stdlib.h>
 
 /**
  * @brief Timeline do programa.
  * @details Permuta as funcoes do programa.
- * @see interface
+ * @see interface.
+ * @see sum.
+ * @see sub.
+ * @see tim.
+ * @see show.
+ * @see size.
+ * @see choose.
+ * @see point.
+ * @see inv.
+ * @see transp.
+ * @see subst.
  **/
 int main() {
     
-    int f = 1;
+    int sair = 1;       // Condição de saída
     
-    if (interface(1)==1){ //  Pagina de inicializacao.
+    if (interface(1)==1){ //  Página de inicializacao.
         
         do{
             switch (interface(2)) { // Usuario define opreção do programa.
-                case  1: /* Somar                         ( A + B ) */  {} break;
-                case  2: /* Subtrair                      ( A - B ) */  {} break;
-                case  3: /* Multiplicar                   ( A * B ) */  {} break;
-                case  4: /* Mostrar matriz                        A */  {} break;
-                case  5: /* Mostrar matriz                        B */  {} break;
-                case  6: /* Mostrar matriz                        C */  {} break;
-                case  7: /* Alterar as dimensoes da matriz        A */  {} break;
-                case  8: /* Alterar todos os valores em sequencia A */  {} break;
-                case  9: /* Alterar um valor especifico           A */  {} break;
-                case 10: /* Inverter a matriz                     A */  {} break;
-                case 11: /* Transpor a matriz                     A */  {} break;
-                case 12: /* Substituir pela matriz C              A */  {} break;
-                case 13: /* Alterar as dimensoes da matriz        B */  {} break;
-                case 14: /* Alterar todos os valores em sequencia B */  {} break;
-                case 15: /* Alterar um valor especifico           B */  {} break;
-                case 16: /* Inverter a matriz                     B */  {} break;
-                case 17: /* Transpor a matriz                     B */  {} break;
-                case 18: /* Substituir pela matriz C              B */  {} break;
-                case  0: /* Sair                                    */  { f = 0; } break;
+                case  1: /* Somar                         ( A + B ) */  { sum    ( ); } break;
+                case  2: /* Subtrair                      ( A - B ) */  { sub    ( ); } break;
+                case  3: /* Multiplicar                   ( A * B ) */  { tim    ( ); } break;
+                case  4: /* Mostrar matriz                        A */  { show   (1); } break;
+                case  5: /* Mostrar matriz                        B */  { show   (2); } break;
+                case  6: /* Mostrar matriz                        C */  { show   (3); } break;
+                case  7: /* Alterar as dimensoes da matriz        A */  { size   (1); } break;
+                case  8: /* Alterar todos os valores em sequencia A */  { choose (1); } break;
+                case  9: /* Alterar um valor especifico           A */  { point  (1); } break;
+                case 10: /* Inverter a matriz                     A */  { inv    (1); } break;
+                case 11: /* Transpor a matriz                     A */  { transp (1); } break;
+                case 12: /* Substituir pela matriz C              A */  { subst  (1); } break;
+                case 13: /* Alterar as dimensoes da matriz        B */  { size   (2); } break;
+                case 14: /* Alterar todos os valores em sequencia B */  { choose (2); } break;
+                case 15: /* Alterar um valor especifico           B */  { point  (2); } break;
+                case 16: /* Inverter a matriz                     B */  { inv    (2); } break;
+                case 17: /* Transpor a matriz                     B */  { transp (2); } break;
+                case 18: /* Substituir pela matriz C              B */  { subst  (2); } break;
+                case  0: /* Sair                                    */  { sair = 0;     } break;
             }
-        } while (f!=0);
+        } while (sair!=0);
     }
     return 0;
 }

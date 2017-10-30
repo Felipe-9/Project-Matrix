@@ -1,15 +1,17 @@
 //
-//  Funcoes.h
+//  interface.h
 //  Project Matrix
 //
-//  Created by Felipe Alexandre de Barros Pinto on 13/10/17.
+//  Created by Felipe Alexandre de Barros Pinto on 30/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
-#ifndef Funcoes_h
-#define Funcoes_h
+#ifndef interface_h
+#define interface_h
 
 #include <stdio.h>
+
+//  Funções de interfaçe
 
 /**
  * @brief Interfaçe do usuário.
@@ -40,4 +42,4 @@ void    Box         (int h, int l, char txt[100]);
  **/
 void    pbreak                            (int n);
 
-#endif /* Funcoes_h */
+#endif /* interface_h */

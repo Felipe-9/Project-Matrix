@@ -19,21 +19,22 @@ int     interface               (int rs) {
         case 1: /* Pagina de Inicialisacao  */  {
             
             do{
-            
-            pbreak(50);
-            
-            Box(0,75,
-                 "##             ##    ##                                     ##      #\n"
-                 " #              #     #                                      #      #\n"
-                 " ####   ###    #      #    ###        ##  ##  ###   ## ##   #    ####\n"
-                 " #  #  #   #   #     #    #  ##       # ###  ##  #   ##     #   ## ##\n"
-                 " #  # ######   #     #   #    #       # # #  #   #   #      #   #   #\n"
-                 " #  # #        #     #   #   #        ####   #   #  #      ##   #  ##\n"
-                 "## ##  ####  #### #####  ####        ## ##   ####  ####   ####  #####\n");
-            printf("\n\t\t\t\t1 - INITIALIZE PROGRAM\n"
-                   "\t\t\t\t0 - SAIR\n\n$ ");
-            scanf("%d",&rs);
-            pbreak(50);
+                char i[1000];
+                
+                FILE *intro = fopen("test.txt","r");
+                
+              //  fgets(i,1000, intro);
+                
+                fclose(intro);
+                
+                pbreak(50);
+                Box(0,103,i);
+                
+                printf("\n\t\t\t\t1 - INITIALIZE PROGRAM\n"
+                       "\t\t\t\t0 - SAIR\n\n$ ");
+                scanf("%d",&rs);
+                
+                pbreak(50);
                 
             } while (rs!=0&&rs!=1);
             
@@ -249,7 +250,6 @@ void    Box   (int h,int l, char txt[100]){
     
     }
 void    pbreak               (int n) {
-    
     while (n>0){
         printf("\n");
         n--;

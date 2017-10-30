@@ -224,6 +224,7 @@
 		81AD45671F91A11600D8FAA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INSTALL_PATH = "/Users/felipepinto/Documents/Engenharia\\ Eletrica/A\\&L\\ Prog/FelipePint0.github.io/Project-Matrix/Project\\ Matrix/Product/debug/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -231,6 +232,7 @@
 		81AD45681F91A11600D8FAA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INSTALL_PATH = "/Users/felipepinto/Documents/Engenharia\\ Eletrica/A\\&L\\ Prog/FelipePint0.github.io/Project-Matrix/Project\\ Matrix/Product/debug/";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -254,6 +256,7 @@
 				81AD45681F91A11600D8FAA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

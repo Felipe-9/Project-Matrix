@@ -53,7 +53,7 @@ int main() {
                 case 16: /* Inverter a matriz                     B */  { inv    (2); } break;
                 case 17: /* Transpor a matriz                     B */  { transp (2); } break;
                 case 18: /* Substituir pela matriz C              B */  { subst  (2); } break;
-                case  0: /* Sair                                    */  { sair = 0;     } break;
+                case  0: /* Sair                                    */  { sair = 0;   } break;
             }
         } while (sair!=0);
     }

@@ -1,6 +1,14 @@
 var NAVTREE =
 [
   [ "Project Matrix", "index.html", [
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ],
+      [ "Data Structure Index", "classes.html", null ],
+      [ "Data Fields", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Variables", "functions_vars.html", null ]
+      ] ]
+    ] ],
     [ "Files", null, [
       [ "File List", "files.html", "files" ],
       [ "Globals", "globals.html", [
@@ -14,7 +22,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"dir_00ee740066fbafee008733c1fcafff70.html"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

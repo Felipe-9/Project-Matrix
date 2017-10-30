@@ -44,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8166128E1FA7C7BC007B614A /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				814A28371FA7BBF900485E6D /* interface.h */,
+				81AD45691F91A12E00D8FAA6 /* funcoes.h */,
+			);
+			path = headers;
+			sourceTree = "<group>";
+		};
 		81AD45561F91A11600D8FAA6 = {
 			isa = PBXGroup;
 			children = (
@@ -63,10 +72,9 @@
 		81AD45611F91A11600D8FAA6 /* Project Matrix */ = {
 			isa = PBXGroup;
 			children = (
+				8166128E1FA7C7BC007B614A /* headers */,
 				81AD45621F91A11600D8FAA6 /* main.c */,
-				814A28371FA7BBF900485E6D /* interface.h */,
 				814A28381FA7BBF900485E6D /* interface.c */,
-				81AD45691F91A12E00D8FAA6 /* funcoes.h */,
 				81AD456A1F91A12E00D8FAA6 /* funcoes.c */,
 			);
 			path = "Project Matrix";

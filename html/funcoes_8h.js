@@ -1,9 +1,10 @@
 var funcoes_8h =
 [
+    [ "matriz", "structmatriz.html", "structmatriz" ],
     [ "choose", "funcoes_8h.html#ae5813f0ef88394ea1d8cd766018061b8", null ],
     [ "inv", "funcoes_8h.html#a0a490e5ea9ab80605bddddf6eddb5e19", null ],
     [ "point", "funcoes_8h.html#a86be95d456e86d23406d6a3b51746731", null ],
-    [ "result", "funcoes_8h.html#a6f196652f5e5080ec284ba8d12974eaa", null ],
+    [ "result", "funcoes_8h.html#a6c5c792353b4864d1bb60e0cb5c494dd", null ],
     [ "show", "funcoes_8h.html#af63f47264cfdd4c88a97d4eda1c0efe1", null ],
     [ "size", "funcoes_8h.html#a382635a8118a482aa080de7615449f7f", null ],
     [ "sub", "funcoes_8h.html#ab09a6457a19510670b369271b988cd8c", null ],

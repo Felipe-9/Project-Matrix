@@ -22,7 +22,7 @@
  * @see choose.
  * @see point.
  */
-void sum (void);
+void sum     (void);
 /**
  * @brief Subtração de Matrizes ( A - B ).
  * @details Verifica a inicialização e subtrai as matrizes A e B.
@@ -32,7 +32,7 @@ void sum (void);
  * @see choose.
  * @see point.
  */
-void sub (void);
+void sub     (void);
 /**
  * @brief Multiplicação de Matrizes ( A * B ).
  * @details Verifica a inicialização e multiplica as matrizes A e B.
@@ -42,7 +42,7 @@ void sub (void);
  * @see choose.
  * @see point.
  */
-void tim (void);
+void tim     (void);
 /**
  * @brief Mostra uma matriz.
  * @details Verifica a inicialização da matriz selecionada e a imprime na tela.
@@ -52,12 +52,12 @@ void tim (void);
  * @see choose.
  * @see point.
  */
-void show (int m);
+void show   (int m);
 /**
  * @brief Altera as dimenções de uma matriz.
  * @param m Seleção de matriz.
  */
-void size (int m);
+void size   (int m);
 /**
  * @brief Altera sequencialmente os valores de uma matriz.
  * @details Insere um a um os valores da matriz selecionada.
@@ -74,7 +74,7 @@ void choose (int m);
  * @warning Matriz selecionada deve ter suas dimenções definidas!
  * @see size
  */
-void point (int m);
+void point  (int m);
 /**
  * @brief Inversão de uma matriz.
  * @details Inverte a matriz selecionada.
@@ -84,7 +84,7 @@ void point (int m);
  * @see choose.
  * @see point.
  */
-void inv (int m);
+void inv    (int m);
 /**
  * @brief Transpõe uma matriz.
  * @details Transpõe a matriz selecionada.
@@ -103,19 +103,31 @@ void transp (int m);
  * @warning matriz C deve ter sido inicializada!
  * @see result
  */
-void subst (int m);
+void subst  (int m);
 /**
  * @brief substitui o string inserido em uma matriz.
  * @details Insere a matriz dada na matriz seleionada.
  * @param m Seleção de matrizes.
- * @param txt matriz para ser inserida.
+ * @param M matriz para ser inserida.
  * @see sum.
  * @see sub.
  * @see tim.
  */
-void result (int m, char txt[50]);
+void result (int m, int M[100][100]);
 
-
+/**
+ * @brief Modelo de matriz.
+ * @param i Quantidade de colunas de uma matriz.
+ * @param j Quantidade de linhas de uma matriz.
+ * @param v Numero de inicializaçao de uma matriz.
+ * @param m Array que guarda a matriz.
+ */
+struct matriz{
+    int v;
+    int i;
+    int j;
+    int m[100][100];
+};
 
 
 #endif /* funcoes_h */

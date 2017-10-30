@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('funcoes_8h.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">funcoes.h File Reference</div>  </div>
@@ -92,6 +93,12 @@ $(document).ready(function(){initNavTree('funcoes_8h.html','');});
 </div>
 <p><a href="funcoes_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatriz.html">matriz</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modelo de matriz.  <a href="structmatriz.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a5bcafc75025e47668ebd2cd587d06826"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funcoes_8h.html#a5bcafc75025e47668ebd2cd587d06826">sum</a> (void)</td></tr>
@@ -124,9 +131,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9da024f56e70a6ce0cc0d9998a644a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funcoes_8h.html#a9da024f56e70a6ce0cc0d9998a644a02">subst</a> (int m)</td></tr>
 <tr class="memdesc:a9da024f56e70a6ce0cc0d9998a644a02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Substituição de matrizes.  <a href="#a9da024f56e70a6ce0cc0d9998a644a02">More...</a><br /></td></tr>
 <tr class="separator:a9da024f56e70a6ce0cc0d9998a644a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f196652f5e5080ec284ba8d12974eaa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funcoes_8h.html#a6f196652f5e5080ec284ba8d12974eaa">result</a> (int m, char txt[50])</td></tr>
-<tr class="memdesc:a6f196652f5e5080ec284ba8d12974eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">substitui o string inserido em uma matriz.  <a href="#a6f196652f5e5080ec284ba8d12974eaa">More...</a><br /></td></tr>
-<tr class="separator:a6f196652f5e5080ec284ba8d12974eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c5c792353b4864d1bb60e0cb5c494dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="funcoes_8h.html#a6c5c792353b4864d1bb60e0cb5c494dd">result</a> (int m, int M[100][100])</td></tr>
+<tr class="memdesc:a6c5c792353b4864d1bb60e0cb5c494dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">substitui o string inserido em uma matriz.  <a href="#a6c5c792353b4864d1bb60e0cb5c494dd">More...</a><br /></td></tr>
+<tr class="separator:a6c5c792353b4864d1bb60e0cb5c494dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae5813f0ef88394ea1d8cd766018061b8"></a>
@@ -223,8 +230,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a6f196652f5e5080ec284ba8d12974eaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f196652f5e5080ec284ba8d12974eaa">&#9670;&nbsp;</a></span>result()</h2>
+<a id="a6c5c792353b4864d1bb60e0cb5c494dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c5c792353b4864d1bb60e0cb5c494dd">&#9670;&nbsp;</a></span>result()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,8 +245,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>txt</em>[50]&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>M</em>[100][100]&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -253,7 +260,7 @@ Functions</h2></td></tr>
 <p>Insere a matriz dada na matriz seleionada. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">m</td><td>Seleção de matrizes. </td></tr>
-    <tr><td class="paramname">txt</td><td>matriz para ser inserida. </td></tr>
+    <tr><td class="paramname">M</td><td>matriz para ser inserida. </td></tr>
   </table>
   </dd>
 </dl>
@@ -262,8 +269,6 @@ Functions</h2></td></tr>
 <a class="el" href="funcoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( A - B ). ">sub</a>. </dd>
 <dd>
 <a class="el" href="funcoes_8h.html#a46f49ebc49cd6a21692d308d67bb703d" title="Multiplicação de Matrizes ( A * B ). ">tim</a>. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00041">41</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 
 </div>
 </div>
@@ -381,7 +386,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>matriz C deve ter sido inicializada! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="funcoes_8h.html#a6f196652f5e5080ec284ba8d12974eaa" title="substitui o string inserido em uma matriz. ">result</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="funcoes_8h.html#a6c5c792353b4864d1bb60e0cb5c494dd" title="substitui o string inserido em uma matriz. ">result</a> </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="funcoes_8c_source.html#l00038">38</a> of file <a class="el" href="funcoes_8c_source.html">funcoes.c</a>.</p>
 

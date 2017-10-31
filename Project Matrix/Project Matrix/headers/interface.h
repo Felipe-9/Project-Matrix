@@ -11,8 +11,6 @@
 
 #include <stdio.h>
 
-//  Funções de interfaçe
-
 /**
  * @brief Interfaçe do usuário.
  * @details O guia pelo programa e define qual ação o programa irá realizar.

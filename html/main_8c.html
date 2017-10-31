@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="Screen Shot 2017-10-12 at 5.30.26 PM.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V3.1</span>
+   &#160;<span id="projectnumber">V4.0</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -89,8 +89,10 @@ $(document).ready(function(){initNavTree('main_8c.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="funcoes_8h_source.html">funcoes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="operacoes_8h_source.html">operacoes.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="interface_8h_source.html">interface.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="show__and__edit_8h_source.html">show_and_edit.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
 <code>#include &lt;time.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 </div>
@@ -119,29 +121,29 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Timeline do programa. </p>
-<p>Permuta as funcoes do programa. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="interface_8c.html#a05234ec9d8a9c75394d20c9d617675ec" title="Interfaçe do usuário. ">interface</a>. </dd>
+<p>Permuta as funcoes do programa. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="interface_8h.html#a05234ec9d8a9c75394d20c9d617675ec" title="Interfaçe do usuário. ">interface</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( A + B ). ">sum</a>. </dd>
+<a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( A - B ). ">sub</a>. </dd>
+<a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#a46f49ebc49cd6a21692d308d67bb703d" title="Multiplicação de Matrizes ( A * B ). ">tim</a>. </dd>
+<a class="el" href="operacoes_8h.html#a46f49ebc49cd6a21692d308d67bb703d" title="Multiplicação de Matrizes ( A * B ). ">tim</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#af63f47264cfdd4c88a97d4eda1c0efe1" title="Mostra uma matriz. ">show</a>. </dd>
+<a class="el" href="show__and__edit_8h.html#a1b4bc654b3bc3f3d1cb49b3134cf5a79" title="Mostra uma matriz. ">show</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#a382635a8118a482aa080de7615449f7f" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
+<a class="el" href="show__and__edit_8h.html#ad798cdc84cde0e8442675b7032944cd7" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#ae5813f0ef88394ea1d8cd766018061b8" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
+<a class="el" href="show__and__edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#a86be95d456e86d23406d6a3b51746731" title="altera um valor especifico de uma matriz. ">point</a>. </dd>
+<a class="el" href="show__and__edit_8h.html#a5c71940a467691123679f2b0b996ffa4" title="altera um valor especifico de uma matriz. ">point</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#a0a490e5ea9ab80605bddddf6eddb5e19" title="Inversão de uma matriz. ">inv</a>. </dd>
+<a class="el" href="show__and__edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82" title="Inversão de matriz. ">inv</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#a9ffc9ee25e85efdaf4a46e9ab16f8ae8" title="Transpõe uma matriz. ">transp</a>. </dd>
+<a class="el" href="show__and__edit_8h.html#a0535e788df40ebc876949d8337341c6e" title="Transpozição de matriz. ">transp</a>. </dd>
 <dd>
-<a class="el" href="funcoes_8h.html#a9da024f56e70a6ce0cc0d9998a644a02" title="Substituição de matrizes. ">subst</a>. </dd></dl>
+subst. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00030">30</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00032">32</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
 </div>
 </div>

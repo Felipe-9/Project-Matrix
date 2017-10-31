@@ -1,14 +1,16 @@
 //
 //  main.c
-//  Project Matrix
+//  Project Matrix V4.0
 //
 //  Created by Felipe Alexandre de Barros Pinto on 13/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
 #include <stdio.h>
-#include "funcoes.h"
+#include "operacoes.h"
 #include "interface.h"
+#include "show_and_edit.h"
+#include "memory.h"
 #include <time.h>
 #include <stdlib.h>
 
@@ -35,24 +37,22 @@ int main() {
         
         do{
             switch (interface(2)) { // Usuario define opreção do programa.
-                case  1: /* Somar                         ( A + B ) */  { sum    ( ); } break;
-                case  2: /* Subtrair                      ( A - B ) */  { sub    ( ); } break;
-                case  3: /* Multiplicar                   ( A * B ) */  { tim    ( ); } break;
-                case  4: /* Mostrar matriz                        A */  { show   (1); } break;
-                case  5: /* Mostrar matriz                        B */  { show   (2); } break;
-                case  6: /* Mostrar matriz                        C */  { show   (3); } break;
-                case  7: /* Alterar as dimensoes da matriz        A */  { size   (1); } break;
-                case  8: /* Alterar todos os valores em sequencia A */  { choose (1); } break;
-                case  9: /* Alterar um valor especifico           A */  { point  (1); } break;
-                case 10: /* Inverter a matriz                     A */  { inv    (1); } break;
-                case 11: /* Transpor a matriz                     A */  { transp (1); } break;
-                case 12: /* Substituir pela matriz C              A */  { subst  (1); } break;
-                case 13: /* Alterar as dimensoes da matriz        B */  { size   (2); } break;
-                case 14: /* Alterar todos os valores em sequencia B */  { choose (2); } break;
-                case 15: /* Alterar um valor especifico           B */  { point  (2); } break;
-                case 16: /* Inverter a matriz                     B */  { inv    (2); } break;
-                case 17: /* Transpor a matriz                     B */  { transp (2); } break;
-                case 18: /* Substituir pela matriz C              B */  { subst  (2); } break;
+                case  1: /* Somar                         ( Y + X ) */  { sum    ( ); } break;
+                case  2: /* Subtrair                      ( Y - X ) */  { sub    ( ); } break;
+                case  3: /* Multiplicar                   ( Y * X ) */  { tim    ( ); } break;
+                case  4: /* Mostrar matriz                        X */  { show   (1); } break;
+                case  5: /* Mostrar matriz                        Y */  { show   (2); } break;
+                case  6: /* Mostrar matriz                        Z */  { show   (3); } break;
+                case  7: /* Mostrar matriz                        W */  { show   (4); } break;
+                case  8: /* Alterar as dimensoes da matriz        X */  { size   (1); } break;
+                case  9: /* Alterar todos os valores em sequencia X */  { choose ( ); } break;
+                case 10: /* Alterar um valor especifico           X */  { point  ( ); } break;
+                case 11: /* Inverter a matriz                     x */  { inv    ( ); } break;
+                case 12: /* Transpor a matriz                     X */  { transp ( ); } break;
+                case 13: /* Enter / Subir coluna                    */  { enter  ( ); } break;
+                case 14: /* Drop / Descer coluna                    */  { drop   ( ); } break;
+                case 15: /* Swap / Alocação de matrizes             */  { swap   ( ); } break;
+                case 16: /* roll / Alocação de matrizes             */  { roll   ( ); } break;
                 case  0: /* Sair                                    */  { sair = 0;   } break;
             }
         } while (sair!=0);

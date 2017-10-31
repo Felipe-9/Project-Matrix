@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['show',['show',['../funcoes_8c.html#af63f47264cfdd4c88a97d4eda1c0efe1',1,'show(int m):&#160;funcoes.c'],['../funcoes_8h.html#af63f47264cfdd4c88a97d4eda1c0efe1',1,'show(int m):&#160;funcoes.c']]],
-  ['size',['size',['../funcoes_8c.html#a382635a8118a482aa080de7615449f7f',1,'size(int m):&#160;funcoes.c'],['../funcoes_8h.html#a382635a8118a482aa080de7615449f7f',1,'size(int m):&#160;funcoes.c']]],
-  ['sub',['sub',['../funcoes_8c.html#ab09a6457a19510670b369271b988cd8c',1,'sub(void):&#160;funcoes.c'],['../funcoes_8h.html#ab09a6457a19510670b369271b988cd8c',1,'sub(void):&#160;funcoes.c']]],
-  ['subst',['subst',['../funcoes_8c.html#a9da024f56e70a6ce0cc0d9998a644a02',1,'subst(int m):&#160;funcoes.c'],['../funcoes_8h.html#a9da024f56e70a6ce0cc0d9998a644a02',1,'subst(int m):&#160;funcoes.c']]],
-  ['sum',['sum',['../funcoes_8c.html#a5bcafc75025e47668ebd2cd587d06826',1,'sum(void):&#160;funcoes.c'],['../funcoes_8h.html#a5bcafc75025e47668ebd2cd587d06826',1,'sum(void):&#160;funcoes.c']]]
+  ['pbreak',['pbreak',['../interface_8c.html#ae0148fefdb3991d391d75ca2fceabf04',1,'pbreak(int n):&#160;interface.c'],['../interface_8h.html#ae0148fefdb3991d391d75ca2fceabf04',1,'pbreak(int n):&#160;interface.c']]],
+  ['point',['point',['../show__and__edit_8c.html#a5c71940a467691123679f2b0b996ffa4',1,'point(void):&#160;show_and_edit.c'],['../show__and__edit_8h.html#a5c71940a467691123679f2b0b996ffa4',1,'point(void):&#160;show_and_edit.c']]]
 ];

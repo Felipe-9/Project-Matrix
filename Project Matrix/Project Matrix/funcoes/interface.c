@@ -14,30 +14,29 @@ int     interface                        (int rs) {
 #define H 10
 #define L 90
     
-    int r=1;
+    int r=1;                        //  Cond. de Saida
+    int i,j=0;                      //  Contadores
+    char linha[100], texto[2000];   //  Grava recupera arquivo .txt
+    FILE *menu;
     
     switch (rs) {
         case 1: /* Pagina de Inicialisacao  */  {
             
             do{
+                menu = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/pm\ intro/pmi.txt","r");
                 
-                char linha[100], intro[2000];   //  Grava pixelart guardada em pmi.txt
-                int i,j=0;                      //  Contadores
-                
-                FILE *Intro = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/pm\ intro/pmi.txt","r");
-                
-                while(fgets(linha, sizeof(linha), Intro)){ //   Guarda cada linha de pmi.txt em linha
+                while(fgets(linha, sizeof(linha), menu)){ //   Guarda cada linha de pmi.txt em linha
                     for (i=0;i<strlen(linha);i++){  //  Guarda em sequencia cada linha em intro
-                        intro[i+j]=linha[i];
+                        texto[i+j]=linha[i];
                     }
-                    intro[i+j]='\n';    //  Marca fim de cada linha de pmi.txt
+                    texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
                     j=j+i;
                 }
                 
-                fclose(Intro);
+                fclose(menu);
                 
                 pbreak(50);
-                Box(0,103,intro);   //  Imprime a intro
+                Box(0,103,texto);   //  Imprime a intro
                 
                 //  Espera resposta do usuário
                 printf("\n\t\t\t\t1 - INITIALIZE PROGRAM\n"

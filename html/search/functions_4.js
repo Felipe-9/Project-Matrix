@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pbreak',['pbreak',['../interface_8h.html#ae0148fefdb3991d391d75ca2fceabf04',1,'pbreak(int n):&#160;interface.c'],['../interface_8c.html#ae0148fefdb3991d391d75ca2fceabf04',1,'pbreak(int n):&#160;interface.c']]],
-  ['point',['point',['../funcoes_8c.html#a86be95d456e86d23406d6a3b51746731',1,'point(int m):&#160;funcoes.c'],['../funcoes_8h.html#a86be95d456e86d23406d6a3b51746731',1,'point(int m):&#160;funcoes.c']]]
+  ['interface',['interface',['../interface_8c.html#a05234ec9d8a9c75394d20c9d617675ec',1,'interface(int rs):&#160;interface.c'],['../interface_8h.html#a05234ec9d8a9c75394d20c9d617675ec',1,'interface(int rs):&#160;interface.c']]],
+  ['inv',['inv',['../show__and__edit_8c.html#a0d8e16387ddcc0f978ec2dc0238fcf82',1,'inv(void):&#160;show_and_edit.c'],['../show__and__edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82',1,'inv(void):&#160;show_and_edit.c']]]
 ];

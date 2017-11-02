@@ -1,0 +1,7 @@
+Menu > Editar X:
+
+s - Dimensões           c - Inserir valores em sequencia
+p - Valor especifico    r - Preencher com valores aleatórios
+i - Inverter            t - Transpor
+
+q - Voltar

@@ -53,19 +53,4 @@ void drop (void);
  */
 void roll (void);
 
-/**
- * @brief Modelo de matriz.
- * @param i Quantidade de colunas de uma matriz.
- * @param j Quantidade de linhas de uma matriz.
- * @param v Numero de inicializaçao de uma matriz.
- * @param m Array que guarda a matriz.
- */
-struct matriz{
-    int v;
-    int i;
-    int j;
-    int m[100][100];
-};
-
-
 #endif /* memory_h */

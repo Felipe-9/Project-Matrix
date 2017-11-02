@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="Screen Shot 2017-10-12 at 5.30.26 PM.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V4.0</span>
+   &#160;<span id="projectnumber">V2.0.0</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -90,6 +90,7 @@ $(document).ready(function(){initNavTree('interface_8c.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="interface_8h_source.html">interface.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 </div>
 <p><a href="interface_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -97,7 +98,7 @@ $(document).ready(function(){initNavTree('interface_8c.html','');});
 Macros</h2></td></tr>
 <tr class="memitem:abec92cc72a096640b821b8cd56a02495"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#abec92cc72a096640b821b8cd56a02495">H</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:abec92cc72a096640b821b8cd56a02495"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa73214aa5f2f94f63d90bb4e3d99fe53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#aa73214aa5f2f94f63d90bb4e3d99fe53">L</a>&#160;&#160;&#160;90</td></tr>
+<tr class="memitem:aa73214aa5f2f94f63d90bb4e3d99fe53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#aa73214aa5f2f94f63d90bb4e3d99fe53">L</a>&#160;&#160;&#160;66</td></tr>
 <tr class="separator:aa73214aa5f2f94f63d90bb4e3d99fe53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -105,9 +106,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a05234ec9d8a9c75394d20c9d617675ec"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a05234ec9d8a9c75394d20c9d617675ec">interface</a> (int rs)</td></tr>
 <tr class="memdesc:a05234ec9d8a9c75394d20c9d617675ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interfaçe do usuário.  <a href="#a05234ec9d8a9c75394d20c9d617675ec">More...</a><br /></td></tr>
 <tr class="separator:a05234ec9d8a9c75394d20c9d617675ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68eca3298eac437d000bfdb0bccc1f49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a68eca3298eac437d000bfdb0bccc1f49">Box</a> (int h, int l, char txt[100])</td></tr>
-<tr class="memdesc:a68eca3298eac437d000bfdb0bccc1f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime texto inserido dentro de uma caixa.  <a href="#a68eca3298eac437d000bfdb0bccc1f49">More...</a><br /></td></tr>
-<tr class="separator:a68eca3298eac437d000bfdb0bccc1f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a032793ba12454104120161d09768a800"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#a032793ba12454104120161d09768a800">Box</a> (int h, int l, char menu[100])</td></tr>
+<tr class="memdesc:a032793ba12454104120161d09768a800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime texto inserido dentro de uma caixa.  <a href="#a032793ba12454104120161d09768a800">More...</a><br /></td></tr>
+<tr class="separator:a032793ba12454104120161d09768a800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae0148fefdb3991d391d75ca2fceabf04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ae0148fefdb3991d391d75ca2fceabf04">pbreak</a> (int n)</td></tr>
 <tr class="memdesc:ae0148fefdb3991d391d75ca2fceabf04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quebra de linha.  <a href="#ae0148fefdb3991d391d75ca2fceabf04">More...</a><br /></td></tr>
 <tr class="separator:ae0148fefdb3991d391d75ca2fceabf04"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,7 +135,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define L&#160;&#160;&#160;90</td>
+          <td class="memname">#define L&#160;&#160;&#160;66</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -142,8 +143,8 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a68eca3298eac437d000bfdb0bccc1f49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68eca3298eac437d000bfdb0bccc1f49">&#9670;&nbsp;</a></span>Box()</h2>
+<a id="a032793ba12454104120161d09768a800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a032793ba12454104120161d09768a800">&#9670;&nbsp;</a></span>Box()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +189,7 @@ A finalização de uma linha deve ser indicada por "\n". </td></tr>
 <dl class="section warning"><dt>Warning</dt><dd>Dimensoes minimas no input - l = 6 + numero de caracteres da maior linha do texto.<br />
 h &lt; 4 + numero de linhas do texto, imprime o tamanho minimo da caixa para o texto inserido. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="interface_8c_source.html#l00195">195</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interface_8c_source.html#l00148">148</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
 
 </div>
 </div>
@@ -211,7 +212,7 @@ h &lt; 4 + numero de linhas do texto, imprime o tamanho minimo da caixa para o t
 <p>Interfaçe do usuário. </p>
 <p>O guia pelo programa e define qual ação o programa irá realizar. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">rs</td><td>Define qual menu exibir. </td></tr>
+    <tr><td class="paramname">rs</td><td>Define qual menu exibir. </td></tr>
   </table>
   </dd>
 </dl>
@@ -219,7 +220,6 @@ h &lt; 4 + numero de linhas do texto, imprime o tamanho minimo da caixa para o t
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="interface_8h.html#a68eca3298eac437d000bfdb0bccc1f49" title="Imprime texto inserido dentro de uma caixa. ">Box</a>. </dd>
 <dd>
 <a class="el" href="interface_8h.html#ae0148fefdb3991d391d75ca2fceabf04" title="Quebra de linha. ">pbreak</a>. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>rs recebe apenas numeros inteiros. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="interface_8c_source.html#l00012">12</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
 
@@ -249,7 +249,7 @@ h &lt; 4 + numero de linhas do texto, imprime o tamanho minimo da caixa para o t
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="interface_8c_source.html#l00262">262</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="interface_8c_source.html#l00217">217</a> of file <a class="el" href="interface_8c_source.html">interface.c</a>.</p>
 
 </div>
 </div>

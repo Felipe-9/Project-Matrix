@@ -7,182 +7,136 @@
 //
 
 #include "interface.h"
+#include <string.h>
 
-
-int     interface                        (int rs) {
+int     interface                         (int rs) {
     
 #define H 10
-#define L 90
+#define L 66
     
     int r=1;                        //  Cond. de Saida
+    FILE *txt;                      //  Guarda arquivo.txt
     int i,j=0;                      //  Contadores
-    char linha[100], texto[2000];   //  Grava recupera arquivo .txt
-    FILE *menu;
+    char linha[100], texto[2000];   //  Grava recupera arquivo.txt
     
     switch (rs) {
         case 1: /* Pagina de Inicialisacao  */  {
             
-            do{
-                menu = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/pm\ intro/pmi.txt","r");
-                
-                while(fgets(linha, sizeof(linha), menu)){ //   Guarda cada linha de pmi.txt em linha
-                    for (i=0;i<strlen(linha);i++){  //  Guarda em sequencia cada linha em intro
-                        texto[i+j]=linha[i];
-                    }
-                    texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
-                    j=j+i;
+            txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/intro/m1.txt", "r");
+            
+            while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
+                for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
+                    texto[i+j]=linha[i];
                 }
-                
-                fclose(menu);
-                
+                texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
+                j=j+i;
+            }
+            texto[j]='\0';
+            
+            fclose(txt);
+            
                 pbreak(50);
                 Box(0,103,texto);   //  Imprime a intro
                 
                 //  Espera resposta do usuário
-                printf("\n\t\t\t\t1 - INITIALIZE PROGRAM\n"
-                       "\t\t\t\t0 - SAIR\n\n$ ");
-                scanf("%d",&rs);
-                
+                printf("\n\t\t\t\t\t\t\tPress Enter to initialize the program");
+                scanf("%c",&rs);
+            
                 pbreak(50);
-                
-            } while (rs!=0&&rs!=1);
             
         } break;
-        case 2: /* Menu inicial             */  {
+        case 2: /* Menu principal             */  {
+            
+            txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/menu/m2.txt", "r");
+            
+            while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
+                for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
+                    texto[i+j]=linha[i];
+                }
+                texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
+                j=j+i;
+            }
+            texto[j]='\0';
+            fclose(txt);
             
             do{
                 pbreak(50);
-                Box (H,L,
-                     "Menu Principal\n\n"
-                     "1 - Editar Valores\n"
-                     "2 - Operacoes\n"
-                     "3 - Mostrar Matrizes\n"
-                     "0 - Sair\n");
+                Box (H,L,texto);
                 
                 printf("\n$ ");
-                scanf("%d",&rs);
+                scanf("%c",&rs);
                 
                 switch (rs){ // Define qual ação realizar
-                    case 1: rs = interface(3); r=0; break;
-                    case 2: rs = interface(4); r=0; break;
-                    case 3: rs = interface(5); r=0; break;
-                    case 0: rs = 0; r=0; break;
+                    case 'E': rs =  1; r=0; break;
+                    case 'D': rs =  2; r=0; break;
+                    case 'S': rs =  3; r=0; break;
+                    case 'R': rs =  4; r=0; break;
+                    case 'e': rs = interface(3); r=0; break;
+                    case 'o': rs = interface(4); r=0; break;
+                    case 'q': rs = 0; r=0; break;
                 }
             } while (r!=0);
         } break;
         case 3: /* Menu de Edicao           */  {
             
             r=1;
+            
+            txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/menu/m3.txt", "r");
+            
+            while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
+                for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
+                    texto[i+j]=linha[i];
+                }
+                texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
+                j=j+i;
+            }
+            texto[j]='\0';
+            fclose(txt);
+            
             do{
                 pbreak(50);
-                Box (H,L,
-                     "Editar qual Matriz?\n\n"
-                     "1 - Matriz A\n"
-                     "2 - Matriz B\n"
-                     "0 - Voltar\n");
+                Box (H,L,texto);
                 
                 printf("\n$ ");
-                scanf("%d",&rs);
+                scanf("%c",&rs);
                 
                 switch (rs) { // Define qual ação realizar
-                    case 1: rs = interface(6); r=0; break;
-                    case 2: rs = interface(7); r=0; break;
-                    case 0: rs = interface(2); r=0; break;
+                    case 's': rs =  5; r=0; break;
+                    case 'c': rs =  6; r=0; break;
+                    case 'p': rs =  7; r=0; break;
+                    case 'r': rs =  8; r=0; break;
+                    case 'i': rs =  9; r=0; break;
+                    case 't': rs = 10; r=0; break;
+                    case 'q': rs = interface(2); r=0; break;
                 }
             } while (r!=0);
         } break;
         case 4: /* Menu de Operacoes        */  {
             
+            txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/menu/m4.txt", "r");
+            
+            while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
+                for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
+                    texto[i+j]=linha[i];
+                }
+                texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
+                j=j+i;
+            }
+            texto[j]='\0';
+            fclose(txt);
+            
             r=1;
             do{
                 pbreak(50);
-                Box(H,L,
-                    "Realizar quais opercaoes com matrizes?\n\n"
-                    "1 - Somar        ( A + B )\n"
-                    "2 - Subtrair     ( A - B )\n"
-                    "3 - Multiplicar  ( A * B )\n"
-                    "0 - Voltar\n");
+                Box(H,L,texto);
                 printf("\n$ ");
-                scanf("%d",&rs);
+                scanf("%c",&rs);
                 
                 switch (rs) { // Define qual ação realizar
-                    case 1: rs =  1; r=0; break;
-                    case 2: rs =  2; r=0; break;
-                    case 3: rs =  3; r=0; break;
-                    case 0: interface(2); r=0; break;
-                }
-            } while (r!=0);
-        } break;
-        case 5: /* Menu Show                */  {
-            
-            r=1;
-            do{
-                pbreak(50);
-                Box(H,L,
-                    "Mostrar qual Matriz?\n\n"
-                    "1 - Mostrar matriz A\n"
-                    "2 - Mostrar matriz B\n"
-                    "3 - Mostrar matriz C\n"
-                    "0 - Voltar\n");
-                printf("\n$ ");
-                scanf("%d",&rs);
-                
-                switch(rs){ // Define qual ação realizar
-                    case 1: rs =  4; r=0; break;
-                    case 2: rs =  5; r=0; break;
-                    case 3: rs =  6; r=0; break;
-                    case 0: interface(2); r=0; break;
-                }
-                
-            } while (r!=0);
-        } break;
-        case 6: /* Menu Edicao de A        */  {
-            
-            do{
-                pbreak(50);
-                Box(H,L,
-                    "Para a matriz A:\n\n"
-                    "1 - Alterar as dimensoes da matriz   2 - Alterar todos os valores em sequencia\n"
-                    "3 - Alterar um valor especifico      4 - Inverter a matriz\n"
-                    "5 - Transpor a matriz                6 - Substituir pela matriz C\n"
-                    "0 - Voltar\n");
-                
-                printf("\n$ ");
-                scanf("%d",&rs);
-                
-                switch(rs){ // Define qual ação realizar
-                    case 1: rs =  7; r=0; break;
-                    case 2: rs =  8; r=0; break;
-                    case 3: rs =  9; r=0; break;
-                    case 4: rs = 10; r=0; break;
-                    case 5: rs = 11; r=0; break;
-                    case 6: rs = 12; r=0; break;
-                    case 0: rs = interface(3); r=0; break;
-                }
-            } while (r!=0);
-        } break;
-        case 7: /* Menu Edicao de B        */  {
-            
-            do{
-                pbreak(50);
-                Box(H,L,
-                    "Para a matriz B:\n\n"
-                    "1 - Alterar as dimensoes da matriz   2 - Alterar todos os valores em sequencia\n"
-                    "3 - Alterar um valor especifico      4 - Inverter a matriz\n"
-                    "5 - Transpor a matriz                6 - Substituir pela matriz C\n"
-                    "0 - Voltar\n");
-                
-                printf("\n$ ");
-                scanf("%d",&rs);
-                
-                switch(rs){ // Define qual ação realizar
-                    case 1: rs = 13; r=0; break;
-                    case 2: rs = 14; r=0; break;
-                    case 3: rs = 15; r=0; break;
-                    case 4: rs = 16; r=0; break;
-                    case 5: rs = 17; r=0; break;
-                    case 6: rs = 18; r=0; break;
-                    case 0: rs = interface(3); r=0; break;
+                    case 'S': rs = 11; r=0; break;
+                    case 's': rs = 12; r=0; break;
+                    case 'm': rs = 13; r=0; break;
+                    case 'q': interface(2); r=0; break;
                 }
             } while (r!=0);
         } break;
@@ -191,7 +145,7 @@ int     interface                        (int rs) {
     return rs;
     
 }
-void    Box          (int h,int l, char txt[100]) {
+void    Box          (int h,int l, char menu[100]) {
     
     int i=1,j,k=0; // Contadores
     char line[100]; // Guarda e imprime linhas do texto inserido
@@ -199,11 +153,13 @@ void    Box          (int h,int l, char txt[100]) {
     
     box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/box/texto.txt", "w");
     
-    fprintf(box, "%s", txt); // Imprime o texto inserino no arquivo texto.txt
+    fprintf(box, "%s", menu); // Imprime o texto inserino no arquivo texto.txt
     
     fclose(box);
     
     box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/box/texto.txt", "r");
+    
+    rewind(box);
     
     while (i<=3){
         switch (i) {
@@ -258,9 +214,13 @@ void    Box          (int h,int l, char txt[100]) {
     
     
 }
-void    pbreak                            (int n) {
+void    pbreak                             (int n) {
     while (n>0){
         printf("\n");
         n--;
     }
 }
+
+
+
+

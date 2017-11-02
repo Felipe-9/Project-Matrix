@@ -14,11 +14,10 @@
 /**
  * @brief Interfaçe do usuário.
  * @details O guia pelo programa e define qual ação o programa irá realizar.
- * @param[in] rs Define qual menu exibir.
+ * @param rs Define qual menu exibir.
  * @return numero de ação do programa.
  * @see Box.
  * @see pbreak.
- * @warning rs recebe apenas numeros inteiros.
  */
 int     interface                        (int rs);
 /**

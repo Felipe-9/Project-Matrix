@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['interface_2ec',['interface.c',['../interface_8c.html',1,'']]],
-  ['interface_2eh',['interface.h',['../interface_8h.html',1,'']]]
+  ['edit_2ec',['edit.c',['../edit_8c.html',1,'']]],
+  ['edit_2eh',['edit.h',['../edit_8h.html',1,'']]]
 ];

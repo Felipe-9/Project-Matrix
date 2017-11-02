@@ -1,30 +1,16 @@
 //
-//  show_and_edit.h
+//  edit.h
 //  Project Matrix
 //
 //  Created by Felipe Alexandre de Barros Pinto on 31/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
-#ifndef show_and_edit_h
-#define show_and_edit_h
+#ifndef edit_h
+#define edit_h
 
 #include <stdio.h>
 
-/**
- * @brief Mostra uma matriz.
- * @details Verifica no espaço selecionado a existencia de uma matriz e a imprime na tela.
- * @param l seleção de local de memória.
- * @warning O espaço selecionado deve conter uma matriz!
- * @see size.
- * @see choose.
- * @see point.
- * @see swap.
- * @see enter.
- * @see drop.
- * @see roll
- */
-void show  (int l);
 /**
  * @brief Altera as dimenções de uma matriz.
  * @details Se não existir matriz no local selecionado cria uma matriz apenas com dimenções definidas, necessitando atribuir a ela valores.\n
@@ -69,5 +55,14 @@ void inv    (void);
  * @see point.
  */
 void transp (void);
+/**
+ * @brief Completa a matriz com valores aleatorios.
+ * @detals Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.
+ * @warning Matriz de X deve ter suas dimenções definidas!
+ * @see size.
+ * @see choose.
+ * @see point.
+ */
+void mrand  (void);
 
-#endif /* show_and_edit_h */
+#endif /* edit_h */

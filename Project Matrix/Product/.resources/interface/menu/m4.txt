@@ -1,0 +1,7 @@
+Menu > Operações:
+
+S - Somar       ( Y + X )
+s - Subtrair    ( Y - X )
+m - Multiplicar ( Y * X )
+
+q - Voltar

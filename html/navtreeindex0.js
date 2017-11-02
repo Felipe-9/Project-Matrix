@@ -71,7 +71,7 @@ var NAVTREEINDEX0 =
 "pages.html":[],
 "structmatrix.html":[0,0,0],
 "structmatrix.html#a37d972ae0b47b9099e30983131d31916":[0,0,0,1],
-"structmatrix.html#a903eeddab17a9c9356b779cc14eb59be":[0,0,0,2],
+"structmatrix.html#ab66eedda3f0be63a86054ba3e92cebba":[0,0,0,2],
 "structmatrix.html#ac8859e8c1ce357c4c8b37bbb1936ba1c":[0,0,0,3],
 "structmatrix.html#acb559820d9ca11295b4500f179ef6392":[0,0,0,0]
 };

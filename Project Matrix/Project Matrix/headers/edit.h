@@ -78,10 +78,10 @@ void mrand  (void);
  * @param m Array que guarda a matriz.
  */
 struct matrix{
-    int v;
-    int i;
-    int j;
-    int m[1000][1000];
+    int v;              /**< Numero de Inicialização */
+    int i;              /**< Numero de colunas       */
+    int j;              /**< Numero de linhas        */
+    int m[100][100];    /**< matriz                  */
 };
 
 #endif /* edit_h */

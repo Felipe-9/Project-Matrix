@@ -6,6 +6,10 @@
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
+/**
+ * Funções de operações entre as matrizes localizadas em Y e X.
+ */
+
 #ifndef operacoes_h
 #define operacoes_h
 

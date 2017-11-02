@@ -35,14 +35,14 @@ int     interface                         (int rs) {
             
             fclose(txt);
             
-                pbreak(50);
-                Box(0,103,texto);   //  Imprime a intro
-                
-                //  Espera resposta do usuário
-                printf("\n\t\t\t\t\t\t\tPress Enter to initialize the program");
-                scanf("%c",&rs);
+            pbreak(50);
+            Box(0,103,texto);   //  Imprime a intro
             
-                pbreak(50);
+            //  Espera resposta do usuário
+            printf("\n\t\t\t\t\t\t\tPress Enter to initialize the program");
+            getchar();
+            
+            pbreak(50);
             
         } break;
         case 2: /* Menu principal             */  {

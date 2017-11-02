@@ -6,10 +6,15 @@
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
+/**
+ * Funções de edição da matriz localizada em X.
+ */
+
 #ifndef edit_h
 #define edit_h
 
 #include <stdio.h>
+#include <string.h>
 
 /**
  * @brief Altera as dimenções de uma matriz.
@@ -20,7 +25,7 @@
  * @see choose.
  * @see point.
  */
-void size  (int l);
+void size   (void);
 /**
  * @brief Altera sequencialmente os valores de uma matriz.
  * @details Insere um a um os valores da matriz localizada em X.
@@ -64,5 +69,19 @@ void transp (void);
  * @see point.
  */
 void mrand  (void);
+
+/**
+ * @brief Modelo de matriz.
+ * @param i Quantidade de colunas de uma matriz.
+ * @param j Quantidade de linhas de uma matriz.
+ * @param v Numero de inicializaçao de uma matriz.
+ * @param m Array que guarda a matriz.
+ */
+struct matrix{
+    int v;
+    int i;
+    int j;
+    int m[1000][1000];
+};
 
 #endif /* edit_h */

@@ -6,6 +6,10 @@
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
+/**
+ * Funções de alocação de matrizes nos espaços de memória.
+ */
+
 #ifndef memory_h
 #define memory_h
 

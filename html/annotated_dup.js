@@ -1,4 +1,4 @@
 var annotated_dup =
 [
-    [ "matriz", "structmatriz.html", "structmatriz" ]
+    [ "matrix", "structmatrix.html", "structmatrix" ]
 ];

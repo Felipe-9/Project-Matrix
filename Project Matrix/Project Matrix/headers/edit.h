@@ -15,6 +15,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <math.h>
 
 /**
  * @brief Altera as dimenções de uma matriz.
@@ -77,11 +78,17 @@ void mrand  (void);
  * @param v Numero de inicializaçao de uma matriz.
  * @param m Array que guarda a matriz.
  */
-struct matrix{
+struct matrix {
     int v;              /**< Numero de Inicialização */
     int i;              /**< Numero de colunas       */
     int j;              /**< Numero de linhas        */
     int m[100][100];    /**< matriz                  */
+};
+/***/
+struct choosev {
+    int v;
+    int i;
+    int j;
 };
 
 #endif /* edit_h */

@@ -1,25 +1,16 @@
 //
-//  interface.h
+//  timeline.h
 //  Project Matrix
 //
 //  Created by Felipe Alexandre de Barros Pinto on 30/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
-#ifndef interface_h
-#define interface_h
+#ifndef timeline_h
+#define timeline_h
 
 #include <stdio.h>
 
-/**
- * @brief Interfaçe do usuário.
- * @details O guia pelo programa e define qual ação o programa irá realizar.
- * @param rs Define qual menu exibir.
- * @return numero de ação do programa.
- * @see Box.
- * @see pbreak.
- */
-int     interface                        (int rs);
 /**
  * @brief Imprime texto inserido dentro de uma caixa.
  * @details Esta funcao tem papel estetico de introduzir texto posto sobre ela dentro de uma caixa de largura e altura definida.
@@ -38,5 +29,9 @@ void    Box         (int h, int l, char txt[100]);
  * @param n Numero de linhas que vai pular no terminal.
  **/
 void    pbreak                            (int n);
+/***/
+void    intro                              (void);
+/***/
+int     command                            (void);
 
-#endif /* interface_h */
+#endif /* timeline_h */

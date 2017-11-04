@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['v',['v',['../structmatrix.html#ac8859e8c1ce357c4c8b37bbb1936ba1c',1,'matrix::v()'],['../structchoosev.html#ac8859e8c1ce357c4c8b37bbb1936ba1c',1,'choosev::v()']]]
+  ['verif',['verif',['../structmatrix.html#ac7f58b32c1e6db82cd0edae3dc06e71c',1,'matrix']]]
 ];

@@ -1,0 +1,6 @@
+info size *command* :
+
+Editar dimensões da matriz em X
+
+-i *int* - N da coluna
+-j *int* - N da linha

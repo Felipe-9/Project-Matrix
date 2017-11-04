@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="Screen Shot 2017-10-12 at 5.30.26 PM.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V2.2.1</span>
+   &#160;<span id="projectnumber">V3.1.1.0</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -96,94 +96,90 @@ $(document).ready(function(){initNavTree('structmatrix.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:ac8859e8c1ce357c4c8b37bbb1936ba1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#ac8859e8c1ce357c4c8b37bbb1936ba1c">v</a></td></tr>
-<tr class="separator:ac8859e8c1ce357c4c8b37bbb1936ba1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb559820d9ca11295b4500f179ef6392"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#acb559820d9ca11295b4500f179ef6392">i</a></td></tr>
-<tr class="separator:acb559820d9ca11295b4500f179ef6392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37d972ae0b47b9099e30983131d31916"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#a37d972ae0b47b9099e30983131d31916">j</a></td></tr>
-<tr class="separator:a37d972ae0b47b9099e30983131d31916"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab66eedda3f0be63a86054ba3e92cebba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#ab66eedda3f0be63a86054ba3e92cebba">m</a> [100][100]</td></tr>
-<tr class="separator:ab66eedda3f0be63a86054ba3e92cebba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7f58b32c1e6db82cd0edae3dc06e71c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#ac7f58b32c1e6db82cd0edae3dc06e71c">verif</a></td></tr>
+<tr class="separator:ac7f58b32c1e6db82cd0edae3dc06e71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159c877ac08e076c219e33f6a5cacdc4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#a159c877ac08e076c219e33f6a5cacdc4">ncolunas</a></td></tr>
+<tr class="separator:a159c877ac08e076c219e33f6a5cacdc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69943c9ea552d2a5426c36037880b9c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#ae69943c9ea552d2a5426c36037880b9c">nlinhas</a></td></tr>
+<tr class="separator:ae69943c9ea552d2a5426c36037880b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4624ed475a104935283535cc5a632ee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html#ac4624ed475a104935283535cc5a632ee">matriz</a> [100][100]</td></tr>
+<tr class="separator:ac4624ed475a104935283535cc5a632ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Modelo de matriz. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">i</td><td>Quantidade de colunas de uma matriz. </td></tr>
-    <tr><td class="paramname">j</td><td>Quantidade de linhas de uma matriz. </td></tr>
-    <tr><td class="paramname">v</td><td>Numero de inicializaçao de uma matriz. </td></tr>
-    <tr><td class="paramname">m</td><td>Array que guarda a matriz. </td></tr>
+    <tr><td class="paramname">ncolunas</td><td>Quantidade de colunas de uma matriz. </td></tr>
+    <tr><td class="paramname">nlinhas</td><td>Quantidade de linhas de uma matriz. </td></tr>
+    <tr><td class="paramname">verif</td><td>Numero de inicializaçao de uma matriz. </td></tr>
+    <tr><td class="paramname">matriz</td><td>Array que guarda a matriz. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00081">81</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
-</div><h2 class="groupheader">Field Documentation</h2>
-<a id="acb559820d9ca11295b4500f179ef6392"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb559820d9ca11295b4500f179ef6392">&#9670;&nbsp;</a></span>i</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int i</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Numero de colunas </p>
-
-<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00083">83</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
-
-</div>
-</div>
-<a id="a37d972ae0b47b9099e30983131d31916"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37d972ae0b47b9099e30983131d31916">&#9670;&nbsp;</a></span>j</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int j</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Numero de linhas </p>
-
-<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00084">84</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
-
-</div>
-</div>
-<a id="ab66eedda3f0be63a86054ba3e92cebba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab66eedda3f0be63a86054ba3e92cebba">&#9670;&nbsp;</a></span>m</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int m[100][100]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>matriz </p>
-
 <p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00085">85</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
-
-</div>
-</div>
-<a id="ac8859e8c1ce357c4c8b37bbb1936ba1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8859e8c1ce357c4c8b37bbb1936ba1c">&#9670;&nbsp;</a></span>v</h2>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="ac4624ed475a104935283535cc5a632ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4624ed475a104935283535cc5a632ee">&#9670;&nbsp;</a></span>matriz</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int v</td>
+          <td class="memname">int matriz[100][100]</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Numero de Inicialização </p>
 
-<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00082">82</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00089">89</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
+
+</div>
+</div>
+<a id="a159c877ac08e076c219e33f6a5cacdc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159c877ac08e076c219e33f6a5cacdc4">&#9670;&nbsp;</a></span>ncolunas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int ncolunas</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00087">87</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
+
+</div>
+</div>
+<a id="ae69943c9ea552d2a5426c36037880b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69943c9ea552d2a5426c36037880b9c">&#9670;&nbsp;</a></span>nlinhas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int nlinhas</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00088">88</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
+
+</div>
+</div>
+<a id="ac7f58b32c1e6db82cd0edae3dc06e71c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7f58b32c1e6db82cd0edae3dc06e71c">&#9670;&nbsp;</a></span>verif</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int verif</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="edit_8h_source.html#l00086">86</a> of file <a class="el" href="edit_8h_source.html">edit.h</a>.</p>
 
 </div>
 </div>

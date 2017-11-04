@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['m',['m',['../structmatrix.html#ab66eedda3f0be63a86054ba3e92cebba',1,'matrix']]]
+  ['verif',['verif',['../structmatrix.html#ac7f58b32c1e6db82cd0edae3dc06e71c',1,'matrix']]]
 ];

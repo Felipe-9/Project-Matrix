@@ -16,6 +16,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include "timeline.h"
+#include "memory.h"
 
 /**
  * @brief Altera as dimenções de uma matriz.
@@ -70,25 +72,21 @@ void transp (void);
  * @see point.
  */
 void mrand  (void);
+/***/
+int  chtoin (void);
 
 /**
  * @brief Modelo de matriz.
- * @param i Quantidade de colunas de uma matriz.
- * @param j Quantidade de linhas de uma matriz.
- * @param v Numero de inicializaçao de uma matriz.
- * @param m Array que guarda a matriz.
+ * @param ncolunas Quantidade de colunas de uma matriz.
+ * @param nlinhas Quantidade de linhas de uma matriz.
+ * @param verif Numero de inicializaçao de uma matriz.
+ * @param matriz Array que guarda a matriz.
  */
 struct matrix {
-    int v;              /**< Numero de Inicialização */
-    int i;              /**< Numero de colunas       */
-    int j;              /**< Numero de linhas        */
-    int m[100][100];    /**< matriz                  */
-};
-/***/
-struct choosev {
-    int v;
-    int i;
-    int j;
+    int verif;
+    int ncolunas;
+    int nlinhas;
+    int matriz[100][100];
 };
 
 #endif /* edit_h */

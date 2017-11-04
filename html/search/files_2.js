@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
-  ['memory_2ec',['memory.c',['../memory_8c.html',1,'']]],
-  ['memory_2eh',['memory.h',['../memory_8h.html',1,'']]]
+  ['operacoes_2ec',['operacoes.c',['../operacoes_8c.html',1,'']]],
+  ['operacoes_2eh',['operacoes.h',['../operacoes_8h.html',1,'']]]
 ];

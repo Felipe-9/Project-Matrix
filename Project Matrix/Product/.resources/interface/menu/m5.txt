@@ -1,6 +1,0 @@
-Realizar quais opercaoes com matrizes?
-1 - Somar        ( A + B )
-2 - Subtrair     ( A - B )
-3 - Multiplicar  ( A * B )
-
-0 - Voltar

@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="Screen Shot 2017-10-12 at 5.30.26 PM.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V2.2.1</span>
+   &#160;<span id="projectnumber">V3.1.1.0</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -92,6 +92,8 @@ $(document).ready(function(){initNavTree('edit_8h.html','');});
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="timeline_8h_source.html">timeline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
 </div>
 <p><a href="edit_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -99,8 +101,6 @@ $(document).ready(function(){initNavTree('edit_8h.html','');});
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmatrix.html">matrix</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modelo de matriz.  <a href="structmatrix.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structchoosev.html">choosev</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -123,6 +123,8 @@ Functions</h2></td></tr>
 <tr class="memitem:aabe0eb996897cae9461d083c14a03c87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#aabe0eb996897cae9461d083c14a03c87">mrand</a> (void)</td></tr>
 <tr class="memdesc:aabe0eb996897cae9461d083c14a03c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Completa a matriz com valores aleatorios.  Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.  <a href="#aabe0eb996897cae9461d083c14a03c87">More...</a><br /></td></tr>
 <tr class="separator:aabe0eb996897cae9461d083c14a03c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad339ca06e86e1257a3a813ff38dbcb2b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#ad339ca06e86e1257a3a813ff38dbcb2b">chtoin</a> (void)</td></tr>
+<tr class="separator:ad339ca06e86e1257a3a813ff38dbcb2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a4d8021dae7ac755161c3837d971648ad"></a>
@@ -147,7 +149,27 @@ Functions</h2></td></tr>
 Inicializa completamente a matriz localizada em X. </p><dl class="section warning"><dt>Warning</dt><dd>Matriz deve ter suas dimenções definidas! </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#ac3467128c175761e71e66da7c4f50c08" title="Altera as dimenções de uma matriz. ">size</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00201">201</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00091">91</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+
+</div>
+</div>
+<a id="ad339ca06e86e1257a3a813ff38dbcb2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad339ca06e86e1257a3a813ff38dbcb2b">&#9670;&nbsp;</a></span>chtoin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int chtoin </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00169">169</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -175,7 +197,7 @@ Inicializa completamente a matriz localizada em X. </p><dl class="section warnin
 <dd>
 <a class="el" href="edit_8h.html#a5c71940a467691123679f2b0b996ffa4" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00327">327</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00160">160</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -203,7 +225,7 @@ Inicializa completamente a matriz localizada em X. </p><dl class="section warnin
 <dd>
 <a class="el" href="edit_8h.html#a5c71940a467691123679f2b0b996ffa4" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00333">333</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00166">166</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -227,7 +249,7 @@ Inicializa completamente a matriz localizada em X. </p><dl class="section warnin
 <p>recebe do usuário o valor e as cordenadas e os insere na matriz localizada em X. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#ac3467128c175761e71e66da7c4f50c08" title="Altera as dimenções de uma matriz. ">size</a> </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Não inicializa completamente a matriz caso tal não tenha valores previamente definidos! </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00325">325</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00093">93</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -262,7 +284,7 @@ Inicializa parcialmente a matriz no local selecionado. </p><dl class="params"><d
 <dd>
 <a class="el" href="edit_8h.html#a5c71940a467691123679f2b0b996ffa4" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00012">12</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00011">11</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -290,7 +312,7 @@ Inicializa parcialmente a matriz no local selecionado. </p><dl class="params"><d
 <dd>
 <a class="el" href="edit_8h.html#a5c71940a467691123679f2b0b996ffa4" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00330">330</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00163">163</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>

@@ -1,8 +1,0 @@
-Menu Principal:
-
-E - Enter       e - Editar X
-D - Drop        o - Operações
-S - Swap
-R - Roll
-
-q - Sair

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['j',['j',['../structmatrix.html#a37d972ae0b47b9099e30983131d31916',1,'matrix::j()'],['../structchoosev.html#a37d972ae0b47b9099e30983131d31916',1,'choosev::j()']]]
+  ['ncolunas',['ncolunas',['../structmatrix.html#a159c877ac08e076c219e33f6a5cacdc4',1,'matrix']]],
+  ['nlinhas',['nlinhas',['../structmatrix.html#ae69943c9ea552d2a5426c36037880b9c',1,'matrix']]]
 ];

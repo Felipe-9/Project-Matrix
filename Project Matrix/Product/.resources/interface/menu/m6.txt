@@ -1,8 +1,0 @@
-Mostrar qual Matriz?
-
-1 - Mostrar matriz X
-2 - Mostrar matriz Y
-3 - Mostrar matriz Z
-4 - Mostrar matriz W
-
-0 - Voltar

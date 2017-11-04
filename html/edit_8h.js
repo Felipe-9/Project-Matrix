@@ -1,8 +1,8 @@
 var edit_8h =
 [
     [ "matrix", "structmatrix.html", "structmatrix" ],
-    [ "choosev", "structchoosev.html", "structchoosev" ],
     [ "choose", "edit_8h.html#a4d8021dae7ac755161c3837d971648ad", null ],
+    [ "chtoin", "edit_8h.html#ad339ca06e86e1257a3a813ff38dbcb2b", null ],
     [ "inv", "edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82", null ],
     [ "mrand", "edit_8h.html#aabe0eb996897cae9461d083c14a03c87", null ],
     [ "point", "edit_8h.html#a5c71940a467691123679f2b0b996ffa4", null ],

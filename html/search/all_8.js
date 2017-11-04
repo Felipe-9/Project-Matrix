@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['m',['m',['../structmatrix.html#ab66eedda3f0be63a86054ba3e92cebba',1,'matrix']]],
-  ['main',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['main_2ec',['main.c',['../main_8c.html',1,'']]],
-  ['matrix',['matrix',['../structmatrix.html',1,'']]],
-  ['memory_2ec',['memory.c',['../memory_8c.html',1,'']]],
-  ['memory_2eh',['memory.h',['../memory_8h.html',1,'']]],
-  ['mrand',['mrand',['../edit_8c.html#aabe0eb996897cae9461d083c14a03c87',1,'mrand(void):&#160;edit.c'],['../edit_8h.html#aabe0eb996897cae9461d083c14a03c87',1,'mrand(void):&#160;edit.c']]]
+  ['ncolunas',['ncolunas',['../structmatrix.html#a159c877ac08e076c219e33f6a5cacdc4',1,'matrix']]],
+  ['nlinhas',['nlinhas',['../structmatrix.html#ae69943c9ea552d2a5426c36037880b9c',1,'matrix']]]
 ];

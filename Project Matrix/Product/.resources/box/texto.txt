@@ -1,6 +1,6 @@
 Menu Principal:
 
-E - Enter       e - Editar X
+E - Enter       e - Editar
 D - Drop        o - Operações
 S - Swap
 R - Roll

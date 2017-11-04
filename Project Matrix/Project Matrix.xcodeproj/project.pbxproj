@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		814A28391FA7BBF900485E6D /* interface.c in Sources */ = {isa = PBXBuildFile; fileRef = 814A28381FA7BBF900485E6D /* interface.c */; };
+		814A28391FA7BBF900485E6D /* timeline.c in Sources */ = {isa = PBXBuildFile; fileRef = 814A28381FA7BBF900485E6D /* timeline.c */; };
 		814CE57F1FA89DDD000F883B /* edit.c in Sources */ = {isa = PBXBuildFile; fileRef = 814CE57E1FA89DDD000F883B /* edit.c */; };
 		814CE5821FA89E6F000F883B /* memory.c in Sources */ = {isa = PBXBuildFile; fileRef = 814CE5811FA89E6F000F883B /* memory.c */; };
 		81AD45631F91A11600D8FAA6 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 81AD45621F91A11600D8FAA6 /* main.c */; };
@@ -27,8 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		814A28371FA7BBF900485E6D /* interface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interface.h; sourceTree = "<group>"; };
-		814A28381FA7BBF900485E6D /* interface.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = interface.c; sourceTree = "<group>"; };
+		814A28371FA7BBF900485E6D /* timeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = timeline.h; sourceTree = "<group>"; };
+		814A28381FA7BBF900485E6D /* timeline.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = timeline.c; sourceTree = "<group>"; };
 		814CE57D1FA89DDD000F883B /* edit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = edit.h; sourceTree = "<group>"; };
 		814CE57E1FA89DDD000F883B /* edit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = edit.c; sourceTree = "<group>"; };
 		814CE5801FA89E6F000F883B /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		814CE5831FA89FD7000F883B /* funcoes */ = {
 			isa = PBXGroup;
 			children = (
-				814A28381FA7BBF900485E6D /* interface.c */,
+				814A28381FA7BBF900485E6D /* timeline.c */,
 				81AD456A1F91A12E00D8FAA6 /* operacoes.c */,
 				814CE57E1FA89DDD000F883B /* edit.c */,
 				814CE5811FA89E6F000F883B /* memory.c */,
@@ -64,7 +64,7 @@
 		8166128E1FA7C7BC007B614A /* headers */ = {
 			isa = PBXGroup;
 			children = (
-				814A28371FA7BBF900485E6D /* interface.h */,
+				814A28371FA7BBF900485E6D /* timeline.h */,
 				81AD45691F91A12E00D8FAA6 /* operacoes.h */,
 				814CE57D1FA89DDD000F883B /* edit.h */,
 				814CE5801FA89E6F000F883B /* memory.h */,
@@ -158,7 +158,7 @@
 				81AD45631F91A11600D8FAA6 /* main.c in Sources */,
 				814CE57F1FA89DDD000F883B /* edit.c in Sources */,
 				814CE5821FA89E6F000F883B /* memory.c in Sources */,
-				814A28391FA7BBF900485E6D /* interface.c in Sources */,
+				814A28391FA7BBF900485E6D /* timeline.c in Sources */,
 				81AD456B1F91A12E00D8FAA6 /* operacoes.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

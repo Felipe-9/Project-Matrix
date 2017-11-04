@@ -56,5 +56,7 @@ void drop (void);
  * @see swap.
  */
 void roll (void);
+/***/
+void cpinout (char input[1000], char output[1000]);
 
 #endif /* memory_h */

@@ -1,13 +1,12 @@
 //
-//  interface.c
+//  timeline.c
 //  Project Matrix
 //
 //  Created by Felipe Alexandre de Barros Pinto on 30/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
-#include "interface.h"
-#include <string.h>
+#include "timeline.h"
 
 int     interface                         (int rs) {
     
@@ -39,7 +38,7 @@ int     interface                         (int rs) {
             Box(0,103,texto);   //  Imprime a intro
             
             //  Espera resposta do usuário
-            printf("\n\t\t\t\t\t\t\tPress Enter to initialize the program");
+            printf("\n                             Press Enter to initialize the program");
             getchar();
             
             pbreak(50);
@@ -221,6 +220,43 @@ void    pbreak                             (int n) {
     }
 }
 
-
-
+void    intro                               (void) {
+    
+    char linha[100], texto[2000];
+    int i, j=0;
+    
+    FILE *txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/intro/logo.txt", "r");
+    
+    while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
+        for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
+            texto[i+j]=linha[i];
+        }
+        texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
+        j=j+i;
+    }
+    texto[j]='\0';
+    
+    fclose(txt);
+    
+    pbreak(50);
+    Box(0,103,texto);   //  Imprime a intro
+}
+int     command                             (void) {
+    
+    int f, t, l;
+    char rs[30];
+    
+    printf("Project Matrix: $ ");
+    while (rs[0]=='\n') {
+        fgets(rs, sizeof(rs), stdin);
+    }
+    
+    
+    
+    
+    
+    
+    
+    return 1;
+}
 

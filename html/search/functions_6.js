@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pbreak',['pbreak',['../timeline_8c.html#ae0148fefdb3991d391d75ca2fceabf04',1,'pbreak(int n):&#160;timeline.c'],['../timeline_8h.html#ae0148fefdb3991d391d75ca2fceabf04',1,'pbreak(int n):&#160;timeline.c']]],
-  ['point',['point',['../edit_8c.html#a5c71940a467691123679f2b0b996ffa4',1,'point(void):&#160;edit.c'],['../edit_8h.html#a5c71940a467691123679f2b0b996ffa4',1,'point(void):&#160;edit.c']]]
+  ['main',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
+  ['minfo',['minfo',['../timeline_8c.html#a1863da15492dfbd7e56bbcabb1c3fd12',1,'minfo(void):&#160;timeline.c'],['../timeline_8h.html#a1863da15492dfbd7e56bbcabb1c3fd12',1,'minfo(void):&#160;timeline.c']]],
+  ['mrand',['mrand',['../edit_8c.html#aabe0eb996897cae9461d083c14a03c87',1,'mrand(void):&#160;edit.c'],['../edit_8h.html#aabe0eb996897cae9461d083c14a03c87',1,'mrand(void):&#160;edit.c']]]
 ];

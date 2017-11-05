@@ -1,14 +1,14 @@
 //
 //  main.c
-//  Project Matrix V3.1.1.0
+//  Project Matrix V3.1.6
 //
 //  Created by Felipe Alexandre de Barros Pinto on 13/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
 #include <stdio.h>
-#include "operacoes.h"
 #include "timeline.h"
+#include "operacoes.h"
 #include "edit.h"
 #include "memory.h"
 

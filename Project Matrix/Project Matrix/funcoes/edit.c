@@ -8,12 +8,16 @@
 
 #include "edit.h"
 
-void size (void){
+void size (int c, int l){
+    
+}
+//  size
+/*
+void size (int c, int l){
     
     struct matrix x;                // Base para receber e alterar os valores para poder alterar a matriz localizada em X
     char dialog[1000];              // Menu de edição de dimensões de matriz
     char rs;                        // Recebe comando do usuário
-    int c=0, l=0;                   // Guarda os inteiros das novas dimensões
     int r=1;                        // Cond de parada
     int i, j;                       // Contadores
     
@@ -36,17 +40,17 @@ void size (void){
         do {
             printf("\n(%d,%d) -> (%d,%d) $ ", x.ncolunas, x.nlinhas, c, l);
             scanf("%c",&rs);
-            
+        
             switch (rs) {
-                case 'i': /* Alterar N de linhas    */ {
+                case 'i': { // Alterar N de linhas
                     printf("\n(%d,%d) -> (%d,%d) $ ", x.ncolunas, x.nlinhas, c, l);
                     c = chtoin();
                 } break;
-                case 'j': /* Alterar N de colunas   */ {
+                case 'j': { // Alterar N de colunas
                     printf("\n(%d,%d) -> (%d,%d) $ ", x.ncolunas, x.nlinhas, c, l);
                     l = chtoin();
                 } break;
-                case 'c': /* Inserir novos valores  */ {
+                case 'c': { // Inserir novos valores
                     if ( (c!=0) && (l!=0) ){
                         r=0;
                     } else {
@@ -54,11 +58,11 @@ void size (void){
                         i=0; while(i<2){ getchar(); i++; }
                     }
                 } break;
-                case 'q': /* Cancelar novos valores */ { r=0; } break;
+                case 'q': { r=0; } break;   // Cancelar novos valores
             }
             
         } while (r==1);
-    
+
     // 2a Etapa - Recebe novas dimensões e atribui á memória.
     
     if (rs=='c'){   // Verifica se usuário quer atribuir as novas dimensões a matriz
@@ -88,16 +92,22 @@ void size (void){
         fclose(X);
     }
 }
+*/
 void choose (void){
+    
 }
-void point (void){
+void point (int c, int l, int v){
+    
+}
+//  Point
+/*
+void point (int c, int l, int v){
     
     int i, j, k;                // Contadores
     struct matrix x;            // Base de construção da matriz
     int r1=1, r2=1;             // Cond de parada
     char dialog[1000];          // Menu de edição de dimensões de matriz
     char rs;                    // Recebe respostas do usuário
-    int c=0, l=0;               // Cordenadas
     
     // 1a Etapa - Receber dados da matriz anterior:
     
@@ -152,11 +162,13 @@ void point (void){
                     case 'C': { r1=0;  r2=0; } break;
                     case 'Q': { r1=0;  r2=0; } break;
                 }
+                
             }
             r1=1;
         }
     }
 }
+*/
 void inv (void){
     
 }
@@ -166,31 +178,24 @@ void transp (void){
 void mrand (void){
     
 }
-int chtoin (void){
+int chtoin (char n[4]){
     
-    char n[4];  // Char que recebe N inteiro
     int N;      // Inteiro convertido a partir do char
-    int i, j;   // Contadores
+    int chi1, chi2;   // Contadores
     
-    do{
-        fgets(n, 10, stdin);    // Recebe novo N de linhas
-        if (n[0]=='0'){
-            n[0]='\n';
+    for (chi1=0;chi1<5;chi1++){  // Limpa qualquer character que não for um inteiro
+        if (n[chi1]<'0'||n[chi1]>'9'){
+            n[chi1]='\0';
         }
-    } while (n[0]=='\n'||(n[0]<'0'||n[0]>'9')); // Restringe o usuário a digitar apenas inteiros
-    for (i=0;i<5;i++){  // Limpa qualquer character que não for um inteiro
-        if (n[i]<'0'||n[i]>'9'){
-            n[i]='\0';
-        }
-        if (i>2){   // Limpa N maiores que 3 digitos
-            n[i]='\0';
+        if (chi1>2){   // Limpa N maiores que 3 digitos
+            n[chi1]='\0';
         }
     }
-    j=0;
+    chi2=0;
     N=0;
-    for (i=0;i<strlen(n);i++){  // Converte char em int
-        N = N + ((n[i]-'0')*pow(10, strlen(n)-j-1));
-        j++;
+    for (chi1=0;chi1<strlen(n);chi1++){  // Converte char em int
+        N = N + ((n[chi1]-'0')*pow(10, strlen(n)-chi2-1));
+        chi2++;
     }
     return N;
 }

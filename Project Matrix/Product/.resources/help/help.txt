@@ -1,10 +1,10 @@
-help          - Mostra esse menu:
-info          - Mostra detalhes da matriz
-info *função* - Mostra detalhes de uma função especifica
-clear         - Limpa a tela
-show/hide     - Deixa a mostra a matriz em X ou a esconde
-quit          - Fecha programa
-intro         - Re-mostra a intro
+help           - Mostra esse menu:
+info *função*  - Mostra detalhes de uma função especifica
+minfo          - Mostra detalhes da matriz
+clear          - Limpa a tela
+show/hide      - Deixa a mostra a matriz em X ou a esconde
+quit           - Fecha programa
+intro          - Re-mostra a intro
 
 Alocação de matrizes  | Operações               | Editar X
                       |                         | 

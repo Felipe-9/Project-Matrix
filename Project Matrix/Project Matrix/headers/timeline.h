@@ -10,6 +10,9 @@
 #define timeline_h
 
 #include <stdio.h>
+#include "operacoes.h"
+#include "edit.h"
+#include "memory.h"
 
 /**
  * @brief Imprime texto inserido dentro de uma caixa.
@@ -33,5 +36,15 @@ void    pbreak                            (int n);
 void    intro                              (void);
 /***/
 int     command                            (void);
+/***/
+void    help                               (void);
+/***/
+void    info                      (char func[10]);
+/***/
+void    minfo                              (void);
+/***/
+void    reset                              (void);
+/***/
+void    show                              (int s);
 
 #endif /* timeline_h */

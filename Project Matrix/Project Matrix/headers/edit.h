@@ -28,7 +28,7 @@
  * @see choose.
  * @see point.
  */
-void size   (void);
+void size   (int c, int l);
 /**
  * @brief Altera sequencialmente os valores de uma matriz.
  * @details Insere um a um os valores da matriz localizada em X.
@@ -44,7 +44,7 @@ void choose (void);
  * @see size
  * @warning Não inicializa completamente a matriz caso tal não tenha valores previamente definidos!
  */
-void point  (void);
+void point  (int c, int l, int v);
 /**
  * @brief Inversão de matriz.
  * @details Inverte a matriz localizada em X.
@@ -73,7 +73,7 @@ void transp (void);
  */
 void mrand  (void);
 /***/
-int  chtoin (void);
+int  chtoin (char n[4]);
 
 /**
  * @brief Modelo de matriz.

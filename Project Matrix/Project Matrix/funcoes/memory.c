@@ -20,3 +20,12 @@ void drop (void){
 void roll (void){
     
 }
+void Reset (void){
+    
+}
+void clr (void){
+    
+}
+void cpinout (char input[1000], char output[1000]) {
+    
+}

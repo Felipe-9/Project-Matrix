@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="Screen Shot 2017-10-12 at 5.30.26 PM.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V3.1.1.0</span>
+   &#160;<span id="projectnumber">V3.1.6</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -106,10 +106,34 @@ Functions</h2></td></tr>
 <tr class="memitem:aeb5e19969cc2a7110f5479e431962d80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#aeb5e19969cc2a7110f5479e431962d80">roll</a> (void)</td></tr>
 <tr class="memdesc:aeb5e19969cc2a7110f5479e431962d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aloca os as matrizes contidas nos espaços de memoria.  <a href="#aeb5e19969cc2a7110f5479e431962d80">More...</a><br /></td></tr>
 <tr class="separator:aeb5e19969cc2a7110f5479e431962d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed19948be38e80a0af0f88a8ef598706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#aed19948be38e80a0af0f88a8ef598706">Reset</a> (void)</td></tr>
+<tr class="separator:aed19948be38e80a0af0f88a8ef598706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36df56c3c5491dcb70159168d5dd6583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#a36df56c3c5491dcb70159168d5dd6583">clr</a> (void)</td></tr>
+<tr class="separator:a36df56c3c5491dcb70159168d5dd6583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4658b44687fc10a416cc6b3b5860fa3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#a4658b44687fc10a416cc6b3b5860fa3e">cpinout</a> (char input[1000], char output[1000])</td></tr>
 <tr class="separator:a4658b44687fc10a416cc6b3b5860fa3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a36df56c3c5491dcb70159168d5dd6583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36df56c3c5491dcb70159168d5dd6583">&#9670;&nbsp;</a></span>clr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void clr </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00026">26</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
+
+</div>
+</div>
 <a id="a4658b44687fc10a416cc6b3b5860fa3e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4658b44687fc10a416cc6b3b5860fa3e">&#9670;&nbsp;</a></span>cpinout()</h2>
 
@@ -135,6 +159,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00029">29</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
 
 </div>
 </div>
@@ -194,6 +220,26 @@ A localizada em X é copiada em Y, A de Y é transferida Z, a de Z é transferid
 
 </div>
 </div>
+<a id="aed19948be38e80a0af0f88a8ef598706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed19948be38e80a0af0f88a8ef598706">&#9670;&nbsp;</a></span>Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Reset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00023">23</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
+
+</div>
+</div>
 <a id="aeb5e19969cc2a7110f5479e431962d80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb5e19969cc2a7110f5479e431962d80">&#9670;&nbsp;</a></span>roll()</h2>
 
@@ -242,11 +288,11 @@ A localizada em X é transferida em Y, a de Y é transferida para Z, a de Z é t
 <p>troca de matrizes. </p>
 <p>Funções de alocação de matrizes nos espaços de memória.</p>
 <p>troca as matrizes localizadas em X e Y. </p><dl class="section warning"><dt>Warning</dt><dd>X e Y devem conter matrizes. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#ac3467128c175761e71e66da7c4f50c08" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
 <dd>
 <a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
 <dd>
-<a class="el" href="edit_8h.html#a5c71940a467691123679f2b0b996ffa4" title="altera um valor especifico de uma matriz. ">point</a>. </dd>
+<a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="altera um valor especifico de uma matriz. ">point</a>. </dd>
 <dd>
 <a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673" title="Sobe a coluna de matrizes. ">enter</a>. </dd>
 <dd>

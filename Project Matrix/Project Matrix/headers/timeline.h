@@ -33,7 +33,7 @@ void    Box         (int h, int l, char txt[100]);
  **/
 void    pbreak                            (int n);
 /***/
-void    intro                              (void);
+void    interface                (char path[1000]);
 /***/
 int     command                            (void);
 /***/

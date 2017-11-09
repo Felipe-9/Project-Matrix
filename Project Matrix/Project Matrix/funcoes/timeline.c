@@ -440,7 +440,7 @@ void    minfo                              (void) {
                         
                         for (mi[0]=0, det[2]=1; mi[0]<3; mi[0]++){      // 2a Diagonal positiva
                             for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if (mi[1]+1==mi[0]||mi[1]+2==mi[0]){
+                                if (mi[1]+1==mi[0]||mi[1]==mi[0]+2){
                                     det[2] = det[2]*x.matriz[mi[1]][mi[0]];
                                 }
                             }
@@ -448,13 +448,13 @@ void    minfo                              (void) {
                         
                         for (mi[0]=0, det[3]=1; mi[0]<3; mi[0]++){      // 3a Diagonal positiva
                             for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if (mi[1]==mi[0]+1||mi[1]==mi[0]+2){
+                                if (mi[1]==mi[0]+1||mi[1]+2==mi[0]){
                                     det[3] = det[3]*x.matriz[mi[1]][mi[0]];
                                 }
                             }
                         }
                         
-                        for (mi[0]=1; mi[0]<4; mi[0]++){                // Soma diagonais positivas
+                        for (mi[0]=1, det[0]=0; mi[0]<4; mi[0]++){                // Soma diagonais positivas
                             det[0] = det[0] + det[mi[0]];
                         }
                         
@@ -466,7 +466,7 @@ void    minfo                              (void) {
                         
                         for (mi[0]=0, det[2]=1; mi[0]<3; mi[0]++){                      // 2a Diagonal negativa
                             for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if (mi[1]+mi[0]==3 || (mi[1]==3 && mi[0]==3) ) {
+                                if ((mi[1]+mi[0])==1 || (mi[1]==2 && mi[0]==2) ) {
                                     det[2] = det[2]*x.matriz[mi[1]][mi[0]];
                                 }
                             }
@@ -474,7 +474,7 @@ void    minfo                              (void) {
                         
                         for (mi[0]=0, det[3]=1; mi[0]<3; mi[0]++){                      // 3a Diagonal negativa
                             for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if (mi[1]+mi[0]==5 || (mi[1]==1 && mi[0]==1) ) {
+                                if (mi[1]+mi[0]==3 || (mi[1]==0 && mi[0]==0) ) {
                                     det[3] = det[3]*x.matriz[mi[1]][mi[0]];
                                 }
                             }
@@ -554,7 +554,7 @@ void    minfo                              (void) {
             }
     }
     Box(0, strlen("Matriz guardada na memória X:")+6, stats);
-    
+    mi[0];
 }
 void    reset                              (void) {
     

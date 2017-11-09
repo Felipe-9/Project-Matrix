@@ -1,5 +1,6 @@
-Matriz guardada na memÃ³ria X:
-DimensÃµes    - (2, 2)
-Formato      - Quadrada
-Tipo         - œ;ú£PGáşQuadrada
-Determinante - -10
+info size *command* :
+
+Editar dimensÃµes da matriz em X
+
+-i *int* - N da coluna
+-j *int* - N da linha

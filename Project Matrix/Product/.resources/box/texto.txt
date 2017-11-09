@@ -1,6 +1,5 @@
-info size *command* :
-
-Editar dimensões da matriz em X
-
--i *int* - N da coluna
--j *int* - N da linha
+Matriz guardada na memória X:
+Dimensões    - (3, 3)
+Formato      - Quadrada
+Tipo         - Comum
+Determinante - 0

@@ -321,7 +321,7 @@ int     command                            (void) {
         else if (strcmp(rs[1], "D"     )==0) { drop          (); }  // Desce coluna de matrizes
         else if (strcmp(rs[1], "S"     )==0) { swap          (); }  // Troca matrizes de X e Y
         else if (strcmp(rs[1], "R"     )==0) { roll          (); }  // Aloca coluna de matrizes para baixo
-        else if (strcmp(rs[1], "AC"    )==0) { Reset         (); }  // Reseta memória
+        else if (strcmp(rs[1], "AC"    )==0) { reset         (); }  // Reseta memória
         else if (strcmp(rs[1], "sum"   )==0) { sum           (); }  // Soma       (Y + X)
         else if (strcmp(rs[1], "sub"   )==0) { sub           (); }  // Subtrai    (Y - X)
         else if (strcmp(rs[1], "tim"   )==0) { tim           (); }  // Multiplica (Y * X)
@@ -365,7 +365,7 @@ void    minfo                              (void) {
     struct matrix x;
     char stats[1000];
     int mi[3];
-    int det[4]; char form[10], type[10];
+    int det[4]; char form[10], type[100];
     
     
     // Recupera dados da matriz:
@@ -373,7 +373,8 @@ void    minfo                              (void) {
     // Abre arquivo de memoria X
     FILE *X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r");
     
-    fscanf(X, "%d\n(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);  // Recupera numero de inicialização e dimensões da matriz
+    fscanf(X, "%*[^\n]\n", NULL);
+    fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);  // Recupera numero de inicialização e dimensões da matriz
     
     for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){                              // Recumera valores da matriz
         for (mi[1]=0; mi[1]<x.ncolunas-1; mi[1]++){
@@ -533,6 +534,7 @@ void    minfo                              (void) {
                                 }
                             }
                             if (mi[2]==0) { sprintf(type, "Matriz diagonal"); }
+                            else { sprintf(type, "Comum"); }
                         }
                     }
                 }
@@ -554,11 +556,77 @@ void    minfo                              (void) {
             }
     }
     Box(0, strlen("Matriz guardada na memória X:")+6, stats);
-    mi[0];
+    
 }
 void    reset                              (void) {
     
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "w");
+    
+    fprintf(X, "0\n(0,0)\n");
+    
+    fclose(X);
+    
+    FILE *Y = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/y.txt", "w");
+    
+    fprintf(Y, "0\n(0,0)\n");
+    
+    fclose(Y);
+    
+    FILE *Z = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/z.txt", "w");
+    
+    fprintf(Z, "0\n(0,0)\n");
+    
+    fclose(Z);
+    
+    FILE *W = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/w.txt", "w");
+    
+    fprintf(W, "0\n(0,0)\n");
+    
+    fclose(W);
+    
 }
 void    show                              (int s) {
+    
+    FILE *O_SHOW, *I_SHOW;
+    int s1;
+    struct matrix X;
+    
+    switch (s) {
+        case 0: {   // Desliga a função - Esconde a matriz
+            
+            I_SHOW = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r+");
+            
+            fscanf(I_SHOW, "%d\n", &s1);
+            
+            if (s1!=0){
+                
+                rewind(I_SHOW);
+                fprintf(I_SHOW, "%d\n", 0);
+                
+            }
+            
+            fclose(I_SHOW);
+            
+        } break;
+        case 1: {   // Aciona a função - Mostra a matriz
+            
+            I_SHOW = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r+");
+            
+            fscanf(I_SHOW, "%d\n", &s1);
+            
+            if (s1!=1){
+                
+                rewind(I_SHOW);
+                fprintf(I_SHOW, "%d\n", 1);
+                
+            }
+            
+            fclose(I_SHOW);
+            
+        }break;
+        case 2: {   // A função show em si
+            
+        } break;
+    }
     
 }

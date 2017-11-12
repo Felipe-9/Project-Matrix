@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ncolunas',['ncolunas',['../structmatrix.html#a159c877ac08e076c219e33f6a5cacdc4',1,'matrix']]],
-  ['nlinhas',['nlinhas',['../structmatrix.html#ae69943c9ea552d2a5426c36037880b9c',1,'matrix']]]
+  ['operacoes_2ec',['operacoes.c',['../operacoes_8c.html',1,'']]],
+  ['operacoes_2eh',['operacoes.h',['../operacoes_8h.html',1,'']]]
 ];

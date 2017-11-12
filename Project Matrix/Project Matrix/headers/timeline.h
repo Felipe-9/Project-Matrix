@@ -37,14 +37,18 @@ void    interface                (char path[1000]);
 /***/
 int     command                            (void);
 /***/
-void    help                               (void);
-/***/
 void    info                      (char func[10]);
 /***/
 void    minfo                              (void);
 /***/
 void    reset                              (void);
 /***/
-void    show                              (int s);
+void    showhide           (int s, char func[10]);
+/***/
+void    sh_matriz                          (void);
+/***/
+void    sh_help                            (void);
+/***/
+void    initialise                         (void);
 
 #endif /* timeline_h */

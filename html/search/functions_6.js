@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['main',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]],
-  ['minfo',['minfo',['../timeline_8c.html#a1863da15492dfbd7e56bbcabb1c3fd12',1,'minfo(void):&#160;timeline.c'],['../timeline_8h.html#a1863da15492dfbd7e56bbcabb1c3fd12',1,'minfo(void):&#160;timeline.c']]],
-  ['mrand',['mrand',['../edit_8c.html#aabe0eb996897cae9461d083c14a03c87',1,'mrand(void):&#160;edit.c'],['../edit_8h.html#aabe0eb996897cae9461d083c14a03c87',1,'mrand(void):&#160;edit.c']]]
+  ['pbreak',['pbreak',['../timeline_8c.html#ace78517a1a52062668c52575c11728cb',1,'pbreak(int pb1):&#160;timeline.c'],['../timeline_8h.html#ae0148fefdb3991d391d75ca2fceabf04',1,'pbreak(int n):&#160;timeline.c']]],
+  ['point',['point',['../edit_8c.html#a17b2e28140c6d79a7801f31fbd911f46',1,'point(int c, int l, int v):&#160;edit.c'],['../edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46',1,'point(int c, int l, int v):&#160;edit.c']]]
 ];

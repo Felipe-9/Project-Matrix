@@ -14,6 +14,7 @@
 #define memory_h
 
 #include <stdio.h>
+#include "edit.h"
 
 /**
  * @brief troca de matrizes.
@@ -26,7 +27,7 @@
  * @see drop.
  * @see roll.
  */
-void swap (void);
+void    swap    (void);
 /**
  * @brief Sobe a coluna de matrizes.
  * @details Eleva as matrizes nos seus espaços definidos.\n
@@ -35,7 +36,7 @@ void swap (void);
  * @see drop.
  * @see roll.
  */
-void enter (void);
+void    enter   (void);
 /**
  * @brief Desçe a coluna de matrizes.
  * @details Desçe as matrizes de seus espaços definidos.\n
@@ -45,7 +46,7 @@ void enter (void);
  * @see swap.
  * @see roll.
  */
-void drop (void);
+void    drop    (void);
 /**
  * @brief Aloca os as matrizes contidas nos espaços de memoria.
  * @details Eleva a coluna de matrizes substituindo a matriz de W em X.\n
@@ -55,12 +56,25 @@ void drop (void);
  * @see drop.
  * @see swap.
  */
-void roll (void);
+void    roll    (void);
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+void    reset   (void);
 /***/
-void Reset (void);
+void    Reset   (void);
 /***/
-void clr (void);
+void    clrt    (void);
 /***/
-void cpinout (char input[1000], char output[1000]);
+void    clrv    (void);
 
 #endif /* memory_h */

@@ -1,0 +1,9 @@
+Info Multiplicação - tim *command* :
+
+Função dupla:
+ou Multiplica matrizes Y * X
+ou Multiplica X por um valor
+
+comandos:
+-v *int* - valor para multiplicar X;
+(void)   - Multiplica Y * X;

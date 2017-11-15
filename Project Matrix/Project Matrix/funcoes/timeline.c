@@ -150,10 +150,11 @@
 
 void    Box         (int h,int l, char menu[100]) {
     
-    int b1,b2,b3;   // Contadores
+    int b1,b2,b3;       // Contadores
     char line[100];     // Guarda e imprime linhas do texto inserido
     FILE *box;          // Guarda o texto inserido
     
+    l=l+6;              // Reajuste do valor de l
     
     // Guarda texto inserido em um arquivo:
     
@@ -173,14 +174,8 @@ void    Box         (int h,int l, char menu[100]) {
     // Imprime parte superior da Caixa:
     
     for(b1=0;b1<l;b1++){
-        printf("_");
+        printf("-");
     } printf("\n");
-    
-    printf("|");
-    for (b1=2;b1<l;b1++){
-        printf(" ");
-    }
-    printf("|\n");
     
     // Imprime parte central com o texto:
     
@@ -218,11 +213,13 @@ void    interface               (char path[1000]) {
     
     char linha[100], texto[2000];
     int i1, i2=0;
+    int l=0;
     
     FILE *txt = fopen (path, "r");
     
-    while(fgets(linha, sizeof(linha), txt)){    // Guarda cada linha do arquivo .txt em linha
-        for (i1=0;i1<strlen(linha);i1++){       // Guarda em sequencia cada linha em intro
+    while(fgets(linha, sizeof(linha), txt)){        // Guarda cada linha do arquivo .txt em linha
+        if (l<strlen(linha)) { l = strlen(linha); } // Guarda tamanho da maior linha
+        for (i1=0;i1<strlen(linha);i1++){           // Guarda em sequencia cada linha em intro
             texto[i1+i2]=linha[i1];
         }
         texto[i1+i2]='\n';    //  Marca fim de cada linha de do arquivo .txt
@@ -232,7 +229,9 @@ void    interface               (char path[1000]) {
     
     fclose(txt);
     
-    Box(0,103,texto);   //  Imprime arquivo .txt dentro de uma caixa
+    if (l<40) { l=40; } // Proteção contra caixas menores que texto
+    Box(0, l, texto);   // Imprime arquivo .txt dentro de uma caixa
+    
 }
 int     command                            (void) {
     
@@ -264,7 +263,7 @@ int     command                            (void) {
         for (c1=0; c1<strlen(rs[0]); c1++){ // Proíbe o usuário de digitar numeros que iniciem com 0 e que tenham mais de 4 digitos
             if ( ((rs[0][c1]=='0') && ( ((rs[0][c1-1]<'1') || (rs[0][c1-1]>'9')) && ((rs[0][c1-2]<'1') || (rs[0][c1-2]>'9')) ))  ||  ( ((rs[0][c1]>='1' && rs[0][c1]<='9') && (rs[0][c1-1]<'1' || rs[0][c1]>'9')) && (rs[0][c1+3]>='0' && rs[0][c1+3]<='9') )){
                 rs[0][0]='\0';
-                printf ("\nERRO - Numero inválido\n\n");
+                Box(0, 40, "ERRO! - Numero inválido\n");
             }
         }
     }
@@ -288,7 +287,7 @@ int     command                            (void) {
         }
     }
     
-    if (c3!=0) { printf("\nERRO!\n"); }
+    if (c3!=0) { Box(0, 40, "ERRO! - Funções repetidas\n"); }
     
     
     else {
@@ -310,33 +309,41 @@ int     command                            (void) {
         
         // Execulta commando do usuário:
         
-        if      (strcmp(rs[1], "help"  )==0) {
-            // interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/help.txt");
-        }  // Mostra tela de ajuda
-        else if (strcmp(rs[1], "info"  )==0) { info        (rs[2]); }  // Mostra ajuda da função
-        else if (strcmp(rs[1], "minfo" )==0) { minfo            (); }  // Mostra detalhes da matriz
-        else if (strcmp(rs[1], "clear" )==0) { pbreak         (50); }  // Limpa a tela
-        else if (strcmp(rs[1], "show"  )==0) { showhide (1, rs[2]); }  // Mostra a matriz
-        else if (strcmp(rs[1], "hide"  )==0) { showhide (0, rs[2]); }  // Esconde a matriz
-        else if (strcmp(rs[1], "quit"  )==0) { return            0; }  // Encerra programa
-        else if (strcmp(rs[1], "intro" )==0) {
-            interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/intro/logo.txt");
-        }  // Mostra tela intro
-        else if (strcmp(rs[1], "E"     )==0) { enter            (); }  // Eleva coluna de matrizes
-        else if (strcmp(rs[1], "D"     )==0) { drop             (); }  // Desce coluna de matrizes
-        else if (strcmp(rs[1], "S"     )==0) { swap             (); }  // Troca matrizes de X e Y
-        else if (strcmp(rs[1], "R"     )==0) { roll             (); }  // Aloca coluna de matrizes para baixo
-        else if (strcmp(rs[1], "AC"    )==0) { reset            (); }  // Reseta memória
-        else if (strcmp(rs[1], "sum"   )==0) { sum              (); }  // Soma       (Y + X)
-        else if (strcmp(rs[1], "sub"   )==0) { sub              (); }  // Subtrai    (Y - X)
-        else if (strcmp(rs[1], "tim"   )==0) { tim              (); }  // Multiplica (Y * X)
-        else if (strcmp(rs[1], "size"  )==0) { size         (i, j); }  // Edita dimensões da matriz
-        else if (strcmp(rs[1], "choose")==0) { choose           (); }  // Insere valores na matriz
-        else if (strcmp(rs[1], "point" )==0) { point     (i, j, v); }  // Insere valores nas cordenadas na matriz
-        else if (strcmp(rs[1], "rand"  )==0) { mrand            (); }  // Preeche matriz com valores aleatórios
-        else if (strcmp(rs[1], "ts"    )==0) { transp           (); }  // Transpõe matriz
-        else if (strcmp(rs[1], "inv"   )==0) { inv              (); }  // Inverte matriz
-        else if (strcmp(rs[1], "clr"   )==0) { clr              (); }  // Limpa matriz
+        if      (strcmp(rs[1], "help"  )==0) { interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/help.txt");     }   // Mostra tela de ajuda
+        
+        else if (strcmp(rs[1], "info"  )==0) { info        (rs[2]); }   // Mostra ajuda da função
+        else if (strcmp(rs[1], "minfo" )==0) { minfo            (); }   // Mostra detalhes da matriz
+        else if (strcmp(rs[1], "clear" )==0) { pbreak         (50); }   // Limpa a tela
+        else if (strcmp(rs[1], "show"  )==0) { showhide (1, rs[2]); }   // Mostra a matriz
+        else if (strcmp(rs[1], "hide"  )==0) { showhide (0, rs[2]); }   // Esconde a matriz
+        else if (strcmp(rs[1], "quit"  )==0) { return            0; }   // Encerra programa
+        
+        else if (strcmp(rs[1], "intro" )==0) { interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/intro/logo.txt");    }   // Mostra tela intro
+        
+        else if (strcmp(rs[1], "E"     )==0) { enter            (); }   // Eleva coluna de matrizes
+        else if (strcmp(rs[1], "D"     )==0) { drop             (); }   // Desce coluna de matrizes
+        else if (strcmp(rs[1], "S"     )==0) { swap             (); }   // Troca matrizes de X e Y
+        else if (strcmp(rs[1], "R"     )==0) { roll             (); }   // Aloca coluna de matrizes para baixo
+        else if (strcmp(rs[1], "AC"    )==0) { reset            (); }   // Reseta memória
+        
+        else if (strcmp(rs[1], "sum"   )==0) { sum              (); }   // Soma       (Y + X)
+        else if (strcmp(rs[1], "sub"   )==0) { sub              (); }   // Subtrai    (Y - X)
+        
+        else if (strcmp(rs[1], "tim"   )==0 && strcmp(rs[2], "-v")!=0) { mtim  (); }   // Multiplica matrizes (Y * X)
+        else if (strcmp(rs[1], "tim"   )==0 && strcmp(rs[2], "-v")==0) { vtim (v); }   // Multiplica escalar  (N * X)
+        else if (strcmp(rs[1], "pow"   )==0 && strcmp(rs[2], "-v")==0) { mpow (v); }   // Eleva X ^ V
+        
+        else if (strcmp(rs[1], "size"  )==0) { size         (i, j); }   // Edita dimensões da matriz
+        else if (strcmp(rs[1], "choose")==0) { choose           (); }   // Insere valores na matriz
+        else if (strcmp(rs[1], "point" )==0) { point     (i, j, v); }   // Insere valores nas cordenadas na matriz
+        else if (strcmp(rs[1], "rand"  )==0) { mrand            (); }   // Preeche matriz com valores aleatórios
+        else if (strcmp(rs[1], "ts"    )==0) { transp           (); }   // Transpõe matriz
+        else if (strcmp(rs[1], "inv"   )==0) { inv              (); }   // Inverte matriz
+        
+        else if (strcmp(rs[1], "clr"   )==0 && strcmp(rs[2], "-r")!=0) { clrv  (); }   // Limpa valores da matriz
+        else if (strcmp(rs[1], "clr"   )==0 && strcmp(rs[2], "-r")==0) { clrt  (); }   // Reseta matriz
+        
+        else if (strcmp(rs[1], "Flowey")==0) { flowey      (rs[2]); }   // Secret
     }
     return 1;
 }
@@ -393,7 +400,9 @@ void    minfo                              (void) {
     // Prepara as estatisticas da matriz:
     
     switch (x.verif) {
-        case 0: { sprintf(stats, "Matriz sem dimenções definidas\n"); } break;
+        case 0: { sprintf(stats,
+                          "Matriz sem dimenções definidas\n"
+                          "Dimensões - (%d, %d)\n", x.ncolunas, x.nlinhas); } break;
         case 1: {
             
             // Tipo da matriz levando em conta a forma:
@@ -412,7 +421,7 @@ void    minfo                              (void) {
             
             sprintf(stats,
                     "Matriz guardada na memória X:\n"
-                    "Dimensões - (%d , %d)\n"
+                    "Dimensões - (%d, %d)\n"
                     "Formato   - %s\n"
                     "Matriz incompleta!\n", x.ncolunas, x.nlinhas, form);
         } break;
@@ -495,7 +504,7 @@ void    minfo                              (void) {
             
             // Determinar tipo de matriz:
             
-            for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){
+            for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
                 for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
                     if (x.matriz[mi[1]][mi[0]]!=0){
                         mi[2]++;
@@ -504,7 +513,7 @@ void    minfo                              (void) {
             }
             if (mi[2]==0) { sprintf(type, "Matriz nula"); }
             else {
-                for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){
+                for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
                     for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
                         if ( ((mi[1]>mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]<=mi[0]) && (x.matriz[mi[1]][mi[0]]==0)) ){
                             mi[2]++;
@@ -513,7 +522,7 @@ void    minfo                              (void) {
                 }
                 if (mi[2]==0) { sprintf(type, "Matriz triangular inferior"); }
                 else {
-                    for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){
+                    for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
                         for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
                             if ( ((mi[1]<mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]<=mi[0]) && (x.matriz[mi[1]][mi[0]]==0)) ){
                                 mi[2]++;
@@ -522,7 +531,7 @@ void    minfo                              (void) {
                     }
                     if (mi[2]==0) { sprintf(type, "Matriz triangular superior"); }
                     else {
-                        for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){
+                        for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
                             for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
                                 if ( ((mi[1]!=mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]==mi[0]) && (x.matriz[mi[1]][mi[0]]!=1)) ){
                                     mi[2]++;
@@ -531,7 +540,7 @@ void    minfo                              (void) {
                         }
                         if (mi[2]==0) { sprintf(type, "Matriz identidade e diagonal"); }
                         else {
-                            for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){
+                            for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
                                 for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
                                     if ( ((mi[1]!=mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]==mi[0]) && (x.matriz[mi[1]][mi[0]]==0)) ){
                                         mi[2]++;
@@ -560,34 +569,7 @@ void    minfo                              (void) {
                         "Tipo         - %s\n", x.ncolunas, x.nlinhas, form, type);
             }
     }
-    Box(0, strlen("Matriz guardada na memória X:")+6, stats);
-    
-}
-void    reset                              (void) {
-    
-    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "w");
-    
-    fprintf(X, "0\n(0,0)\n");
-    
-    fclose(X);
-    
-    FILE *Y = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/y.txt", "w");
-    
-    fprintf(Y, "0\n(0,0)\n");
-    
-    fclose(Y);
-    
-    FILE *Z = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/z.txt", "w");
-    
-    fprintf(Z, "0\n(0,0)\n");
-    
-    fclose(Z);
-    
-    FILE *W = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/w.txt", "w");
-    
-    fprintf(W, "0\n(0,0)\n");
-    
-    fclose(W);
+    Box(0, 43, stats);
     
 }
 void    showhide           (int s, char func[10]) {
@@ -632,29 +614,29 @@ void    showhide           (int s, char func[10]) {
 }
 void    sh_matriz                          (void) {
     
-    FILE *MATRIZ, *X;                   // Verificação se deve mostrar e guarda a matriz
+    FILE *MATRIX, *X;                   // Verificação se deve mostrar e guarda a matriz
     int msh1=0, msh2;                   // Contadores
-    char line[50], func[10]="matriz";   // Guarda linhas e palavras para comparação
+    char line[50], func[10]="matrix";   // Guarda linhas e palavras para comparação
     struct matrix x;                    // Guarda de forma organizada os valores da matriz
     
     
     // Verifica se deve imprimir a matriz:
     
-    MATRIZ = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/switch.txt", "r");
+    MATRIX = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/switch.txt", "r");
     
-    rewind(MATRIZ);
-    while (fgets(line, sizeof(line), MATRIZ)){  // Acha os valores atribuidos a esta função na memória
+    rewind(MATRIX);
+    while (fgets(line, sizeof(line), MATRIX)){  // Acha os valores atribuidos a esta função na memória
         for (msh1=0; msh1<strlen(func); msh1++){
             if (line[msh1]!=func[msh1]) { break; }
         }
         if (msh1==strlen(func)){ // Recebe valor de ação da função
-            fseek(MATRIZ, -2, SEEK_CUR);
-            fscanf(MATRIZ, "%d", &msh1);
+            fseek(MATRIX, -2, SEEK_CUR);
+            fscanf(MATRIX, "%d", &msh1);
             break;
         }
     }
     
-    fclose(MATRIZ);
+    fclose(MATRIX);
     
     if (msh1==1){   // Se estiver ligada:
         
@@ -673,58 +655,39 @@ void    sh_matriz                          (void) {
         
         fclose(X);
         
-        for (msh1=0; msh1<x.nlinhas; msh1++){                              // Recumera valores da matriz
-            for (msh2=0; msh2<x.ncolunas-1; msh2++){
-                fscanf(MATRIZ, "%d ", &x.matriz[msh2][msh1]);
+        if (x.verif>0){
+            
+            // Mostra visualmente a matriz:
+            
+            // Imprime cabeça da matriz:
+            printf("---");
+            for (msh1=0; msh1<x.ncolunas*4+1; msh1++){
+                printf(" ");
             }
-            fscanf(MATRIZ , "%d\n", &x.matriz[msh2][msh1]);
-        }
-        
-        
-        // Mostra visualmente a matriz:
-        
-        // Imprime cabeça da matriz:
-        printf("___");
-        for (msh1=0; msh1<x.ncolunas*4-1; msh1++){
-            printf(" ");
-        }
-        printf("___\n");
-        
-        // Pula uma linha para inserir valores:
-        printf("|  ");
-        for (msh1=0; msh1<x.ncolunas*4-1; msh1++){
-            printf(" ");
-        }
-        printf("  |\n");
-        
-        // Imprime linhas com valores:
-        for (msh1=0; msh1<x.nlinhas; msh1++){
-            printf("|  ");
-            for (msh2=0; msh2<x.ncolunas-1; msh2++){
+            printf("---\n");
+            
+            // Imprime linhas com valores:
+            for (msh1=0; msh1<x.nlinhas; msh1++){
+                printf("|   ");
+                for (msh2=0; msh2<x.ncolunas-1; msh2++){
+                    if (x.matriz[msh2][msh1]<1000){
+                        printf("%3d ", x.matriz[msh2][msh1]);
+                    } else { printf(" -  "); }
+                }
                 if (x.matriz[msh2][msh1]<1000){
-                    printf("%3d ", x.matriz[msh2][msh1]);
-                } else { printf(" -  "); }
+                    printf("%3d   |\n", x.matriz[msh2][msh1]);
+                } else { printf(" -    |\n"); }
             }
-            if (x.matriz[msh2][msh1]<1000){
-                printf("%3d  |\n", x.matriz[msh2][msh1]);
-            } else { printf(" -   |\n"); }
+            
+            // Imprime base da matriz:
+            printf("---");
+            for (msh1=0; msh1<x.ncolunas*4+1; msh1++){
+                printf(" ");
+            }
+            printf("---\n");
         }
-        
-        // Pula uma linha sem valores:
-        printf("|  ");
-        for (msh1=0; msh1<x.ncolunas*4-1; msh1++){
-            printf(" ");
-        }
-        printf("  |\n");
-        
-        // Imprime base da matriz:
-        printf("---");
-        for (msh1=0; msh1<x.ncolunas*4-1; msh1++){
-            printf(" ");
-        }
-        printf("---\n");
     }
-    fclose(MATRIZ);
+    fclose(MATRIX);
 }
 void    sh_help                            (void) {
     
@@ -754,6 +717,44 @@ void    sh_help                            (void) {
 void    initialise                         (void) {
     
     // Por defealt deixa a matriz e o menu help escondidos:
-    showhide(0, "help"); showhide(0, "matriz");
+    showhide(0, "help"); showhide(0, "matrix");
     
+}
+void    flowey                     (char acc[10]) {
+    
+    char line[100];
+    FILE *FLOWEY;
+    
+    if (strcmp(acc, "")==0){
+        
+        FLOWEY = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/.flowey/flowey.txt", "r");
+        
+        while (fgets(line, sizeof(line), FLOWEY)){
+            printf("%s", line);
+        }
+    
+    } else if (strcmp(acc, "hello")==0){
+        
+        FLOWEY = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/.flowey/hello.txt", "r");
+        
+        while (fgets(line, sizeof(line), FLOWEY)){
+            printf("%s", line);
+        }
+    } else if (strcmp(acc, "idiot")==0){
+        
+        FLOWEY = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/.flowey/idiot.txt", "r");
+        
+        while (fgets(line, sizeof(line), FLOWEY)){
+            printf("%s", line);
+        }
+    } else if (strcmp(acc, ":p")==0){
+        
+        FLOWEY = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/.flowey/;p.txt", "r");
+        
+        while (fgets(line, sizeof(line), FLOWEY)){
+            printf("%s", line);
+        }
+        
+    }
+    fclose(FLOWEY);
 }

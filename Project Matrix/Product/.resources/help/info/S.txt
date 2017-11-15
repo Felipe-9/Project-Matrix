@@ -1,0 +1,8 @@
+Info Swap - S (void)      :
+
+Troca as matrizes localizadas
+em X e em Y.
+
+Salva X;
+Copia Y em X;
+Insere valores salvos em Y.

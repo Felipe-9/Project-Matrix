@@ -1,0 +1,14 @@
+Info Roll - R (void)    :
+
+Aloca coluna de matrizes
+para baixo copiando x em
+W.
+
+igual a drop copiando
+X em W.
+
+Salva a matriz X;
+Copia a matriz Y em X;
+               Z em Y;
+               W em Z;
+Insere valores salvos em W.

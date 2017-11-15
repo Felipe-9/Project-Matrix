@@ -1,1 +1,5 @@
+Info Help -> help (void)      :
 
+Imprime uma vez o menu de ajuda
+mostrando de forma simplificada
+todas as funções do programa.

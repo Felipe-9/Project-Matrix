@@ -1,0 +1,11 @@
+Info Drop - D (void)   :
+
+Aloca coluna de matrizes
+para baixo
+
+copia a matriz Y em X;
+               Z em Y;
+               W em Z;
+
+OBS: Matriz guardada em X
+     é deletada.

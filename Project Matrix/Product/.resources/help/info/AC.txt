@@ -1,0 +1,4 @@
+Info Reset - AC (void)  :
+
+Reseta todas as matrizes
+na memória.

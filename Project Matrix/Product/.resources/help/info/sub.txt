@@ -1,0 +1,8 @@
+Info Subtrair - sub (void)     :
+
+Subtrai a matriz X da matriz Y.
+
+Subtrai Y - X e salva resultados;
+Aloca coluna de matrizes
+para baixo;
+Insere resultados em X.

@@ -1,0 +1,7 @@
+Info Info - info *função*      :
+
+Mostra detalhes referentes a uma
+função especifica.
+
+Incluindo exemplos e comandos para
+cada.

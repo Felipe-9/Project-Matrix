@@ -8,7 +8,9 @@
 
 #include "edit.h"
 
-void size (int c, int l){
+void    size           (int c, int l) {
+    
+    
     
 }
 //  size
@@ -93,10 +95,10 @@ void size (int c, int l){
     }
 }
 */
-void choose (void){
+void    choose                 (void) {
     
 }
-void point (int c, int l, int v){
+void    point   (int c, int l, int v) {
     
 }
 //  Point
@@ -169,16 +171,16 @@ void point (int c, int l, int v){
     }
 }
 */
-void inv (void){
+void    inv                    (void) {
     
 }
-void transp (void){
+void    transp                 (void) {
     
 }
-void mrand (void){
+void    mrand                  (void) {
     
 }
-int chtoin (char n[4]){
+int     chtoin            (char n[4]) {
     
     int N;      // Inteiro convertido a partir do char
     int chi1, chi2;   // Contadores

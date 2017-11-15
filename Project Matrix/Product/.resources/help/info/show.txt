@@ -1,0 +1,10 @@
+Info Show - show *commands* :
+
+Deixa a mostra o a tela do
+comando inserido.
+
+Telas suportadas:
+ - help;
+ - matriz;
+
+See also: hide

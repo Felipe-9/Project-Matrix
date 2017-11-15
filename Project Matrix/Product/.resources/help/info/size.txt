@@ -1,6 +1,10 @@
-info size *command* :
+Info Size -> size *command*   :
 
-Editar dimensões da matriz em X
+Editar dimensões da matriz em X.
 
+comandos:
 -i *int* - N da coluna
 -j *int* - N da linha
+
+OBS: Inicializa parcialmente a
+     matriz localizada em X.

@@ -1,0 +1,14 @@
+Info Transpose - tr (void)      :
+
+Transpõe a matrix localizada em X.
+
+EX: ---         ---
+    |    11  12   |
+    |    21  22   | 
+    ---         ---
+    Project Matrix $ tr
+    ---         ---
+    |    11  21   |
+    |    12  22   | 
+    ---         ---
+    Project Matrix $ _

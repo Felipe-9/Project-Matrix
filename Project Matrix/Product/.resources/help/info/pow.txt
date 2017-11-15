@@ -1,0 +1,13 @@
+Info Power - pow *command*         :
+
+Eleva a matriz X a potencia do valor
+inserido
+
+comandos:
+-v *int* - Valor para elevar X a pot.
+
+Multiplica X * X;
+Salva resultado
+Multiplica Res. * X;
+repete N vezes;
+Insere resultado final em X.

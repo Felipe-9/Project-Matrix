@@ -1,0 +1,5 @@
+Info Invert - inv (void)	:	zlo
+
+Inverte a matriz localizada em X.
+
+EX: 

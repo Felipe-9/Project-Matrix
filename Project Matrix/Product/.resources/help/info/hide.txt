@@ -1,0 +1,9 @@
+Info Hide - hide *command*      :
+
+Esconde a tela do comando inserido
+
+Comandos suportados:
+ - help;
+ - matriz;
+
+See also: show.

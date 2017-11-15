@@ -1,7 +1,19 @@
-Info point *command* :
+Info Point -> point *command*       :
 
 Insere valor nas coordenadas definidas
 
+comandos:
 -i *int* - N da coluna
 -j *int* - N da linha
 -v *int* - Valor a ser inserido
+
+EX1:  Project Matrix $ point -v 3 -i 6 -j 9
+        se insere o valor
+        1 nas coordenadas
+        inseridas.
+
+EX2*: Project Matrix $ point -v 12 -i 9
+        Se insere o valor
+        2 a todas as
+        coordenadas da
+        primeira coluna.

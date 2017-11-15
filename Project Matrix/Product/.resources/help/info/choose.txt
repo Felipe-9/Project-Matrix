@@ -1,0 +1,23 @@
+Info Choose - choose (void)                  :
+
+Abre menu de inserção valores,
+inserindo um a um em sequencia
+das coordenadas da matriz localizada
+em X. Até que o usuário deseje
+finalizar a função com o comando *end*
+
+MENU: choose *coordenadas* <- $ *commad*
+
+Comandos:
+*int* - Insere valor nas coordenadas
+*end* - Encerra função
+
+Passa de coordenada em coordenada
+varrendo cada linha da matriz
+individualmente.
+
+EX: Project Matrix: $ choose      - inicia operação
+    choose (1, 1) <- $ 9          - insere o valor 9
+                                    nas coordenadas (1, 1)
+    choose (2, 1) <- $ end        - Finaliza função
+    Project Matrix $ _

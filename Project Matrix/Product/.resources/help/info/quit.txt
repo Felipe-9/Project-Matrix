@@ -1,0 +1,7 @@
+Info Quit - quit (void) :
+
+Encerra o Programa.
+
+OBS: memória não é limpa
+     pela ação dessa
+     função.

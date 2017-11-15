@@ -1,0 +1,9 @@
+Info Somar - sum (void) :
+
+Soma a matriz em Y com a
+matriz guardada em X.
+
+Soma Y + X e salva resultados;
+Aloca coluna de matrizes para
+baixo;
+Insere resultados em X.

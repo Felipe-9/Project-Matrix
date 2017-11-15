@@ -1,0 +1,3 @@
+Info Clear - clear (void) :
+
+Limpa a tela de commando.

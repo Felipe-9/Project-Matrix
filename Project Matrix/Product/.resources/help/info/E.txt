@@ -1,0 +1,11 @@
+Info Enter -> E (void)  :
+
+Aloca coluna de matrizes
+para cima.
+
+copia a matriz Z em W;
+               Y em Z;
+               X em Y;
+
+OBS: Matriz guardada em W
+     é deletada.

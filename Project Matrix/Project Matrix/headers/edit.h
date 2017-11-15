@@ -28,7 +28,7 @@
  * @see choose.
  * @see point.
  */
-void size   (int c, int l);
+void    size          (int c, int l);
 /**
  * @brief Altera sequencialmente os valores de uma matriz.
  * @details Insere um a um os valores da matriz localizada em X.
@@ -37,14 +37,14 @@ void size   (int c, int l);
  * @warning Matriz deve ter suas dimenções definidas!
  * @see size.
  */
-void choose (void);
+void    choose                (void);
 /**
  * @brief altera um valor especifico de uma matriz.
  * @details recebe do usuário o valor e as cordenadas e os insere na matriz localizada em X.
  * @see size
  * @warning Não inicializa completamente a matriz caso tal não tenha valores previamente definidos!
  */
-void point  (int c, int l, int v);
+void    point  (int c, int l, int v);
 /**
  * @brief Inversão de matriz.
  * @details Inverte a matriz localizada em X.
@@ -53,7 +53,7 @@ void point  (int c, int l, int v);
  * @see choose.
  * @see point.
  */
-void inv    (void);
+void    inv                   (void);
 /**
  * @brief Transpozição de matriz.
  * @details Transpõe a matriz localizada em X.
@@ -62,7 +62,7 @@ void inv    (void);
  * @see choose.
  * @see point.
  */
-void transp (void);
+void    transp                (void);
 /**
  * @brief Completa a matriz com valores aleatorios.
  * @detals Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.
@@ -71,9 +71,9 @@ void transp (void);
  * @see choose.
  * @see point.
  */
-void mrand  (void);
+void    mrand                 (void);
 /***/
-int  chtoin (char n[4]);
+int     chtoin           (char n[4]);
 
 /**
  * @brief Modelo de matriz.

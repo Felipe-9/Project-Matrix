@@ -1,7 +1,8 @@
 var operacoes_8c =
 [
-    [ "result", "operacoes_8c.html#a34a5721437564b3ee91e4f1ce7064417", null ],
+    [ "mpow", "operacoes_8c.html#aeb9239c19c4c62a297c772dfe18f9466", null ],
+    [ "mtim", "operacoes_8c.html#afcb2053d6f4a592ad799aded507f4c58", null ],
     [ "sub", "operacoes_8c.html#ab09a6457a19510670b369271b988cd8c", null ],
     [ "sum", "operacoes_8c.html#a5bcafc75025e47668ebd2cd587d06826", null ],
-    [ "tim", "operacoes_8c.html#a46f49ebc49cd6a21692d308d67bb703d", null ]
+    [ "vtim", "operacoes_8c.html#afcfd2b3fbc7e877b758cb8d54f4d8c91", null ]
 ];

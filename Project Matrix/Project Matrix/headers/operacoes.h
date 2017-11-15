@@ -6,14 +6,12 @@
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
-/**
- * Funções de operações entre as matrizes localizadas em Y e X.
- */
 
 #ifndef operacoes_h
 #define operacoes_h
 
 #include <stdio.h>
+#include "edit.h"
 
 /**
  * @brief Soma de Matrizes ( Y + X ).
@@ -28,7 +26,7 @@
  * @see drop.
  * @see roll.
  */
-void sum    (void);
+void    sum     (void);
 /**
  * @brief Subtração de Matrizes ( Y - X ).
  * @details Verifica a existencia e subtrai da matriz localizada em Y a matriz localizada em X.
@@ -42,7 +40,7 @@ void sum    (void);
  * @see drop.
  * @see roll
  */
-void sub    (void);
+void    sub     (void);
 /**
  * @brief Multiplicação de Matrizes ( A * B ).
  * @details Verifica a existencia e multiplica as matrizes localizadas em X e Y.
@@ -56,16 +54,10 @@ void sub    (void);
  * @see drop.
  * @see roll
  */
-void tim    (void);
-/**
- * @brief substitui o string inserido em uma matriz.
- * @details Insere a matriz dada na matriz seleionada.
- * @param l seleção de local de memória.
- * @param m matriz para ser inserida.
- * @see sum.
- * @see sub.
- * @see tim.
- */
-void result (int l, int m[100][100]);
+void    mtim    (void);
+/***/
+void    vtim   (int v);
+/***/
+void    mpow   (int v);
 
 #endif /* operacoes_h */

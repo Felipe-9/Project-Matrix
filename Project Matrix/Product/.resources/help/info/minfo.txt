@@ -1,0 +1,13 @@
+Info Matrix stats: minfo (void) :
+
+Mostra as estatísticas referentes
+a matriz localizada em X.
+
+Lista:
+ --------------------
+ | *Matriz*         |
+ | *Dimensões*      |
+ | *Formato*        |
+ | *Tipo*           |
+ | *Determinante*   |
+ --------------------

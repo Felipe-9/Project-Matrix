@@ -2,7 +2,6 @@ var edit_8h =
 [
     [ "matrix", "structmatrix.html", "structmatrix" ],
     [ "choose", "edit_8h.html#a4d8021dae7ac755161c3837d971648ad", null ],
-    [ "chtoin", "edit_8h.html#a7978a1d5032e8e1071f871b29186c2b2", null ],
     [ "inv", "edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82", null ],
     [ "mrand", "edit_8h.html#aabe0eb996897cae9461d083c14a03c87", null ],
     [ "point", "edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46", null ],

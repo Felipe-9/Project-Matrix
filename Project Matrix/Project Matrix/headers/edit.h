@@ -72,8 +72,6 @@ void    transp                (void);
  * @see point.
  */
 void    mrand                 (void);
-/***/
-int     chtoin           (char n[4]);
 
 /**
  * @brief Modelo de matriz.
@@ -83,10 +81,10 @@ int     chtoin           (char n[4]);
  * @param matriz Array que guarda a matriz.
  */
 struct matrix {
-    int verif;
-    int ncolunas;
-    int nlinhas;
-    int matriz[100][100];
+    int     verif;
+    int     ncolunas;
+    int     nlinhas;
+    float   matriz[100][100];
 };
 
 #endif /* edit_h */

@@ -24,8 +24,8 @@ void    swap    (void) {
     if (x.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sw1=0; sw1<x.nlinhas; sw1++){ for (sw2=0; sw2<x.ncolunas-1; sw2++){  // Recebe os valores de X em um array
-            fscanf(X, "%d " , &x.matriz[sw2][sw1]);
-        }   fscanf(X, "%d\n", &x.matriz[sw2][sw1]);
+            fscanf(X, "%f " , &x.matriz[sw2][sw1]);
+        }   fscanf(X, "%f\n", &x.matriz[sw2][sw1]);
         }
         
     }
@@ -40,8 +40,8 @@ void    swap    (void) {
     if (y.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sw1=0; sw1<y.nlinhas; sw1++){ for (sw2=0; sw2<y.ncolunas-1; sw2++){  // Recebe os valores de Y em um array
-            fscanf(Y, "%d " , &y.matriz[sw2][sw1]);
-        }   fscanf(Y, "%d\n", &y.matriz[sw2][sw1]);
+            fscanf(Y, "%f " , &y.matriz[sw2][sw1]);
+        }   fscanf(Y, "%f\n", &y.matriz[sw2][sw1]);
         }
         
     }
@@ -57,8 +57,8 @@ void    swap    (void) {
     fprintf(X, "%d,(%d,%d)\n", y.verif, y.ncolunas, y.nlinhas);   // Imprime valores para N de inicialização e dimensões da matriz
         
         for (sw1=0; sw1<y.nlinhas; sw1++){ for (sw2=0; sw2<y.ncolunas-1; sw2++){  // Imprime os valores de Y em X
-            fprintf(X, "%d " , y.matriz[sw2][sw1]);
-        }   fprintf(X, "%d\n", y.matriz[sw2][sw1]);
+            fprintf(X, "%f " , y.matriz[sw2][sw1]);
+        }   fprintf(X, "%f\n", y.matriz[sw2][sw1]);
         }
     
     fclose(X);  // Finaliza inserção de Y em X
@@ -69,8 +69,8 @@ void    swap    (void) {
     fprintf(Y, "%d,(%d,%d)\n", x.verif, x.ncolunas, x.nlinhas);   // Imprime os valores de X em Y
     
         for (sw1=0; sw1<x.nlinhas; sw1++){ for (sw2=0; sw2<x.ncolunas-1; sw2++){  // Recebe os valores de Y em um array
-            fprintf(Y, "%d " , x.matriz[sw2][sw1]);
-        }   fprintf(Y, "%d\n", x.matriz[sw2][sw1]);
+            fprintf(Y, "%f " , x.matriz[sw2][sw1]);
+        }   fprintf(Y, "%f\n", x.matriz[sw2][sw1]);
         }
     
     fclose(Y);  // Finaliza inserção de Y em X
@@ -92,8 +92,8 @@ void    enter   (void) {
     
     if (a.verif>0){
         for (e1=0; e1<a.nlinhas; e1++) { for (e2=0; e2<a.ncolunas-1; e2++) {
-            fscanf(Z, "%d " , &a.matriz[e2][e1]); fprintf(W, "%d " , a.matriz[e2][e1]);
-        }   fscanf(Z, "%d\n", &a.matriz[e2][e1]); fprintf(W, "%d\n", a.matriz[e2][e1]);
+            fscanf(Z, "%f " , &a.matriz[e2][e1]); fprintf(W, "%f " , a.matriz[e2][e1]);
+        }   fscanf(Z, "%f\n", &a.matriz[e2][e1]); fprintf(W, "%f\n", a.matriz[e2][e1]);
         }
     }
     fclose(Z); fclose(W);
@@ -106,8 +106,8 @@ void    enter   (void) {
     
     if (a.verif>0){
         for (e1=0; e1<a.nlinhas; e1++) { for (e2=0; e2<a.ncolunas-1; e2++) {
-            fscanf(Y, "%d " , &a.matriz[e2][e1]); fprintf(Z, "%d " , a.matriz[e2][e1]);
-        }   fscanf(Y, "%d\n", &a.matriz[e2][e1]); fprintf(Z, "%d\n", a.matriz[e2][e1]);
+            fscanf(Y, "%f " , &a.matriz[e2][e1]); fprintf(Z, "%f " , a.matriz[e2][e1]);
+        }   fscanf(Y, "%f\n", &a.matriz[e2][e1]); fprintf(Z, "%f\n", a.matriz[e2][e1]);
         }
     }
     fclose(Y); fclose(Z);
@@ -120,8 +120,8 @@ void    enter   (void) {
     
     if (a.verif>0){
         for (e1=0; e1<a.nlinhas; e1++) { for (e2=0; e2<a.ncolunas-1; e2++) {
-            fscanf(X, "%d " , &a.matriz[e2][e1]); fprintf(Y, "%d " , a.matriz[e2][e1]);
-        }   fscanf(X, "%d\n", &a.matriz[e2][e1]); fprintf(Y, "%d\n", a.matriz[e2][e1]);
+            fscanf(X, "%f " , &a.matriz[e2][e1]); fprintf(Y, "%f " , a.matriz[e2][e1]);
+        }   fscanf(X, "%f\n", &a.matriz[e2][e1]); fprintf(Y, "%f\n", a.matriz[e2][e1]);
         }
     }
     
@@ -142,8 +142,8 @@ void    drop    (void) {
     
     if (a.verif>0){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
-            fscanf(Y, "%d " , &a.matriz[d2][d1]); fprintf(X, "%d " , a.matriz[d2][d1]);
-        }   fscanf(Y, "%d\n", &a.matriz[d2][d1]); fprintf(X, "%d\n", a.matriz[d2][d1]);
+            fscanf(Y, "%f " , &a.matriz[d2][d1]); fprintf(X, "%f " , a.matriz[d2][d1]);
+        }   fscanf(Y, "%f\n", &a.matriz[d2][d1]); fprintf(X, "%f\n", a.matriz[d2][d1]);
         }
     }
     fclose(Y); fclose(X);
@@ -156,8 +156,8 @@ void    drop    (void) {
     
     if (a.verif>0){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
-            fscanf(Z, "%d " , &a.matriz[d2][d1]); fprintf(Y, "%d " , a.matriz[d2][d1]);
-        }   fscanf(Z, "%d\n", &a.matriz[d2][d1]); fprintf(Y, "%d\n", a.matriz[d2][d1]);
+            fscanf(Z, "%f " , &a.matriz[d2][d1]); fprintf(Y, "%f " , a.matriz[d2][d1]);
+        }   fscanf(Z, "%f\n", &a.matriz[d2][d1]); fprintf(Y, "%f\n", a.matriz[d2][d1]);
         }
     }
     fclose(Z); fclose(Y);
@@ -170,8 +170,8 @@ void    drop    (void) {
     
     if (a.verif>0){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
-            fscanf(W, "%d " , &a.matriz[d2][d1]); fprintf(Z, "%d " , a.matriz[d2][d1]);
-        }   fscanf(W, "%d\n", &a.matriz[d2][d1]); fprintf(Z, "%d\n", a.matriz[d2][d1]);
+            fscanf(W, "%f " , &a.matriz[d2][d1]); fprintf(Z, "%f " , a.matriz[d2][d1]);
+        }   fscanf(W, "%f\n", &a.matriz[d2][d1]); fprintf(Z, "%f\n", a.matriz[d2][d1]);
         }
     }
     
@@ -191,8 +191,8 @@ void    roll    (void) {
     
     if (x.verif>0) {
         for (d1=0; d1<x.nlinhas; d1++){ for (d2=0; d2<x.ncolunas-1; d2++) {
-            fscanf(X, "%d " , &x.matriz[d2][d1]);
-        }   fscanf(X, "%d\b", &x.matriz[d2][d1]);
+            fscanf(X, "%f " , &x.matriz[d2][d1]);
+        }   fscanf(X, "%f\b", &x.matriz[d2][d1]);
         }
     }
     
@@ -206,8 +206,8 @@ void    roll    (void) {
     
     if (a.verif>0){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
-            fscanf(Y, "%d " , &a.matriz[d2][d1]); fprintf(X, "%d " , a.matriz[d2][d1]);
-        }   fscanf(Y, "%d\n", &a.matriz[d2][d1]); fprintf(X, "%d\n", a.matriz[d2][d1]);
+            fscanf(Y, "%f " , &a.matriz[d2][d1]); fprintf(X, "%f " , a.matriz[d2][d1]);
+        }   fscanf(Y, "%f\n", &a.matriz[d2][d1]); fprintf(X, "%f\n", a.matriz[d2][d1]);
         }
     }
     fclose(Y); fclose(X);
@@ -220,8 +220,8 @@ void    roll    (void) {
     
     if (a.verif>0){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
-            fscanf(Z, "%d " , &a.matriz[d2][d1]); fprintf(Y, "%d " , a.matriz[d2][d1]);
-        }   fscanf(Z, "%d\n", &a.matriz[d2][d1]); fprintf(Y, "%d\n", a.matriz[d2][d1]);
+            fscanf(Z, "%f " , &a.matriz[d2][d1]); fprintf(Y, "%f " , a.matriz[d2][d1]);
+        }   fscanf(Z, "%f\n", &a.matriz[d2][d1]); fprintf(Y, "%f\n", a.matriz[d2][d1]);
         }
     }
     fclose(Z); fclose(Y);
@@ -234,8 +234,8 @@ void    roll    (void) {
     
     if (a.verif>0){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
-            fscanf(W, "%d " , &a.matriz[d2][d1]); fprintf(Z, "%d " , a.matriz[d2][d1]);
-        }   fscanf(W, "%d\n", &a.matriz[d2][d1]); fprintf(Z, "%d\n", a.matriz[d2][d1]);
+            fscanf(W, "%f " , &a.matriz[d2][d1]); fprintf(Z, "%f " , a.matriz[d2][d1]);
+        }   fscanf(W, "%f\n", &a.matriz[d2][d1]); fprintf(Z, "%f\n", a.matriz[d2][d1]);
         }
     }
     
@@ -248,8 +248,8 @@ void    roll    (void) {
     
     if (x.verif>0) {
         for (d1=0; d1<x.nlinhas; d1++){ for (d2=0; d2<x.ncolunas-1; d2++) {
-            fprintf(W, "%d " , x.matriz[d2][d1]);
-        }   fprintf(W, "%d\b", x.matriz[d2][d1]);
+            fprintf(W, "%f " , x.matriz[d2][d1]);
+        }   fprintf(W, "%f\b", x.matriz[d2][d1]);
         }
     }
     
@@ -303,10 +303,10 @@ void    clrv    (void) {
     if (x.verif>0) {
         fseek(X, 8, SEEK_SET);  // Aponta para inicio dos valores da matriz X
         for (v1=0; v1<x.nlinhas; v1++) { for (v2=0; v2<x.ncolunas-1; v2++) {    // Insere valor reconhecido como nulo
-            fprintf(X, "1000 " );
-        }   fprintf(X, "1000\n");
+            fprintf(X, " " );
+        }   fprintf(X, " \n");
         }
     } else { Box(0, 40,"ERRO! - Matriz sem dimensões definidas!"); }    // Mensagem de ERRO
     
     fclose(X);
-}
+}   // REVER

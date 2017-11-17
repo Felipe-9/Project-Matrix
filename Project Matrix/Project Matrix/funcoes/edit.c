@@ -180,24 +180,3 @@ void    transp                 (void) {
 void    mrand                  (void) {
     
 }
-int     chtoin            (char n[4]) {
-    
-    int N;      // Inteiro convertido a partir do char
-    int chi1, chi2;   // Contadores
-    
-    for (chi1=0;chi1<5;chi1++){  // Limpa qualquer character que não for um inteiro
-        if (n[chi1]<'0'||n[chi1]>'9'){
-            n[chi1]='\0';
-        }
-        if (chi1>2){   // Limpa N maiores que 3 digitos
-            n[chi1]='\0';
-        }
-    }
-    chi2=0;
-    N=0;
-    for (chi1=0;chi1<strlen(n);chi1++){  // Converte char em int
-        N = N + ((n[chi1]-'0')*pow(10, strlen(n)-chi2-1));
-        chi2++;
-    }
-    return N;
-}

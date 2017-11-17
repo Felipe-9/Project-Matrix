@@ -10,6 +10,7 @@
 #define timeline_h
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "operacoes.h"
 #include "edit.h"
 #include "memory.h"

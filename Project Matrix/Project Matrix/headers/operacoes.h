@@ -56,7 +56,7 @@ void    sub     (void);
  */
 void    mtim    (void);
 /***/
-void    vtim   (int v);
+void    vtim (float v);
 /***/
 void    mpow   (int v);
 

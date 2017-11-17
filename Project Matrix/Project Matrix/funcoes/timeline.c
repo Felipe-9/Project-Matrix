@@ -232,12 +232,12 @@ void    interface               (char path[1000]) {
     if (l<40) { l=40; } // Proteção contra caixas menores que texto
     Box(0, l, texto);   // Imprime arquivo .txt dentro de uma caixa
     
-}
+} // REVER
 int     command                            (void) {
     
-    int c1, c2, c3;     // Contadores
-    int i=0, j=0, v=0;  // Guarda commando
-    char rs[10][30];    // Guarda input do usuário
+    int c1, c2, c3;         // Contadores
+    float i=0, j=0, v=0;    // Guarda commando
+    char rs[10][50];        // Guarda input do usuário
     
     
     // Zera strings de rs:
@@ -260,19 +260,13 @@ int     command                            (void) {
         printf("Project Matrix: $ ");
         fgets(rs[0], 30, stdin);
         
-        for (c1=0; c1<strlen(rs[0]); c1++){ // Proíbe o usuário de digitar numeros que iniciem com 0 e que tenham mais de 4 digitos
-            if ( ((rs[0][c1]=='0') && ( ((rs[0][c1-1]<'1') || (rs[0][c1-1]>'9')) && ((rs[0][c1-2]<'1') || (rs[0][c1-2]>'9')) ))  ||  ( ((rs[0][c1]>='1' && rs[0][c1]<='9') && (rs[0][c1-1]<'1' || rs[0][c1]>'9')) && (rs[0][c1+3]>='0' && rs[0][c1+3]<='9') )){
-                rs[0][0]='\0';
-                Box(0, 40, "ERRO! - Numero inválido\n");
-            }
-        }
     }
     
     
     // Parte a funçao inserida pelo usuário por palavras em strings diferentes:
     
     for (c1=0, c2=1, c3=0;c1<strlen(rs[0])+1;c1++, c3++){
-        if (rs[0][c1]==' ') { rs[c2][c3]='\0'; c2++; c3=0; c1++;}
+        if (rs[0][c1]==' ') { rs[c2][c3]='\0'; c2++; c3=0; c1++; }
         rs[c2][c3]=rs[0][c1];
     }
     rs[c2+1][0]='\0';
@@ -286,8 +280,7 @@ int     command                            (void) {
             if ((strcmp(rs[c1],rs[c2])==0) && rs[c1][0]!='\0' && c1!=c2) { c3++; break; }
         }
     }
-    
-    if (c3!=0) { Box(0, 40, "ERRO! - Funções repetidas\n"); }
+    if (c3!=0) { Box(0, 40, "ERRO! - Funções repetidas!\n"); }
     
     
     else {
@@ -295,15 +288,9 @@ int     command                            (void) {
         // Recebe numeros inseridos pelo usuário:
         
         for (c1=2; rs[c1][0]!='\0'; c1++) {
-            if (strcmp(rs[c1],"-i")==0){
-                i = chtoin(rs[c1+1]);
-            }
-            if (strcmp(rs[c1],"-j")==0){
-                j = chtoin(rs[c1+1]);
-            }
-            if (strcmp(rs[c1],"-v")==0){
-                v = chtoin(rs[c1+1]);
-            }
+            if (strcmp(rs[c1],"-i")==0 || strcmp(rs[c1],"-m")==0){ i = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-j")==0 || strcmp(rs[c1],"-M")==0){ j = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-v")==0){ v = atof(rs[c1+1]); }
         }
         
         
@@ -377,7 +364,7 @@ void    minfo                              (void) {
     struct matrix x;
     char stats[1000];
     int mi[3];
-    int det[4]; char form[10], type[100];
+    float det[4]; char form[10], type[100];
     
     
     // Recupera dados da matriz:
@@ -389,9 +376,9 @@ void    minfo                              (void) {
     
     for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){                              // Recumera valores da matriz
         for (mi[1]=0; mi[1]<x.ncolunas-1; mi[1]++){
-            fscanf(X, "%d ", &x.matriz[mi[1]][mi[0]]);
+            fscanf(X, "%f ", &x.matriz[mi[1]][mi[0]]);
         }
-        fscanf(X , "%d\n", &x.matriz[mi[1]][mi[0]]);
+        fscanf(X , "%f\n", &x.matriz[mi[1]][mi[0]]);
     }
     
     fclose(X);
@@ -560,7 +547,7 @@ void    minfo                              (void) {
                         "Dimensões    - (%d, %d)\n"
                         "Formato      - %s\n"
                         "Tipo         - %s\n"
-                        "Determinante - %d\n", x.ncolunas, x.nlinhas, form, type, det[0]);
+                        "Determinante - %f\n", x.ncolunas, x.nlinhas, form, type, det[0]);
             } else {
                 sprintf(stats,
                         "Matriz guardada na memória X:\n"
@@ -648,9 +635,9 @@ void    sh_matriz                          (void) {
         
         for (msh1=0; msh1<x.nlinhas; msh1++){
             for (msh2=0; msh2<x.ncolunas-1; msh2++){
-                fscanf(X, "%d ", &x.matriz[msh2][msh1]);
+                fscanf(X, "%f ", &x.matriz[msh2][msh1]);
             }
-            fscanf(X, "%d\n", &x.matriz[msh2][msh1]);
+            fscanf(X, "%f\n", &x.matriz[msh2][msh1]);
         }
         
         fclose(X);
@@ -661,7 +648,7 @@ void    sh_matriz                          (void) {
             
             // Imprime cabeça da matriz:
             printf("---");
-            for (msh1=0; msh1<x.ncolunas*4+1; msh1++){
+            for (msh1=0; msh1<x.ncolunas*11+1; msh1++){
                 printf(" ");
             }
             printf("---\n");
@@ -671,24 +658,24 @@ void    sh_matriz                          (void) {
                 printf("|   ");
                 for (msh2=0; msh2<x.ncolunas-1; msh2++){
                     if (x.matriz[msh2][msh1]<1000){
-                        printf("%3d ", x.matriz[msh2][msh1]);
+                        printf("%3f ", x.matriz[msh2][msh1]);
                     } else { printf(" -  "); }
                 }
                 if (x.matriz[msh2][msh1]<1000){
-                    printf("%3d   |\n", x.matriz[msh2][msh1]);
+                    printf("%3f   |\n", x.matriz[msh2][msh1]);
                 } else { printf(" -    |\n"); }
             }
             
             // Imprime base da matriz:
             printf("---");
-            for (msh1=0; msh1<x.ncolunas*4+1; msh1++){
+            for (msh1=0; msh1<x.ncolunas*11+1; msh1++){
                 printf(" ");
             }
             printf("---\n");
         }
     }
     fclose(MATRIX);
-}
+} // REVER
 void    sh_help                            (void) {
     
     FILE *HELP;

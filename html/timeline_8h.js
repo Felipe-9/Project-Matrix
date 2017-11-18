@@ -8,6 +8,7 @@ var timeline_8h =
     [ "interface", "timeline_8h.html#aaae3321ed2b2096494c11ab2291a1fa7", null ],
     [ "minfo", "timeline_8h.html#a1863da15492dfbd7e56bbcabb1c3fd12", null ],
     [ "pbreak", "timeline_8h.html#ae0148fefdb3991d391d75ca2fceabf04", null ],
+    [ "precision", "timeline_8h.html#ad661547be29e40997b504a9cbfc861ec", null ],
     [ "sh_help", "timeline_8h.html#a2f431ddaf91a95a3f30710aea8a0ed60", null ],
     [ "sh_matriz", "timeline_8h.html#a6011bfa3f45d8a741e89a1f604d46769", null ],
     [ "showhide", "timeline_8h.html#a7293485c6e3dc571d5f0a25ecfc38364", null ]

@@ -179,7 +179,7 @@ void    Box         (int h,int l, char menu[100]) {
     
     // Imprime parte central com o texto:
     
-    for(b1=4; fgets(line, sizeof(line), box); b1++){
+    for(b1=2; fgets(line, sizeof(line), box); b1++){
         line[strlen(line)-1]='\0';
         printf("|  ");
         printf("%s",line);
@@ -217,6 +217,8 @@ void    interface               (char path[1000]) {
     
     FILE *txt = fopen (path, "r");
     
+    if (txt!=NULL) {    // Verifica existencia da Função
+        
     while(fgets(linha, sizeof(linha), txt)){        // Guarda cada linha do arquivo .txt em linha
         if (l<strlen(linha)) { l = strlen(linha); } // Guarda tamanho da maior linha
         for (i1=0;i1<strlen(linha);i1++){           // Guarda em sequencia cada linha em intro
@@ -231,8 +233,11 @@ void    interface               (char path[1000]) {
     
     if (l<40) { l=40; } // Proteção contra caixas menores que texto
     Box(0, l, texto);   // Imprime arquivo .txt dentro de uma caixa
+    }
     
-} // REVER
+    else { Box(0, 40, "ERRO! - Função desconhecida!"); } // Mensagem de ERRO
+    
+}
 int     command                            (void) {
     
     int c1, c2, c3;         // Contadores
@@ -602,7 +607,7 @@ void    showhide           (int s, char func[10]) {
 void    sh_matriz                          (void) {
     
     FILE *MATRIX, *X;                   // Verificação se deve mostrar e guarda a matriz
-    int msh1=0, msh2;                   // Contadores
+    int msh1=0, msh2, msh3, msh4;       // Contadores
     char line[50], func[10]="matrix";   // Guarda linhas e palavras para comparação
     struct matrix x;                    // Guarda de forma organizada os valores da matriz
     
@@ -644,11 +649,20 @@ void    sh_matriz                          (void) {
         
         if (x.verif>0){
             
+            // Acha maior quantidade de digitos:
+            int ch;
+            char f[20];
+            for (msh1=0, ch=0; msh1<x.nlinhas; msh1++) { for (msh2=0; msh2<x.ncolunas; msh2++) {
+                msh3 = sprintf(f, "%g", x.matriz[msh2][msh1]);
+                if (ch<msh3) { ch = msh3; }
+            }
+            }
+            
             // Mostra visualmente a matriz:
             
             // Imprime cabeça da matriz:
             printf("---");
-            for (msh1=0; msh1<x.ncolunas*11+1; msh1++){
+            for (msh1=0; msh1<x.ncolunas*(ch+1)+1; msh1++){
                 printf(" ");
             }
             printf("---\n");
@@ -656,26 +670,31 @@ void    sh_matriz                          (void) {
             // Imprime linhas com valores:
             for (msh1=0; msh1<x.nlinhas; msh1++){
                 printf("|   ");
-                for (msh2=0; msh2<x.ncolunas-1; msh2++){
-                    if (x.matriz[msh2][msh1]<1000){
-                        printf("%3f ", x.matriz[msh2][msh1]);
-                    } else { printf(" -  "); }
+                for (msh2=0; msh2<x.ncolunas; msh2++){
+                    switch (ch) {
+                        case 1: { printf("%g " , x.matriz[msh2][msh1]); } break;
+                        case 2: { printf("%2g ", x.matriz[msh2][msh1]); } break;
+                        case 3: { printf("%3g ", x.matriz[msh2][msh1]); } break;
+                        case 4: { printf("%4g ", x.matriz[msh2][msh1]); } break;
+                        case 5: { printf("%5g ", x.matriz[msh2][msh1]); } break;
+                        case 6: { printf("%6g ", x.matriz[msh2][msh1]); } break;
+                        case 7: { printf("%7g ", x.matriz[msh2][msh1]); } break;
+                        case 8: { printf("%8g ", x.matriz[msh2][msh1]); } break;
+                        case 9: { printf("%9g ", x.matriz[msh2][msh1]); } break;
+                    }
                 }
-                if (x.matriz[msh2][msh1]<1000){
-                    printf("%3f   |\n", x.matriz[msh2][msh1]);
-                } else { printf(" -    |\n"); }
+                printf("  |\n");
             }
-            
             // Imprime base da matriz:
             printf("---");
-            for (msh1=0; msh1<x.ncolunas*11+1; msh1++){
+            for (msh1=0; msh1<x.ncolunas*(ch+1)+1; msh1++){
                 printf(" ");
             }
             printf("---\n");
         }
     }
     fclose(MATRIX);
-} // REVER
+}
 void    sh_help                            (void) {
     
     FILE *HELP;

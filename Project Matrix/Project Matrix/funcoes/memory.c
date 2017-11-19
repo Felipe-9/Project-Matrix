@@ -21,7 +21,7 @@ void    swap    (void) {
     
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
-    if (x.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
+    if (x.verif==1){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sw1=0; sw1<x.nlinhas; sw1++){ for (sw2=0; sw2<x.ncolunas-1; sw2++){  // Recebe os valores de X em um array
             fscanf(X, "%f " , &x.matriz[sw2][sw1]);
@@ -37,7 +37,7 @@ void    swap    (void) {
     
     fscanf(Y, "%d,(%d,%d)\n", &y.verif, &y.ncolunas, &y.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
-    if (y.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
+    if (y.verif==1){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sw1=0; sw1<y.nlinhas; sw1++){ for (sw2=0; sw2<y.ncolunas-1; sw2++){  // Recebe os valores de Y em um array
             fscanf(Y, "%f " , &y.matriz[sw2][sw1]);
@@ -90,7 +90,7 @@ void    enter   (void) {
     
     fscanf(Z, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(W, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (e1=0; e1<a.nlinhas; e1++) { for (e2=0; e2<a.ncolunas-1; e2++) {
             fscanf(Z, "%f " , &a.matriz[e2][e1]); fprintf(W, "%f " , a.matriz[e2][e1]);
         }   fscanf(Z, "%f\n", &a.matriz[e2][e1]); fprintf(W, "%f\n", a.matriz[e2][e1]);
@@ -104,7 +104,7 @@ void    enter   (void) {
     
     fscanf(Y, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(Z, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (e1=0; e1<a.nlinhas; e1++) { for (e2=0; e2<a.ncolunas-1; e2++) {
             fscanf(Y, "%f " , &a.matriz[e2][e1]); fprintf(Z, "%f " , a.matriz[e2][e1]);
         }   fscanf(Y, "%f\n", &a.matriz[e2][e1]); fprintf(Z, "%f\n", a.matriz[e2][e1]);
@@ -118,7 +118,7 @@ void    enter   (void) {
     
     fscanf(X, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(Y, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (e1=0; e1<a.nlinhas; e1++) { for (e2=0; e2<a.ncolunas-1; e2++) {
             fscanf(X, "%f " , &a.matriz[e2][e1]); fprintf(Y, "%f " , a.matriz[e2][e1]);
         }   fscanf(X, "%f\n", &a.matriz[e2][e1]); fprintf(Y, "%f\n", a.matriz[e2][e1]);
@@ -140,7 +140,7 @@ void    drop    (void) {
     
     fscanf(Y, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(X, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif=1) {
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
             fscanf(Y, "%f " , &a.matriz[d2][d1]); fprintf(X, "%f " , a.matriz[d2][d1]);
         }   fscanf(Y, "%f\n", &a.matriz[d2][d1]); fprintf(X, "%f\n", a.matriz[d2][d1]);
@@ -154,7 +154,7 @@ void    drop    (void) {
     
     fscanf(Z, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(Y, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
             fscanf(Z, "%f " , &a.matriz[d2][d1]); fprintf(Y, "%f " , a.matriz[d2][d1]);
         }   fscanf(Z, "%f\n", &a.matriz[d2][d1]); fprintf(Y, "%f\n", a.matriz[d2][d1]);
@@ -168,7 +168,7 @@ void    drop    (void) {
     
     fscanf(W, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(Z, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
             fscanf(W, "%f " , &a.matriz[d2][d1]); fprintf(Z, "%f " , a.matriz[d2][d1]);
         }   fscanf(W, "%f\n", &a.matriz[d2][d1]); fprintf(Z, "%f\n", a.matriz[d2][d1]);
@@ -189,10 +189,10 @@ void    roll    (void) {
     
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);
     
-    if (x.verif>0) {
+    if (x.verif==1) {
         for (d1=0; d1<x.nlinhas; d1++){ for (d2=0; d2<x.ncolunas-1; d2++) {
             fscanf(X, "%f " , &x.matriz[d2][d1]);
-        }   fscanf(X, "%f\b", &x.matriz[d2][d1]);
+        }   fscanf(X, "%f\n", &x.matriz[d2][d1]);
         }
     }
     
@@ -204,7 +204,7 @@ void    roll    (void) {
     
     fscanf(Y, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(X, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
             fscanf(Y, "%f " , &a.matriz[d2][d1]); fprintf(X, "%f " , a.matriz[d2][d1]);
         }   fscanf(Y, "%f\n", &a.matriz[d2][d1]); fprintf(X, "%f\n", a.matriz[d2][d1]);
@@ -218,7 +218,7 @@ void    roll    (void) {
     
     fscanf(Z, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(Y, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
             fscanf(Z, "%f " , &a.matriz[d2][d1]); fprintf(Y, "%f " , a.matriz[d2][d1]);
         }   fscanf(Z, "%f\n", &a.matriz[d2][d1]); fprintf(Y, "%f\n", a.matriz[d2][d1]);
@@ -232,7 +232,7 @@ void    roll    (void) {
     
     fscanf(W, "%d,(%d,%d)\n", &a.verif, &a.ncolunas, &a.nlinhas); fprintf(Z, "%d,(%d,%d)\n", a.verif, a.ncolunas, a.nlinhas);
     
-    if (a.verif>0){
+    if (a.verif==1){
         for (d1=0; d1<a.nlinhas; d1++) { for (d2=0; d2<a.ncolunas-1; d2++) {
             fscanf(W, "%f " , &a.matriz[d2][d1]); fprintf(Z, "%f " , a.matriz[d2][d1]);
         }   fscanf(W, "%f\n", &a.matriz[d2][d1]); fprintf(Z, "%f\n", a.matriz[d2][d1]);
@@ -246,10 +246,10 @@ void    roll    (void) {
     
     fprintf(W, "%d,(%d,%d)\n", x.verif, x.ncolunas, x.nlinhas);
     
-    if (x.verif>0) {
+    if (x.verif==1) {
         for (d1=0; d1<x.nlinhas; d1++){ for (d2=0; d2<x.ncolunas-1; d2++) {
             fprintf(W, "%f " , x.matriz[d2][d1]);
-        }   fprintf(W, "%f\b", x.matriz[d2][d1]);
+        }   fprintf(W, "%f\n", x.matriz[d2][d1]);
         }
     }
     
@@ -300,13 +300,13 @@ void    clrv    (void) {
     
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);   // Recebe valores de inicialização e dimensões de X
     
-    if (x.verif>0) {
+    if (x.verif==1) {
         fseek(X, 8, SEEK_SET);  // Aponta para inicio dos valores da matriz X
         for (v1=0; v1<x.nlinhas; v1++) { for (v2=0; v2<x.ncolunas-1; v2++) {    // Insere valor reconhecido como nulo
-            fprintf(X, " " );
-        }   fprintf(X, " \n");
+            fprintf(X, "0 " );
+        }   fprintf(X, "0\n");
         }
     } else { Box(0, 40,"ERRO! - Matriz sem dimensões definidas!"); }    // Mensagem de ERRO
     
     fclose(X);
-}   // REVER
+}

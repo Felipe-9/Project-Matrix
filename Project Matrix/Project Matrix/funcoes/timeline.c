@@ -368,7 +368,7 @@ void    minfo                              (void) {
     
     struct matrix x;
     char stats[1000];
-    int mi[3];
+    int mi1, mi2, mi3;
     float det[4]; char form[10], type[100];
     
     
@@ -379,46 +379,20 @@ void    minfo                              (void) {
     
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);  // Recupera numero de inicialização e dimensões da matriz
     
-    for (mi[0]=0; mi[0]<x.nlinhas; mi[0]++){                              // Recumera valores da matriz
-        for (mi[1]=0; mi[1]<x.ncolunas-1; mi[1]++){
-            fscanf(X, "%f ", &x.matriz[mi[1]][mi[0]]);
-        }
-        fscanf(X , "%f\n", &x.matriz[mi[1]][mi[0]]);
-    }
+    for (mi1=0; mi1<x.nlinhas; mi1++){ for (mi2=0; mi2<x.ncolunas-1; mi2++)
+    { fscanf(X, "%f ", &x.matriz[mi2][mi1]); } fscanf(X , "%f\n", &x.matriz[mi2][mi1]); }
     
     fclose(X);
     
     
     // Prepara as estatisticas da matriz:
     
-    switch (x.verif) {
-        case 0: { sprintf(stats,
+    if (x.verif==0) {
+        sprintf(stats,
                           "Matriz sem dimenções definidas\n"
-                          "Dimensões - (%d, %d)\n", x.ncolunas, x.nlinhas); } break;
-        case 1: {
-            
-            // Tipo da matriz levando em conta a forma:
-            
-            if (x.nlinhas==x.ncolunas){
-                sprintf(form, "Quadrada");
-            } else if (x.ncolunas==1) {
-                sprintf(form, ("Linear"));
-            } else if (x.nlinhas==1) {
-                sprintf(form, ("Coluna"));
-            } else {
-                sprintf(form, ("Comum"));
-            }
-            
-            // Prepara output:
-            
-            sprintf(stats,
-                    "Matriz guardada na memória X:\n"
-                    "Dimensões - (%d, %d)\n"
-                    "Formato   - %s\n"
-                    "Matriz incompleta!\n", x.ncolunas, x.nlinhas, form);
-        } break;
-        case 2: {
-            
+                          "Dimensões - (%d, %d)\n", x.ncolunas, x.nlinhas);
+    } else {
+        
             // Tipo da matriz levando em conta a forma:
             
             if (x.nlinhas==x.ncolunas){
@@ -441,106 +415,80 @@ void    minfo                              (void) {
                         
                         // Diagonais positivas:
                         
-                        for (mi[0]=0, det[1]=1; mi[0]<3; mi[0]++){      // 1a Diagonal positiva
-                            det[1] = det[1]*x.matriz[mi[0]][mi[0]];
-                        }
+                        // 1a Diagonal positiva:
+                        for (mi1=0, det[1]=1; mi1<3; mi1++){ det[1] = det[1] * x.matriz[mi1][mi1]; }
                         
-                        for (mi[0]=0, det[2]=1; mi[0]<3; mi[0]++){      // 2a Diagonal positiva
-                            for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if (mi[1]+1==mi[0]||mi[1]==mi[0]+2){
-                                    det[2] = det[2]*x.matriz[mi[1]][mi[0]];
+                        // 2a Diagonal positiva:
+                        for (mi1=0, det[2]=1; mi1<3; mi1++) { for (mi2=0; mi2<3; mi2++) { if (mi2+1==mi1||mi2==mi1+2) {
+                                    det[2] = det[2] * x.matriz[mi2][mi1];
                                 }
                             }
                         }
                         
-                        for (mi[0]=0, det[3]=1; mi[0]<3; mi[0]++){      // 3a Diagonal positiva
-                            for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if (mi[1]==mi[0]+1||mi[1]+2==mi[0]){
-                                    det[3] = det[3]*x.matriz[mi[1]][mi[0]];
+                        // 3a Diagonal positiva:
+                        for (mi1=0, det[3]=1; mi1<3; mi1++) { for (mi2=0; mi2<3; mi2++) { if (mi2==mi1+1||mi2+2==mi1) {
+                                    det[3] = det[3] * x.matriz[mi2][mi1];
                                 }
                             }
                         }
                         
-                        for (mi[0]=1, det[0]=0; mi[0]<4; mi[0]++){                // Soma diagonais positivas
-                            det[0] = det[0] + det[mi[0]];
-                        }
+                        // Soma diagonais positivas:
+                        for (mi1=1, det[0]=0; mi1<4; mi1++) { det[0] = det[0] + det[mi1]; }
                         
                         // Diagonais negativas:
                         
-                        for (mi[0]=0, mi[1]=2, det[1]=1; mi[0]<3; mi[0]++, mi[1]--){    // 1a Diagonal negativa
-                            det[1] = det[1] * x.matriz[mi[1]][mi[0]];
-                        }
+                        // 1a Diagonal negativa:
+                        for (mi1=0, mi2=2, det[1]=1; mi1<3; mi1++, mi2--) { det[1] = det[1] * x.matriz[mi2][mi1]; }
                         
-                        for (mi[0]=0, det[2]=1; mi[0]<3; mi[0]++){                      // 2a Diagonal negativa
-                            for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if ((mi[1]+mi[0])==1 || (mi[1]==2 && mi[0]==2) ) {
-                                    det[2] = det[2]*x.matriz[mi[1]][mi[0]];
+                        // 2a Diagonal negativa:
+                        for (mi1=0, det[2]=1; mi1<3; mi1++){ for (mi2=0; mi2<3; mi2++){ if ((mi2+mi1)==1 || (mi2==2 && mi1==2) ) {
+                                    det[2] = det[2]*x.matriz[mi2][mi1];
                                 }
                             }
                         }
                         
-                        for (mi[0]=0, det[3]=1; mi[0]<3; mi[0]++){                      // 3a Diagonal negativa
-                            for (mi[1]=0; mi[1]<3; mi[1]++){
-                                if (mi[1]+mi[0]==3 || (mi[1]==0 && mi[0]==0) ) {
-                                    det[3] = det[3]*x.matriz[mi[1]][mi[0]];
+                        // 3a Diagonal negativa:
+                        for (mi1=0, det[3]=1; mi1<3; mi1++) { for (mi2=0; mi2<3; mi2++){ if (mi2+mi1==3 || (mi2==0 && mi1==0) ) {
+                                    det[3] = det[3] * x.matriz[mi2][mi1];
                                 }
                             }
                         }
                         
-                        for (mi[0]=1; mi[0]<4; mi[0]++){                                // Subtrai diagonais negativas
-                            det[0] = det[0] - det[mi[0]];
-                        }
+                        // Subtrai diagonais negativas:
+                        for (mi1=1; mi1<4; mi1++) { det[0] = det[0] - det[mi1]; }
+                        
                     } break;
                 }
             }
             
             // Determinar tipo de matriz:
             
-            for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
-                for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
-                    if (x.matriz[mi[1]][mi[0]]!=0){
-                        mi[2]++;
+            for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) { if (x.matriz[mi2][mi2]!=0) { mi3++; } } }
+            if (mi3==0) { sprintf(type, "Matriz nula"); } else {
+                
+                for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++){ for (mi2=0; mi2<x.ncolunas; mi2++){
+                        if ( ((mi2>mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2<=mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
                     }
                 }
-            }
-            if (mi[2]==0) { sprintf(type, "Matriz nula"); }
-            else {
-                for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
-                    for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
-                        if ( ((mi[1]>mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]<=mi[0]) && (x.matriz[mi[1]][mi[0]]==0)) ){
-                            mi[2]++;
+                if (mi3==0) { sprintf(type, "Matriz triangular inferior"); } else {
+                    
+                    for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) {
+                            if ( ((mi2<mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2<=mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
                         }
                     }
-                }
-                if (mi[2]==0) { sprintf(type, "Matriz triangular inferior"); }
-                else {
-                    for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
-                        for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
-                            if ( ((mi[1]<mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]<=mi[0]) && (x.matriz[mi[1]][mi[0]]==0)) ){
-                                mi[2]++;
+                    if (mi3==0) { sprintf(type, "Matriz triangular superior"); } else {
+                        
+                        for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++){
+                                if ( ((mi2!=mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2==mi1) && (x.matriz[mi2][mi1]!=1)) ) { mi3++; }
                             }
                         }
-                    }
-                    if (mi[2]==0) { sprintf(type, "Matriz triangular superior"); }
-                    else {
-                        for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
-                            for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
-                                if ( ((mi[1]!=mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]==mi[0]) && (x.matriz[mi[1]][mi[0]]!=1)) ){
-                                    mi[2]++;
+                        if (mi3==0) { sprintf(type, "Matriz identidade e diagonal"); } else {
+                            
+                            for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) {
+                                    if ( ((mi2!=mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2==mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
                                 }
                             }
-                        }
-                        if (mi[2]==0) { sprintf(type, "Matriz identidade e diagonal"); }
-                        else {
-                            for (mi[0]=0, mi[2]=0; mi[0]<x.nlinhas; mi[0]++){
-                                for (mi[1]=0; mi[1]<x.ncolunas; mi[1]++){
-                                    if ( ((mi[1]!=mi[0]) && (x.matriz[mi[1]][mi[0]]!=0)) || ((mi[1]==mi[0]) && (x.matriz[mi[1]][mi[0]]==0)) ){
-                                        mi[2]++;
-                                    }
-                                }
-                            }
-                            if (mi[2]==0) { sprintf(type, "Matriz diagonal"); }
-                            else { sprintf(type, "Comum"); }
+                            if (mi3==0) { sprintf(type, "Matriz diagonal"); } else { sprintf(type, "Comum"); }
                         }
                     }
                 }
@@ -560,7 +508,6 @@ void    minfo                              (void) {
                         "Formato      - %s\n"
                         "Tipo         - %s\n", x.ncolunas, x.nlinhas, form, type);
             }
-    }
     Box(0, 43, stats);
     
 }
@@ -611,7 +558,6 @@ void    sh_matriz                          (void) {
     char line[50], func[10]="matrix";   // Guarda linhas e palavras para comparação
     struct matrix x;                    // Guarda de forma organizada os valores da matriz
     
-    
     // Verifica se deve imprimir a matriz:
     
     MATRIX = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/switch.txt", "r");
@@ -638,59 +584,46 @@ void    sh_matriz                          (void) {
         
         fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);
         
-        for (msh1=0; msh1<x.nlinhas; msh1++){
-            for (msh2=0; msh2<x.ncolunas-1; msh2++){
-                fscanf(X, "%f ", &x.matriz[msh2][msh1]);
-            }
-            fscanf(X, "%f\n", &x.matriz[msh2][msh1]);
-        }
+        for (msh1=0; msh1<x.nlinhas; msh1++){ for (msh2=0; msh2<x.ncolunas-1; msh2++)
+        { fscanf(X, "%f " , &x.matriz[msh2][msh1]); } fscanf(X, "%f\n", &x.matriz[msh2][msh1]); }
         
         fclose(X);
         
-        if (x.verif>0){
+        if (x.verif==1){
             
             // Acha maior quantidade de digitos:
             int ch;
             char f[20];
-            for (msh1=0, ch=0; msh1<x.nlinhas; msh1++) { for (msh2=0; msh2<x.ncolunas; msh2++) {
-                msh3 = sprintf(f, "%g", x.matriz[msh2][msh1]);
-                if (ch<msh3) { ch = msh3; }
+            for (msh1=0, ch=0; msh1<x.nlinhas; msh1++) { for (msh2=0; msh2<x.ncolunas; msh2++)
+            { msh3 = sprintf(f, "%g", x.matriz[msh2][msh1]); if (ch<msh3) { ch = msh3; }
             }
             }
             
             // Mostra visualmente a matriz:
             
             // Imprime cabeça da matriz:
-            printf("---");
-            for (msh1=0; msh1<x.ncolunas*(ch+1)+1; msh1++){
-                printf(" ");
-            }
-            printf("---\n");
+            printf("---"); for (msh1=0; msh1<x.ncolunas*(ch+1)+1; msh1++) { printf(" "); } printf("---\n");
             
             // Imprime linhas com valores:
             for (msh1=0; msh1<x.nlinhas; msh1++){
                 printf("|   ");
-                for (msh2=0; msh2<x.ncolunas; msh2++){
-                    switch (ch) {
-                        case 1: { printf("%g " , x.matriz[msh2][msh1]); } break;
-                        case 2: { printf("%2g ", x.matriz[msh2][msh1]); } break;
-                        case 3: { printf("%3g ", x.matriz[msh2][msh1]); } break;
-                        case 4: { printf("%4g ", x.matriz[msh2][msh1]); } break;
-                        case 5: { printf("%5g ", x.matriz[msh2][msh1]); } break;
-                        case 6: { printf("%6g ", x.matriz[msh2][msh1]); } break;
-                        case 7: { printf("%7g ", x.matriz[msh2][msh1]); } break;
-                        case 8: { printf("%8g ", x.matriz[msh2][msh1]); } break;
-                        case 9: { printf("%9g ", x.matriz[msh2][msh1]); } break;
-                    }
+                for (msh2=0; msh2<x.ncolunas; msh2++){ switch (ch) {
+                    case 1: { printf("%g " , x.matriz[msh2][msh1]); } break;
+                    case 2: { printf("%2g ", x.matriz[msh2][msh1]); } break;
+                    case 3: { printf("%3g ", x.matriz[msh2][msh1]); } break;
+                    case 4: { printf("%4g ", x.matriz[msh2][msh1]); } break;
+                    case 5: { printf("%5g ", x.matriz[msh2][msh1]); } break;
+                    case 6: { printf("%6g ", x.matriz[msh2][msh1]); } break;
+                    case 7: { printf("%7g ", x.matriz[msh2][msh1]); } break;
+                    case 8: { printf("%8g ", x.matriz[msh2][msh1]); } break;
+                    case 9: { printf("%9g ", x.matriz[msh2][msh1]); } break;
+                }
                 }
                 printf("  |\n");
             }
+            
             // Imprime base da matriz:
-            printf("---");
-            for (msh1=0; msh1<x.ncolunas*(ch+1)+1; msh1++){
-                printf(" ");
-            }
-            printf("---\n");
+            printf("---"); for (msh1=0; msh1<x.ncolunas*(ch+1)+1; msh1++){ printf(" "); } printf("---\n");
         }
     }
     fclose(MATRIX);

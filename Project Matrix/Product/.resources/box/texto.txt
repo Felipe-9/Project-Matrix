@@ -1,4 +1,1 @@
-Matriz guardada na memória X:
-Dimensões    - (3, 4)
-Formato      - Comum
-Tipo         - Comum
+ERRO! - Matriz em X ou em Y incompleta!

@@ -21,7 +21,7 @@ void    sum      (void) {
     
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
-    if (x.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
+    if (x.verif==1){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sum1=0; sum1<x.nlinhas; sum1++){ for (sum2=0; sum2<x.ncolunas-1; sum2++){  // Recebe os valores de X em um array
             fscanf(X, "%f " , &x.matriz[sum2][sum1]);
@@ -37,7 +37,7 @@ void    sum      (void) {
     
     fscanf(Y, "%d,(%d,%d)\n", &y.verif, &y.ncolunas, &y.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
-    if (y.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
+    if (y.verif==1){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sum1=0; sum1<y.nlinhas; sum1++){ for (sum2=0; sum2<y.ncolunas-1; sum2++){  // Recebe os valores de Y em um array
             fscanf(Y, "%f " , &y.matriz[sum2][sum1]);
@@ -52,7 +52,7 @@ void    sum      (void) {
     // 2a Etapa - Somar matrizes:
     
     // Verifica se ambas as matrizes estão completas e tem as mesmas dimensões
-    if ( ( x.verif==2 && y.verif==2 ) && ( x.ncolunas == y.ncolunas && x.nlinhas == y.nlinhas ) ) {
+    if ( ( x.verif==1 && y.verif==1 ) && ( x.ncolunas == y.ncolunas && x.nlinhas == y.nlinhas ) ) {
         
         for (sum1=0; sum1<x.nlinhas; sum1++) { for (sum2=0; sum2<x.ncolunas; sum2++){   // Soma e guarda os resultados no array de x
             x.matriz[sum2][sum1] = x.matriz[sum2][sum1] + y.matriz[sum2][sum1];
@@ -79,7 +79,7 @@ void    sum      (void) {
     }
     
     // Mensagens de ERRO!:
-    else if ( x.verif<2 || y.verif<2                          ) { Box(0, 40, "ERRO! - Matriz em X ou em Y incompleta!\n"     ); }
+    else if ( x.verif==0 || y.verif==0                        ) { Box(0, 40, "ERRO! - Matriz em X ou em Y incompleta!\n"     ); }
     else if ( x.ncolunas!=y.nlinhas  || y.ncolunas!=y.nlinhas ) { Box(0, 40, "ERRO! - Matriz em X ou em Y não é quadrada!\n" ); }
     else if ( x.ncolunas!=y.ncolunas || x.nlinhas!=y.nlinhas  ) { Box(0, 40, "ERRO! - Matrizes de dimensões diferentes!\n"   ); }
     
@@ -97,7 +97,7 @@ void    sub      (void) {
     
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
-    if (x.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
+    if (x.verif==1){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sub1=0; sub1<x.nlinhas; sub1++){ for (sub2=0; sub2<x.ncolunas-1; sub2++){  // Recebe os valores de X em um array
             fscanf(X, "%f " , &x.matriz[sub2][sub1]);
@@ -113,7 +113,7 @@ void    sub      (void) {
     
     fscanf(Y, "%d,(%d,%d)\n", &y.verif, &y.ncolunas, &y.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
-    if (y.verif==2){    // Verifica se a matriz está completa antes de receber seus valores
+    if (y.verif==1){    // Verifica se a matriz está completa antes de receber seus valores
         
         for (sub1=0; sub1<y.nlinhas; sub1++){ for (sub2=0; sub2<y.ncolunas-1; sub2++){  // Recebe os valores de Y em um array
             fscanf(Y, "%f " , &y.matriz[sub2][sub1]);
@@ -128,7 +128,7 @@ void    sub      (void) {
     // 2a Etapa - Somar matrizes:
     
     // Verifica se ambas as matrizes estão completas e tem as mesmas dimensões
-    if ( ( x.verif==2 && y.verif==2 ) && ( x.ncolunas == y.ncolunas && x.nlinhas == y.nlinhas ) ) {
+    if ( ( x.verif==1 && y.verif==1 ) && ( x.ncolunas == y.ncolunas && x.nlinhas == y.nlinhas ) ) {
         
         for (sub1=0; sub1<x.nlinhas; sub1++) { for (sub2=0; sub2<x.ncolunas; sub2++){   // Soma e guarda os resultados no array de x
             x.matriz[sub2][sub1] = y.matriz[sub2][sub1] - x.matriz[sub2][sub1];
@@ -155,7 +155,7 @@ void    sub      (void) {
     }
     
     // Mensagens de ERRO!:
-    else if ( x.verif<2 || y.verif<2                          ) { Box(0, 40, "ERRO! - Matriz em X ou em Y incompleta!\n"     ); }
+    else if ( x.verif==0 || y.verif==0                        ) { Box(0, 40, "ERRO! - Matriz em X ou em Y incompleta!\n"     ); }
     else if ( x.ncolunas!=y.nlinhas  || y.ncolunas!=y.nlinhas ) { Box(0, 40, "ERRO! - Matriz em X ou em Y não é quadrada!\n" ); }
     else if ( x.ncolunas!=y.ncolunas || x.nlinhas!=y.nlinhas  ) { Box(0, 40, "ERRO! - Matrizes de dimensões diferentes!\n"   ); }
     
@@ -174,32 +174,32 @@ void    mtim     (void) {
     
     fscanf(X, "%d,(%d,%d)", &x.verif, &x.ncolunas, &x.nlinhas); fscanf(Y, "%d,(%d,%d)", &y.verif, &y.ncolunas, &y.nlinhas);
     
-    if (x.verif==2 && y.verif==2 && ( x.ncolunas==y.nlinhas && x.nlinhas==y.ncolunas ) ) {
+    if (x.verif==1 && y.verif==1 && ( x.ncolunas==y.nlinhas && x.nlinhas==y.ncolunas ) ) {
         if (x.nlinhas>x.ncolunas){
             
             for (mt1=0; mt1<x.nlinhas; mt1++) { for (mt2=0; mt2<x.nlinhas-1; mt2++){
-                if (mt2<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f " , &x.matriz[mt2][mt1]); } else { x.matriz[mt2][mt1] = 1000; }
-                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f " , &y.matriz[mt2][mt1]); } else { y.matriz[mt2][mt1] = 1000; }
+                if (mt2<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f " , &x.matriz[mt2][mt1]); }
+                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f " , &y.matriz[mt2][mt1]); }
             }
-                if (mt2<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f\n", &x.matriz[mt2][mt1]); } else { x.matriz[mt2][mt1] = 1000; }
-                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f\n", &y.matriz[mt2][mt1]); } else { y.matriz[mt2][mt1] = 1000; }
+                if (mt2<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f\n", &x.matriz[mt2][mt1]); }
+                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f\n", &y.matriz[mt2][mt1]); }
             }
             
         } else {
            
             for (mt1=0; mt1<x.ncolunas; mt1++) { for (mt2=0; mt2<x.ncolunas-1; mt2++){
-                if (mt1<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f " , &x.matriz[mt2][mt1]); } else { x.matriz[mt2][mt1] = 1000; }
-                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f " , &y.matriz[mt2][mt1]); } else { y.matriz[mt2][mt1] = 1000; }
+                if (mt1<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f " , &x.matriz[mt2][mt1]); }
+                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f " , &y.matriz[mt2][mt1]); }
             }
-                if (mt2<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f\n", &x.matriz[mt2][mt1]); } else { x.matriz[mt2][mt1] = 1000; }
-                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f\n", &y.matriz[mt2][mt1]); } else { y.matriz[mt2][mt1] = 1000; }
+                if (mt2<x.ncolunas && mt1<x.nlinhas) { fscanf(X, "%f\n", &x.matriz[mt2][mt1]); }
+                if (mt2<y.ncolunas && mt1<y.nlinhas) { fscanf(Y, "%f\n", &y.matriz[mt2][mt1]); }
             }
         }
     }
     
     fclose(X); fclose(Y);
     
-    if (x.verif==2 && y.verif==2 && ( x.ncolunas==y.nlinhas && x.nlinhas==y.ncolunas ) ){
+    if (x.verif==1 && y.verif==1 && ( x.ncolunas==y.nlinhas && x.nlinhas==y.ncolunas ) ){
         
         
         // 2a Etapa - Multiplicar:
@@ -233,13 +233,13 @@ void    mtim     (void) {
         fclose(X);
         
     }
-    else if ( (x.ncolunas!=y.nlinhas || x.nlinhas!=y.ncolunas) && (x.verif!=2 || y.verif!=2) )
+    else if ( (x.ncolunas!=y.nlinhas || x.nlinhas!=y.ncolunas) && (x.verif==0 || y.verif==0) )
         
     { Box(0, 40,
           "ERRO! - Matrizes possuem dimensões imcompariveis!\n"
           "ERRO! - Matrizes incompletas\n"); }
     
-    else if ( x.verif!=2 || y.verif!=2 )                       { Box (0, 40, "ERRO! - Matrizes incompletas!\n"                    ); }
+    else if ( x.verif==0 || y.verif==0 )                       { Box (0, 40, "ERRO! - Matrizes incompletas!\n"                    ); }
     else if ( x.ncolunas!=y.nlinhas || x.nlinhas!=y.ncolunas ) { Box (0, 40, "ERRO! - Matrizes possuem dimensões incompativeis!\n"); }
 }
 void    vtim  (float v) {
@@ -250,7 +250,7 @@ void    vtim  (float v) {
     
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);   // Recebe numero de verificação, colunas e linhas da matriz
     
-    if (x.verif==2){    // Verifica se a matriz esta completa
+    if (x.verif==1){    // Verifica se a matriz esta completa
         
         for (vt1=0; vt1<x.nlinhas; vt1++) { for (vt2=0; vt2<x.ncolunas-1; vt2++) {  // Recebe valores de X
             fscanf (X, "%f " , &x.matriz[vt2][vt1]);
@@ -277,7 +277,7 @@ void    mpow    (int v) {
     
     fscanf(X, "%d,(%d,%d)\n", &x1.verif, &x1.ncolunas, &x1.nlinhas);    // Recebe dados de X
     
-    if (x1.verif==2 && x1.nlinhas==x1.ncolunas) {   // Verifica se é possivel realizar operação
+    if (x1.verif==1 && x1.nlinhas==x1.ncolunas) {   // Verifica se é possivel realizar operação
         
         for (pow1=0; pow1<x1.nlinhas; pow1++) { for (pow2=0; pow2<x1.ncolunas-1; pow2++) {  // Recebe valores da matriz
             fscanf(X, "%f " , &x1.matriz[pow2][pow1]); x2.matriz[pow2][pow1] = x1.matriz[pow2][pow1];
@@ -314,7 +314,7 @@ void    mpow    (int v) {
     }
     
     // Mensagens de ERRO!:
-    else if (x1.verif!=2)             { Box(0, 40, "ERRO! - Matriz incompleta\n"   ); }
+    else if (x1.verif==0)             { Box(0, 40, "ERRO! - Matriz incompleta\n"   ); }
     else if (x1.ncolunas!=x1.nlinhas) { Box(0, 40, "ERRO! - Matriz não quadrada!\n"); }
     else { Box(0, 40, "ERRO! - Desconheçido!\n"); }
     

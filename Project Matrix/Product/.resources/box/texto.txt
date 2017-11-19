@@ -1,1 +1,5 @@
-ERRO! - Matriz em X ou em Y incompleta!
+Matriz guardada na memória X:
+Dimensões    - (2, 2)
+Formato      - Quadrada
+Tipo         - Matriz nula
+Determinante - 0.000000

@@ -271,8 +271,8 @@ void    vtim  (float v) {
 }
 void    mpow    (int v) {
     
-    int pow1, pow2, pow3, pow4, pow5;   // Contadores
-    struct matrix x1, x2, r;            // Matrizes
+    int pow1, pow2, pow3, pow4; float rs;   // Contadores
+    struct matrix x1, x2, r;                // Matrizes
     FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "%d,(%d,%d)\n", &x1.verif, &x1.ncolunas, &x1.nlinhas);    // Recebe dados de X
@@ -289,10 +289,10 @@ void    mpow    (int v) {
         for (pow1=0; pow1<v-1; pow1++){                                                 // Repete a operação quantas vezes foram requiridas pelo usuário
             for (pow2=0; pow2<x1.nlinhas; pow2++) {                                     // Conta cada linha de X
                 for (pow3=0; pow3<x1.ncolunas; pow3++){                                 // Conta cada coluna de X
-                    for (pow4=0, pow5=0; pow4<x1.ncolunas; pow4++){                     // Conta cada coluna de Y
-                        pow5 = pow5 + x2.matriz[pow4][pow2] * x1.matriz[pow3][pow4];    // Realiza a multiplicação
+                    for (pow4=0, rs=0; pow4<x1.ncolunas; pow4++){                       // Conta cada coluna de Y
+                        rs = rs + x2.matriz[pow4][pow2] * x1.matriz[pow3][pow4];        // Realiza a multiplicação
                     }
-                    r.matriz[pow3][pow2] = pow5;                                        // Salva resultado
+                    r.matriz[pow3][pow2] = rs;                                        // Salva resultado
                 }
             }
             for (pow2=0; pow2<x1.nlinhas; pow2++) { for (pow3=0; pow3<x1.ncolunas; pow3++) {    // Imprime resultado no operador

@@ -235,7 +235,7 @@ void    interface               (char path[1000]) {
     Box(0, l, texto);   // Imprime arquivo .txt dentro de uma caixa
     }
     
-    else { Box(0, 40, "ERRO! - Função desconhecida!"); } // Mensagem de ERRO
+    else { Box(0, 40, "ERRO! - Função desconhecida ou incompátivel!"); } // Mensagem de ERRO
     
 }
 int     command                            (void) {
@@ -270,7 +270,7 @@ int     command                            (void) {
     
     // Parte a funçao inserida pelo usuário por palavras em strings diferentes:
     
-    for (c1=0, c2=1, c3=0;c1<strlen(rs[0])+1;c1++, c3++){
+    for (c1=0, c2=1, c3=0; c1<strlen(rs[0])+1; c1++, c3++){
         if (rs[0][c1]==' ') { rs[c2][c3]='\0'; c2++; c3=0; c1++; }
         rs[c2][c3]=rs[0][c1];
     }
@@ -282,7 +282,7 @@ int     command                            (void) {
     
     for (c1=1, c3=0; rs[c1][0]!='\0'; c1++) {
         for (c2=1; rs[c2][0]!='\0'; c2++) {
-            if ((strcmp(rs[c1],rs[c2])==0) && rs[c1][0]!='\0' && c1!=c2) { c3++; break; }
+            if ((strcmp(rs[c1],rs[c2])==0) && rs[c1][0]!='\0' && c1!=c2 && rs[c1][0]<'0' && rs[c1][0]>'9') { c3++; break; }
         }
     }
     if (c3!=0) { Box(0, 40, "ERRO! - Funções repetidas!\n"); }
@@ -293,9 +293,9 @@ int     command                            (void) {
         // Recebe numeros inseridos pelo usuário:
         
         for (c1=2; rs[c1][0]!='\0'; c1++) {
-            if (strcmp(rs[c1],"-i")==0 || strcmp(rs[c1],"-m")==0){ i = atof(rs[c1+1]); }
-            if (strcmp(rs[c1],"-j")==0 || strcmp(rs[c1],"-M")==0){ j = atof(rs[c1+1]); }
-            if (strcmp(rs[c1],"-v")==0){ v = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-i")==0 || strcmp(rs[c1],"-m")==0) { i = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-j")==0 || strcmp(rs[c1],"-M")==0) { j = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-v")==0)                           { v = atof(rs[c1+1]); }
         }
         
         
@@ -329,7 +329,7 @@ int     command                            (void) {
         else if (strcmp(rs[1], "choose")==0) { choose           (); }   // Insere valores na matriz
         else if (strcmp(rs[1], "point" )==0) { point     (i, j, v); }   // Insere valores nas cordenadas na matriz
         else if (strcmp(rs[1], "rand"  )==0) { mrand            (); }   // Preeche matriz com valores aleatórios
-        else if (strcmp(rs[1], "ts"    )==0) { transp           (); }   // Transpõe matriz
+        else if (strcmp(rs[1], "tr"    )==0) { transp           (); }   // Transpõe matriz
         else if (strcmp(rs[1], "inv"   )==0) { inv              (); }   // Inverte matriz
         
         else if (strcmp(rs[1], "clr"   )==0 && strcmp(rs[2], "-r")!=0) { clrv  (); }   // Limpa valores da matriz
@@ -387,11 +387,7 @@ void    minfo                              (void) {
     
     // Prepara as estatisticas da matriz:
     
-    if (x.verif==0) {
-        sprintf(stats,
-                          "Matriz sem dimenções definidas\n"
-                          "Dimensões - (%d, %d)\n", x.ncolunas, x.nlinhas);
-    } else {
+    if (x.verif==0) { sprintf(stats, "Matriz sem dimenções definidas!\n"); } else {
         
             // Tipo da matriz levando em conta a forma:
             
@@ -494,19 +490,21 @@ void    minfo                              (void) {
                 }
             }
         }
-            if (strcmp(form, "Quadrada")==0 && x.ncolunas<4){
+            if (strcmp(form, "Quadrada")==0 && x.ncolunas<4) {
                 sprintf(stats,
                         "Matriz guardada na memória X:\n"
                         "Dimensões    - (%d, %d)\n"
                         "Formato      - %s\n"
                         "Tipo         - %s\n"
-                        "Determinante - %f\n", x.ncolunas, x.nlinhas, form, type, det[0]);
+                        "Determinante - %g\n"
+                        , x.ncolunas, x.nlinhas, form, type, det[0]);
             } else {
                 sprintf(stats,
                         "Matriz guardada na memória X:\n"
                         "Dimensões    - (%d, %d)\n"
                         "Formato      - %s\n"
-                        "Tipo         - %s\n", x.ncolunas, x.nlinhas, form, type);
+                        "Tipo         - %s\n"
+                        , x.ncolunas, x.nlinhas, form, type);
             }
     Box(0, 43, stats);
     

@@ -298,15 +298,21 @@ void    clrv    (void) {
     struct matrix x;    // Matriz X
     FILE *X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r+");
     
+    rewind(X);
+    
     fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);   // Recebe valores de inicialização e dimensões de X
     
     if (x.verif==1) {
-        fseek(X, 8, SEEK_SET);  // Aponta para inicio dos valores da matriz X
-        for (v1=0; v1<x.nlinhas; v1++) { for (v2=0; v2<x.ncolunas-1; v2++) {    // Insere valor reconhecido como nulo
-            fprintf(X, "0 " );
-        }   fprintf(X, "0\n");
-        }
+        
+        rewind(X);
+        
+        fprintf(X, "1,(%d,%d)\n", x.ncolunas, x.nlinhas);   // Insere valores de inicialização e dimensões de X
+        
+        for (v1=0; v1<x.nlinhas; v1++) { for (v2=0; v2<x.ncolunas-1; v2++) {    // Reseta valores da matriz
+            fprintf(X, "%f " , 0.0); }
+            fprintf(X, "%f\n", 0.0); }
+        
     } else { Box(0, 40,"ERRO! - Matriz sem dimensões definidas!"); }    // Mensagem de ERRO
     
     fclose(X);
-}
+}   // REVER

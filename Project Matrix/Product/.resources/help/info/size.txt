@@ -6,5 +6,6 @@ comandos:
 -i *int* - N da coluna
 -j *int* - N da linha
 
-OBS: Inicializa parcialmente a
-     matriz localizada em X.
+OBS: Quando uma matriz abrange
+     novos valores, estes são
+     inicializados com o 0.

@@ -8,6 +8,6 @@ comandos:
 
 Multiplica X * X;
 Salva resultado
-Multiplica Res. * X;
-repete N vezes;
+Multiplica Resp. * X;
+repete N-1 vezes;
 Insere resultado final em X.

@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="flowey.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V4.4.0.0</span>
+   &#160;<span id="projectnumber">V4.4.3.1</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('memory_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a685f72aa18e0581ba0306eb0fd68eaf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#a685f72aa18e0581ba0306eb0fd68eaf3">swap</a> (void)</td></tr>
-<tr class="memdesc:a685f72aa18e0581ba0306eb0fd68eaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">troca de matrizes.  <a href="#a685f72aa18e0581ba0306eb0fd68eaf3">More...</a><br /></td></tr>
+<tr class="memdesc:a685f72aa18e0581ba0306eb0fd68eaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Troca as matrizes em X e Y.  <a href="#a685f72aa18e0581ba0306eb0fd68eaf3">More...</a><br /></td></tr>
 <tr class="separator:a685f72aa18e0581ba0306eb0fd68eaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fbbf03d0445e7f8077fe7dea906d673"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673">enter</a> (void)</td></tr>
 <tr class="memdesc:a6fbbf03d0445e7f8077fe7dea906d673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sobe a coluna de matrizes.  <a href="#a6fbbf03d0445e7f8077fe7dea906d673">More...</a><br /></td></tr>
@@ -108,12 +108,13 @@ Functions</h2></td></tr>
 <tr class="memdesc:aeb5e19969cc2a7110f5479e431962d80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aloca os as matrizes contidas nos espaços de memoria.  <a href="#aeb5e19969cc2a7110f5479e431962d80">More...</a><br /></td></tr>
 <tr class="separator:aeb5e19969cc2a7110f5479e431962d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3aea9deb2a0bfea9ff05a898f4822e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#a3aea9deb2a0bfea9ff05a898f4822e31">reset</a> (void)</td></tr>
+<tr class="memdesc:a3aea9deb2a0bfea9ff05a898f4822e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reseta memória.  <a href="#a3aea9deb2a0bfea9ff05a898f4822e31">More...</a><br /></td></tr>
 <tr class="separator:a3aea9deb2a0bfea9ff05a898f4822e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed19948be38e80a0af0f88a8ef598706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#aed19948be38e80a0af0f88a8ef598706">Reset</a> (void)</td></tr>
-<tr class="separator:aed19948be38e80a0af0f88a8ef598706"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4b38c14212679bd6d554c4523256128"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#ac4b38c14212679bd6d554c4523256128">clrt</a> (void)</td></tr>
+<tr class="memdesc:ac4b38c14212679bd6d554c4523256128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reseta a matriz X.  <a href="#ac4b38c14212679bd6d554c4523256128">More...</a><br /></td></tr>
 <tr class="separator:ac4b38c14212679bd6d554c4523256128"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2818cd0342a131009983a66dc479b803"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8h.html#a2818cd0342a131009983a66dc479b803">clrv</a> (void)</td></tr>
+<tr class="memdesc:a2818cd0342a131009983a66dc479b803"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reseta os valores da matriz X.  <a href="#a2818cd0342a131009983a66dc479b803">More...</a><br /></td></tr>
 <tr class="separator:a2818cd0342a131009983a66dc479b803"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -132,6 +133,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reseta a matriz X. </p>
+<p>Reseta completamente a matriz localizada em X.<br />
+Zera numero de inicialização e dimensões.  Perda da matriz localizada em X. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a3aea9deb2a0bfea9ff05a898f4822e31" title="Reseta memória. ">reset</a> and <a class="el" href="memory_8h.html#a2818cd0342a131009983a66dc479b803" title="Reseta os valores da matriz X. ">clrv</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00286">286</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
 
@@ -152,6 +157,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reseta os valores da matriz X. </p>
+<p>Mantendo as dimensões originais,<br />
+todos os valores de X sao substituidos por 0. </p><dl class="section warning"><dt>Warning</dt><dd>Perda dos valores de X! </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a3aea9deb2a0bfea9ff05a898f4822e31" title="Reseta memória. ">reset</a> and <a class="el" href="memory_8h.html#ac4b38c14212679bd6d554c4523256128" title="Reseta a matriz X. ">clrt</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00295">295</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
 
@@ -175,12 +185,11 @@ Functions</h2></td></tr>
 
 <p>Desçe a coluna de matrizes. </p>
 <p>Desçe as matrizes de seus espaços definidos.<br />
-A localizada em W é copiada em Z, a de Z é transferida para Y, a de Y é tranferida para X, e a de X é deletada. </p><dl class="section warning"><dt>Warning</dt><dd>Deleta a matriz contida em X. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673" title="Sobe a coluna de matrizes. ">enter</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#a685f72aa18e0581ba0306eb0fd68eaf3" title="troca de matrizes. ">swap</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#aeb5e19969cc2a7110f5479e431962d80" title="Aloca os as matrizes contidas nos espaços de memoria. ">roll</a>. </dd></dl>
+Copia Y em X;<br />
+ Z em Y;<br />
+ W em Z;<br />
+</p><dl class="section warning"><dt>Warning</dt><dd>Deleta a matriz localizada em X. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a685f72aa18e0581ba0306eb0fd68eaf3" title="Troca as matrizes em X e Y. ">swap</a>, <a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673" title="Sobe a coluna de matrizes. ">enter</a> and <a class="el" href="memory_8h.html#aeb5e19969cc2a7110f5479e431962d80" title="Aloca os as matrizes contidas nos espaços de memoria. ">roll</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00131">131</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
 
@@ -204,10 +213,11 @@ A localizada em W é copiada em Z, a de Z é transferida para Y, a de Y é tranf
 
 <p>Sobe a coluna de matrizes. </p>
 <p>Eleva as matrizes nos seus espaços definidos.<br />
-A localizada em X é copiada em Y, A de Y é transferida Z, a de Z é transferida W, e a de W é deletada. </p><dl class="section warning"><dt>Warning</dt><dd>A matriz localizada em W é deletada! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a70b6ce664b7b4fdb33e25ad9d81873d6" title="Desçe a coluna de matrizes. ">drop</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#aeb5e19969cc2a7110f5479e431962d80" title="Aloca os as matrizes contidas nos espaços de memoria. ">roll</a>. </dd></dl>
+Copia Z em W;<br />
+ Y em Z;<br />
+ X em Y.<br />
+</p><dl class="section warning"><dt>Warning</dt><dd>A matriz localizada em W é deletada! </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a685f72aa18e0581ba0306eb0fd68eaf3" title="Troca as matrizes em X e Y. ">swap</a>, <a class="el" href="memory_8h.html#a70b6ce664b7b4fdb33e25ad9d81873d6" title="Desçe a coluna de matrizes. ">drop</a> and <a class="el" href="memory_8h.html#aeb5e19969cc2a7110f5479e431962d80" title="Aloca os as matrizes contidas nos espaços de memoria. ">roll</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00081">81</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
 
@@ -229,25 +239,10 @@ A localizada em X é copiada em Y, A de Y é transferida Z, a de Z é transferid
       </table>
 </div><div class="memdoc">
 
+<p>Reseta memória. </p>
+<p>Reseta todas as matrizes na mémoria.  Todas as matrizes são perdidas! </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#ac4b38c14212679bd6d554c4523256128" title="Reseta a matriz X. ">clrt</a> and <a class="el" href="memory_8h.html#a2818cd0342a131009983a66dc479b803" title="Reseta os valores da matriz X. ">clrv</a>. </dd></dl>
+
 <p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00259">259</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
-
-</div>
-</div>
-<a id="aed19948be38e80a0af0f88a8ef598706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed19948be38e80a0af0f88a8ef598706">&#9670;&nbsp;</a></span>Reset()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Reset </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -269,12 +264,13 @@ A localizada em X é copiada em Y, A de Y é transferida Z, a de Z é transferid
 
 <p>Aloca os as matrizes contidas nos espaços de memoria. </p>
 <p>Eleva a coluna de matrizes substituindo a matriz de W em X.<br />
-A localizada em X é transferida em Y, a de Y é transferida para Z, a de Z é tranferida para W e a de W é tranferida para X. </p><dl class="section warning"><dt>Warning</dt><dd>Não há perda de matriz so troca de localização! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673" title="Sobe a coluna de matrizes. ">enter</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#a70b6ce664b7b4fdb33e25ad9d81873d6" title="Desçe a coluna de matrizes. ">drop</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#a685f72aa18e0581ba0306eb0fd68eaf3" title="troca de matrizes. ">swap</a>. </dd></dl>
+Salva X em R;<br />
+Copia Y em X;<br />
+ Z em Y;<br />
+ W em Z;<br />
+ R em W;<br />
+</p><dl class="section warning"><dt>Warning</dt><dd>Não há perda de matriz so troca de localização! </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a685f72aa18e0581ba0306eb0fd68eaf3" title="Troca as matrizes em X e Y. ">swap</a>, <a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673" title="Sobe a coluna de matrizes. ">enter</a> and <a class="el" href="memory_8h.html#a70b6ce664b7b4fdb33e25ad9d81873d6" title="Desçe a coluna de matrizes. ">drop</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00181">181</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
 
@@ -296,20 +292,9 @@ A localizada em X é transferida em Y, a de Y é transferida para Z, a de Z é t
       </table>
 </div><div class="memdoc">
 
-<p>troca de matrizes. </p>
-<p>Funções de alocação de matrizes nos espaços de memória.</p>
-<p>troca as matrizes localizadas em X e Y. </p><dl class="section warning"><dt>Warning</dt><dd>X e Y devem conter matrizes. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="altera um valor especifico de uma matriz. ">point</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673" title="Sobe a coluna de matrizes. ">enter</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#a70b6ce664b7b4fdb33e25ad9d81873d6" title="Desçe a coluna de matrizes. ">drop</a>. </dd>
-<dd>
-<a class="el" href="memory_8h.html#aeb5e19969cc2a7110f5479e431962d80" title="Aloca os as matrizes contidas nos espaços de memoria. ">roll</a>. </dd></dl>
+<p>Troca as matrizes em X e Y. </p>
+<dl class="section warning"><dt>Warning</dt><dd>X e Y devem conter matrizes. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="memory_8h.html#a6fbbf03d0445e7f8077fe7dea906d673" title="Sobe a coluna de matrizes. ">enter</a>, <a class="el" href="memory_8h.html#a70b6ce664b7b4fdb33e25ad9d81873d6" title="Desçe a coluna de matrizes. ">drop</a> and <a class="el" href="memory_8h.html#aeb5e19969cc2a7110f5479e431962d80" title="Aloca os as matrizes contidas nos espaços de memoria. ">roll</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="memory_8c_source.html#l00011">11</a> of file <a class="el" href="memory_8c_source.html">memory.c</a>.</p>
 

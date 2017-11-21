@@ -78,8 +78,6 @@ void    showhide           (int s, char func[10]);
  * @warning Apenas é ativada quadno a função SHOWHIDE a configura para tal.
  */
 void    sh_matriz                          (void);
-/***/
-float   precision                (float v, int n);
 /**
  * @brief Mostra o menu help
  * @details Mostra dentro de uma caixa o menu de ajuda.

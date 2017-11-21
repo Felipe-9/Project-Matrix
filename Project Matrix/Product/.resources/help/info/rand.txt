@@ -3,16 +3,14 @@ Info Random - rand *commad*              :
 Insere valores aleatórios á matriz.
 
 Comandos:
-(void)     - insere valores aleatórios
-             de 0 a 999.
--min *int* - Limita menor valor a ser
-             posto, de *int* a 999.
--max *int* - Limita maior valor a ser
-             posto, de 0 a *int*
+(void)       - insere valores aleatórios.
+-min *float* - Limita menor valor a ser
+               posto.
+-max *float* - Limita maior valor a ser
+               posto
 
 EX1: Project Matrix $ rand                   - Insere valores
-                                               aleatorios de 0
-                                               a 999
+                                               aleatorios
 EX2: Project Matrix $ rand -min 10 -max 99   - Insere valores
                                                aleatórios de 10
                                                a 99

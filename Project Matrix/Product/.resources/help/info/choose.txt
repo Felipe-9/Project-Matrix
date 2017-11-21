@@ -6,18 +6,34 @@ das coordenadas da matriz localizada
 em X. Até que o usuário deseje
 finalizar a função com o comando *end*
 
-MENU: choose *coordenadas* <- $ *commad*
+MENU: choose *coordenadas* <-- $ *commad*
 
 Comandos:
-*int* - Insere valor nas coordenadas
-*end* - Encerra função
+mv *command*     - Move o ponteiro para as
+                   coordenadas inseridas
+fw               - Move foward, pula uma
+                   coordenada
+bw               - Move backward, retorna para
+                   coordenada anterior
+*float*          - Insere valor nas coordenadas
+end              - Encerra função
+show/hide matrix - Mostra ou esconde a matriz
+clear            - Limpa a tela
+
+Subcomandos:
+-i *int*         - Coordenada da coluna
+-j *int*         - Coordenada da linha
 
 Passa de coordenada em coordenada
 varrendo cada linha da matriz
 individualmente.
 
-EX: Project Matrix: $ choose      - inicia operação
-    choose (1, 1) <- $ 9          - insere o valor 9
-                                    nas coordenadas (1, 1)
-    choose (2, 1) <- $ end        - Finaliza função
+EX: Project Matrix: $ choose     - inicia operação
+    choose (1,1) <-- $ 9         - insere o valor 9
+                                   nas coordenadas (1, 1)
+    choose (2,1) <-- $ fw        - Pula coordenada
+                                   inalterando o valor
+                                   original
+    choose (3,1) <-- $ mv -i 10  - Move para a 10a coluna
+    choose (10,1) <-- $ end      - Finaliza função
     Project Matrix $ _

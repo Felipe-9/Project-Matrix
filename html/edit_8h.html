@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="flowey.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V4.4.0.0</span>
+   &#160;<span id="projectnumber">V4.4.3.1</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('edit_8h.html','');});
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="timeline_8h_source.html">timeline.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
 </div>
@@ -106,22 +107,22 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:afb09ba5c6865d5bf88032158c19ef237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237">size</a> (int c, int l)</td></tr>
-<tr class="memdesc:afb09ba5c6865d5bf88032158c19ef237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera as dimenções de uma matriz.  <a href="#afb09ba5c6865d5bf88032158c19ef237">More...</a><br /></td></tr>
+<tr class="memdesc:afb09ba5c6865d5bf88032158c19ef237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera as dimenções de X.  <a href="#afb09ba5c6865d5bf88032158c19ef237">More...</a><br /></td></tr>
 <tr class="separator:afb09ba5c6865d5bf88032158c19ef237"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d8021dae7ac755161c3837d971648ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad">choose</a> (void)</td></tr>
-<tr class="memdesc:a4d8021dae7ac755161c3837d971648ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera sequencialmente os valores de uma matriz.  <a href="#a4d8021dae7ac755161c3837d971648ad">More...</a><br /></td></tr>
+<tr class="memdesc:a4d8021dae7ac755161c3837d971648ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera sequencialmente os valores de X.  <a href="#a4d8021dae7ac755161c3837d971648ad">More...</a><br /></td></tr>
 <tr class="separator:a4d8021dae7ac755161c3837d971648ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17b2e28140c6d79a7801f31fbd911f46"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46">point</a> (int c, int l, int v)</td></tr>
-<tr class="memdesc:a17b2e28140c6d79a7801f31fbd911f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">altera um valor especifico de uma matriz.  <a href="#a17b2e28140c6d79a7801f31fbd911f46">More...</a><br /></td></tr>
+<tr class="memdesc:a17b2e28140c6d79a7801f31fbd911f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Altera um valor em uma coordenada especifica em X.  <a href="#a17b2e28140c6d79a7801f31fbd911f46">More...</a><br /></td></tr>
 <tr class="separator:a17b2e28140c6d79a7801f31fbd911f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d8e16387ddcc0f978ec2dc0238fcf82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82">inv</a> (void)</td></tr>
-<tr class="memdesc:a0d8e16387ddcc0f978ec2dc0238fcf82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inversão de matriz.  <a href="#a0d8e16387ddcc0f978ec2dc0238fcf82">More...</a><br /></td></tr>
-<tr class="separator:a0d8e16387ddcc0f978ec2dc0238fcf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0535e788df40ebc876949d8337341c6e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#a0535e788df40ebc876949d8337341c6e">transp</a> (void)</td></tr>
 <tr class="memdesc:a0535e788df40ebc876949d8337341c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transpozição de matriz.  <a href="#a0535e788df40ebc876949d8337341c6e">More...</a><br /></td></tr>
 <tr class="separator:a0535e788df40ebc876949d8337341c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8e16387ddcc0f978ec2dc0238fcf82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82">inv</a> (void)</td></tr>
+<tr class="memdesc:a0d8e16387ddcc0f978ec2dc0238fcf82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inversão de matriz.  <a href="#a0d8e16387ddcc0f978ec2dc0238fcf82">More...</a><br /></td></tr>
+<tr class="separator:a0d8e16387ddcc0f978ec2dc0238fcf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabe0eb996897cae9461d083c14a03c87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="edit_8h.html#aabe0eb996897cae9461d083c14a03c87">mrand</a> (void)</td></tr>
-<tr class="memdesc:aabe0eb996897cae9461d083c14a03c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Completa a matriz com valores aleatorios.  Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.  <a href="#aabe0eb996897cae9461d083c14a03c87">More...</a><br /></td></tr>
+<tr class="memdesc:aabe0eb996897cae9461d083c14a03c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere sobre a matriz valore aleatórios.  Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.  <a href="#aabe0eb996897cae9461d083c14a03c87">More...</a><br /></td></tr>
 <tr class="separator:aabe0eb996897cae9461d083c14a03c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -141,13 +142,12 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Altera sequencialmente os valores de uma matriz. </p>
-<p>Insere um a um os valores da matriz localizada em X. Até que ou a matriz tenha sido completamente alterada ou o usuário deseje parar a operação.<br />
-<br />
-Inicializa completamente a matriz localizada em X. </p><dl class="section warning"><dt>Warning</dt><dd>Matriz deve ter suas dimenções definidas! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de uma matriz. ">size</a>. </dd></dl>
+<p>Altera sequencialmente os valores de X. </p>
+<p>Insere um a um os valores da matriz localizada em X.<br />
+Podendo mudar qual coordenada alterar o valor. </p><dl class="section warning"><dt>Warning</dt><dd>Matriz deve ter suas dimenções definidas! </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de X. ">size</a>, <a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="Altera um valor em uma coordenada especifica em X. ">point</a> and <a class="el" href="edit_8h.html#aabe0eb996897cae9461d083c14a03c87" title="Insere sobre a matriz valore aleatórios.  Insere valores aleatorios dentro de um leque escolhido pelo...">mrand</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00098">98</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00046">46</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -169,13 +169,9 @@ Inicializa completamente a matriz localizada em X. </p><dl class="section warnin
 
 <p>Inversão de matriz. </p>
 <p>Inverte a matriz localizada em X. </p><dl class="section warning"><dt>Warning</dt><dd>X deve conter uma matriz! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#a0535e788df40ebc876949d8337341c6e" title="Transpozição de matriz. ">transp</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00174">174</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00248">248</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -195,15 +191,11 @@ Inicializa completamente a matriz localizada em X. </p><dl class="section warnin
       </table>
 </div><div class="memdoc">
 
-<p>Completa a matriz com valores aleatorios.  Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz. </p>
+<p>Insere sobre a matriz valore aleatórios.  Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz. </p>
 <dl class="section warning"><dt>Warning</dt><dd>Matriz de X deve ter suas dimenções definidas! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd>sizen <a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de X. ">choose</a> and <a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="Altera um valor em uma coordenada especifica em X. ">point</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00180">180</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00251">251</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -239,11 +231,12 @@ Inicializa completamente a matriz localizada em X. </p><dl class="section warnin
       </table>
 </div><div class="memdoc">
 
-<p>altera um valor especifico de uma matriz. </p>
-<p>recebe do usuário o valor e as cordenadas e os insere na matriz localizada em X. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de uma matriz. ">size</a> </dd></dl>
+<p>Altera um valor em uma coordenada especifica em X. </p>
+<p>Insere diretamente o valor fornecido pelo usuário as coordenadas selecionadas por ele. Caso selecione uma coluna o valor é inserido sobre todas as linhas da mesma,<br />
+o contrário trocando linha por coluna tambem é verdadeiro. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de X. ">size</a>, <a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de X. ">choose</a> and <a class="el" href="edit_8h.html#aabe0eb996897cae9461d083c14a03c87" title="Insere sobre a matriz valore aleatórios.  Insere valores aleatorios dentro de um leque escolhido pelo...">mrand</a>. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Não inicializa completamente a matriz caso tal não tenha valores previamente definidos! </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00101">101</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00136">136</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>
@@ -273,20 +266,18 @@ Inicializa completamente a matriz localizada em X. </p><dl class="section warnin
       </table>
 </div><div class="memdoc">
 
-<p>Altera as dimenções de uma matriz. </p>
+<p>Altera as dimenções de X. </p>
 <p>Funções de edição da matriz localizada em X.</p>
-<p>Se não existir matriz no local selecionado cria uma matriz apenas com dimenções definidas, necessitando atribuir a ela valores.<br />
-Se existir, altera as dimenções desta e caso as novas dimenções forem maiores que a anterior, sera necessario atribuir a ela valores a tais novos espaços.<br />
-<br />
-Inicializa parcialmente a matriz no local selecionado. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Altera as dimenções da matriz localizada em X<br />
+Inserindo nos valores não pré existentes 0.<br />
+Inicializa uma matriz nula caso não exista matriz. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>seleção de local de memória. </td></tr>
+    <tr><td class="paramname">c</td><td>Quantidade de colunas em X. </td></tr>
+    <tr><td class="paramname">l</td><td>Quantidade de linhas em X. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de X. ">choose</a>, <a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="Altera um valor em uma coordenada especifica em X. ">point</a> and <a class="el" href="edit_8h.html#aabe0eb996897cae9461d083c14a03c87" title="Insere sobre a matriz valore aleatórios.  Insere valores aleatorios dentro de um leque escolhido pelo...">mrand</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00011">11</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
@@ -310,13 +301,9 @@ Inicializa parcialmente a matriz no local selecionado. </p><dl class="params"><d
 
 <p>Transpozição de matriz. </p>
 <p>Transpõe a matriz localizada em X. </p><dl class="section warning"><dt>Warning</dt><dd>X deve conter uma matriz! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#afb09ba5c6865d5bf88032158c19ef237" title="Altera as dimenções de uma matriz. ">size</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a4d8021dae7ac755161c3837d971648ad" title="Altera sequencialmente os valores de uma matriz. ">choose</a>. </dd>
-<dd>
-<a class="el" href="edit_8h.html#a17b2e28140c6d79a7801f31fbd911f46" title="altera um valor especifico de uma matriz. ">point</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82" title="Inversão de matriz. ">inv</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00177">177</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="edit_8c_source.html#l00217">217</a> of file <a class="el" href="edit_8c_source.html">edit.c</a>.</p>
 
 </div>
 </div>

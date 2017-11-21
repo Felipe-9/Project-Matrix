@@ -16,75 +16,65 @@
 #include <stdio.h>
 #include <string.h>
 #include <math.h>
+#include <stdlib.h>
 #include "timeline.h"
 #include "memory.h"
 
 /**
- * @brief Altera as dimenções de uma matriz.
- * @details Se não existir matriz no local selecionado cria uma matriz apenas com dimenções definidas, necessitando atribuir a ela valores.\n
- * Se existir, altera as dimenções desta e caso as novas dimenções forem maiores que a anterior, sera necessario atribuir a ela valores a tais novos espaços.\n\n
- * Inicializa parcialmente a matriz no local selecionado.
- * @param l seleção de local de memória.
- * @see choose.
- * @see point.
+ * @brief Altera as dimenções de X.
+ * @details Altera as dimenções da matriz localizada em X\n
+ * Inserindo nos valores não pré existentes 0.\n
+ * Inicializa uma matriz nula caso não exista matriz.
+ * @param c Quantidade de colunas em X.
+ * @param l Quantidade de linhas em X.
+ * @see choose, point and mrand.
  */
 void    size          (int c, int l);
 /**
- * @brief Altera sequencialmente os valores de uma matriz.
- * @details Insere um a um os valores da matriz localizada em X.
- * Até que ou a matriz tenha sido completamente alterada ou o usuário deseje parar a operação.\n\n
- * Inicializa completamente a matriz localizada em X.
+ * @brief Altera sequencialmente os valores de X.
+ * @details Insere um a um os valores da matriz localizada em X.\n
+ * Podendo mudar qual coordenada alterar o valor.
  * @warning Matriz deve ter suas dimenções definidas!
- * @see size.
+ * @see size, point and mrand.
  */
 void    choose                (void);
 /**
- * @brief altera um valor especifico de uma matriz.
- * @details recebe do usuário o valor e as cordenadas e os insere na matriz localizada em X.
- * @see size
+ * @brief Altera um valor em uma coordenada especifica em X
+ * @details Insere diretamente o valor fornecido pelo usuário as coordenadas selecionadas por ele.
+ * Caso selecione uma coluna o valor é inserido sobre todas as linhas da mesma,\n
+ * o contrário trocando linha por coluna tambem é verdadeiro.
+ * @see size, choose and mrand.
  * @warning Não inicializa completamente a matriz caso tal não tenha valores previamente definidos!
  */
 void    point  (int c, int l, int v);
 /**
- * @brief Inversão de matriz.
- * @details Inverte a matriz localizada em X.
- * @warning X deve conter uma matriz!
- * @see size.
- * @see choose.
- * @see point.
- */
-void    inv                   (void);
-/**
  * @brief Transpozição de matriz.
  * @details Transpõe a matriz localizada em X.
  * @warning X deve conter uma matriz!
- * @see size.
- * @see choose.
- * @see point.
+ * @see inv.
  */
 void    transp                (void);
 /**
- * @brief Completa a matriz com valores aleatorios.
+ * @brief Inversão de matriz.
+ * @details Inverte a matriz localizada em X.
+ * @warning X deve conter uma matriz!
+ * @see transp.
+ */
+void    inv                   (void);
+/**
+ * @brief Insere sobre a matriz valore aleatórios.
  * @detals Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.
  * @warning Matriz de X deve ter suas dimenções definidas!
- * @see size.
- * @see choose.
- * @see point.
+ * @see sizen choose and point.
  */
 void    mrand                 (void);
 
-/**
- * @brief Modelo de matriz.
- * @param ncolunas Quantidade de colunas de uma matriz.
- * @param nlinhas Quantidade de linhas de uma matriz.
- * @param verif Numero de inicializaçao de uma matriz.
- * @param matriz Array que guarda a matriz.
- */
+/** @brief Modelo de matriz. */
 struct matrix {
-    int     verif;
-    int     ncolunas;
-    int     nlinhas;
-    float   matriz[100][100];
+    int     verif;              /**< Numero de inicialização da matriz     */
+    int     ncolunas;           /**< Numero de colunlas da matriz          */
+    int     nlinhas;            /**< Numero de linhas da matriz            */
+    float   matriz[100][100];   /**< Corpo que guarda os valores da matriz */
 };
 
 #endif /* edit_h */

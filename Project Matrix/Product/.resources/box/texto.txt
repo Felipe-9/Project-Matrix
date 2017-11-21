@@ -1,5 +1,5 @@
 Matriz guardada na memória X:
-Dimensões    - (2, 2)
+Dimensões    - (3, 3)
 Formato      - Quadrada
-Tipo         - Matriz nula
-Determinante - 0.000000
+Tipo         - Comum
+Determinante - -2.38419e-07

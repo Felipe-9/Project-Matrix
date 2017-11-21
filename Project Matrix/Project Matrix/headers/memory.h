@@ -6,9 +6,6 @@
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
 //
 
-/**
- * Funções de alocação de matrizes nos espaços de memória.
- */
 
 #ifndef memory_h
 #define memory_h
@@ -17,64 +14,65 @@
 #include "edit.h"
 
 /**
- * @brief troca de matrizes.
- * @details troca as matrizes localizadas em X e Y.
+ * @brief Troca as matrizes em X e Y.
  * @warning X e Y devem conter matrizes.
- * @see size.
- * @see choose.
- * @see point.
- * @see enter.
- * @see drop.
- * @see roll.
+ * @see enter, drop and roll.
  */
 void    swap    (void);
 /**
  * @brief Sobe a coluna de matrizes.
  * @details Eleva as matrizes nos seus espaços definidos.\n
- * A localizada em X é copiada em Y, A de Y é transferida Z, a de Z é transferida W, e a de W é deletada.
+ * Copia Z em W;\n
+ *       Y em Z;\n
+ *       X em Y.\n
  * @warning A matriz localizada em W é deletada!
- * @see drop.
- * @see roll.
+ * @see swap, drop and roll.
  */
 void    enter   (void);
 /**
  * @brief Desçe a coluna de matrizes.
  * @details Desçe as matrizes de seus espaços definidos.\n
- * A localizada em W é copiada em Z, a de Z é transferida para Y, a de Y é tranferida para X, e a de X é deletada.
- * @warning Deleta a matriz contida em X.
- * @see enter.
- * @see swap.
- * @see roll.
+ * Copia Y em X;\n
+ *       Z em Y;\n
+ *       W em Z;\n
+ * @warning Deleta a matriz localizada em X.
+ * @see swap, enter and roll.
  */
 void    drop    (void);
 /**
  * @brief Aloca os as matrizes contidas nos espaços de memoria.
  * @details Eleva a coluna de matrizes substituindo a matriz de W em X.\n
- * A localizada em X é transferida em Y, a de Y é transferida para Z, a de Z é tranferida para W e a de W é tranferida para X.
+ * Salva X em R;\n
+ * Copia Y em X;\n
+ *       Z em Y;\n
+ *       W em Z;\n
+ *       R em W;\n
  * @warning Não há perda de matriz so troca de localização!
- * @see enter.
- * @see drop.
- * @see swap.
+ * @see swap, enter and drop.
  */
 void    roll    (void);
 /**
- *
- *
- *
- *
- *
- *
- *
- *
- *
- *
+ * @brief Reseta memória.
+ * @details Reseta todas as matrizes na mémoria.
+ * @warnig Todas as matrizes são perdidas!
+ * @see clrt and clrv.
  */
 void    reset   (void);
-/***/
-void    Reset   (void);
-/***/
+/**
+ * @brief Reseta a matriz X.
+ * @details Reseta completamente a matriz localizada em X.\n
+ * Zera numero de inicialização e dimensões.
+ * @waring Perda da matriz localizada em X.
+ * @see reset and clrv.
+ */
 void    clrt    (void);
-/***/
+/**
+ * @brief Reseta os valores da matriz X.
+ * @details Mantendo as dimensões originais,\n
+ * todos os valores de X sao substituidos por 0.
+ * @warning Perda dos valores de X!
+ * @see reset and clrt.
+ */
 void    clrv    (void);
 
 #endif /* memory_h */

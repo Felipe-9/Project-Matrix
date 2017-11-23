@@ -293,49 +293,54 @@ int     command                            (void) {
         // Recebe numeros inseridos pelo usuário:
         
         for (c1=2; rs[c1][0]!='\0'; c1++) {
-            if (strcmp(rs[c1],"-i")==0 || strcmp(rs[c1],"-m")==0) { i = atof(rs[c1+1]); }
-            if (strcmp(rs[c1],"-j")==0 || strcmp(rs[c1],"-M")==0) { j = atof(rs[c1+1]); }
-            if (strcmp(rs[c1],"-v")==0)                           { v = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-i")==0 || strcmp(rs[c1],"-min")==0) { i = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-j")==0 || strcmp(rs[c1],"-max")==0) { j = atof(rs[c1+1]); }
+            if (strcmp(rs[c1],"-v")==0)                             { v = atof(rs[c1+1]); }
         }
-        
-        
-        // Execulta commando do usuário:
+            
+            // Execulta commando do usuário:
         
         if      (strcmp(rs[1], "help"  )==0) { interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/help.txt");     }   // Mostra tela de ajuda
         
-        else if (strcmp(rs[1], "info"  )==0) { info        (rs[2]); }   // Mostra ajuda da função
-        else if (strcmp(rs[1], "minfo" )==0) { minfo            (); }   // Mostra detalhes da matriz
-        else if (strcmp(rs[1], "clear" )==0) { pbreak         (50); }   // Limpa a tela
-        else if (strcmp(rs[1], "show"  )==0) { showhide (1, rs[2]); }   // Mostra a matriz
-        else if (strcmp(rs[1], "hide"  )==0) { showhide (0, rs[2]); }   // Esconde a matriz
-        else if (strcmp(rs[1], "quit"  )==0) { return            0; }   // Encerra programa
+        else if (strcmp(rs[1], "info"  )==0) { info               (rs[2]); }   // Mostra ajuda da função
+        else if (strcmp(rs[1], "minfo" )==0) { minfo                   (); }   // Mostra detalhes da matriz
+        else if (strcmp(rs[1], "clear" )==0) { pbreak                (50); }   // Limpa a tela
+        else if (strcmp(rs[1], "show"  )==0) { showhide        (1, rs[2]); }   // Mostra a matriz
+        else if (strcmp(rs[1], "hide"  )==0) { showhide        (0, rs[2]); }   // Esconde a matriz
+        else if (strcmp(rs[1], "quit"  )==0) { return                   0; }   // Encerra programa
+        else if (strcmp(rs[1], "Flowey")==0) { flowey             (rs[2]); }   // Logo
         
-        else if (strcmp(rs[1], "intro" )==0) { interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/intro/logo.txt");    }   // Mostra tela intro
+        else if (strcmp(rs[1], "intro" )==0) { interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/intro/logo.txt")   ; }   // Mostra tela intro
         
-        else if (strcmp(rs[1], "E"     )==0) { enter            (); }   // Eleva coluna de matrizes
-        else if (strcmp(rs[1], "D"     )==0) { drop             (); }   // Desce coluna de matrizes
-        else if (strcmp(rs[1], "S"     )==0) { swap             (); }   // Troca matrizes de X e Y
-        else if (strcmp(rs[1], "R"     )==0) { roll             (); }   // Aloca coluna de matrizes para baixo
-        else if (strcmp(rs[1], "AC"    )==0) { reset            (); }   // Reseta memória
+        else if (strcmp(rs[1], "undo"  )==0) { undo                   (1); }   // Reverte ultima operação na memória
         
-        else if (strcmp(rs[1], "sum"   )==0) { sum              (); }   // Soma       (Y + X)
-        else if (strcmp(rs[1], "sub"   )==0) { sub              (); }   // Subtrai    (Y - X)
+        else if (strcmp(rs[1], "E"     )==0) { undo(0); enter          (); }   // Eleva coluna de matrizes
+        else if (strcmp(rs[1], "D"     )==0) { undo(0); drop           (); }   // Desce coluna de matrizes
+        else if (strcmp(rs[1], "S"     )==0) { undo(0); swap           (); }   // Troca matrizes de X e Y
+        else if (strcmp(rs[1], "R"     )==0) { undo(0); roll           (); }   // Aloca coluna de matrizes para baixo
+        else if (strcmp(rs[1], "AC"    )==0) { undo(0); reset          (); }   // Reseta memória
         
-        else if (strcmp(rs[1], "tim"   )==0 && strcmp(rs[2], "-v")!=0) { mtim  (); }   // Multiplica matrizes (Y * X)
-        else if (strcmp(rs[1], "tim"   )==0 && strcmp(rs[2], "-v")==0) { vtim (v); }   // Multiplica escalar  (N * X)
-        else if (strcmp(rs[1], "pow"   )==0 && strcmp(rs[2], "-v")==0) { mpow (v); }   // Eleva X ^ V
+        else if (strcmp(rs[1], "sum"   )==0) { undo(0); sum            (); }   // Soma       (Y + X)
+        else if (strcmp(rs[1], "sub"   )==0) { undo(0); sub            (); }   // Subtrai    (Y - X)
         
-        else if (strcmp(rs[1], "size"  )==0) { size         (i, j); }   // Edita dimensões da matriz
-        else if (strcmp(rs[1], "choose")==0) { choose           (); }   // Insere valores na matriz
-        else if (strcmp(rs[1], "point" )==0) { point     (i, j, v); }   // Insere valores nas cordenadas na matriz
-        else if (strcmp(rs[1], "rand"  )==0) { mrand            (); }   // Preeche matriz com valores aleatórios
-        else if (strcmp(rs[1], "tr"    )==0) { transp           (); }   // Transpõe matriz
-        else if (strcmp(rs[1], "inv"   )==0) { inv              (); }   // Inverte matriz
+        else if (strcmp(rs[1], "tim"   )==0 && strcmp(rs[2], "-v")!=0) { undo(0); mtim  (); }   // Multiplica matrizes (Y * X)
+        else if (strcmp(rs[1], "tim"   )==0 && strcmp(rs[2], "-v")==0) { undo(0); vtim (v); }   // Multiplica escalar  (N * X)
+        else if (strcmp(rs[1], "pow"   )==0 && strcmp(rs[2], "-v")==0) { undo(0); mpow (v); }   // Eleva X ^ V
         
-        else if (strcmp(rs[1], "clr"   )==0 && strcmp(rs[2], "-r")!=0) { clrv  (); }   // Limpa valores da matriz
-        else if (strcmp(rs[1], "clr"   )==0 && strcmp(rs[2], "-r")==0) { clrt  (); }   // Reseta matriz
+        else if (strcmp(rs[1], "size"  )==0) { undo(0); size       (i, j); }   // Edita dimensões da matriz
+        else if (strcmp(rs[1], "choose")==0) { undo(0); choose         (); }   // Insere valores na matriz
+        else if (strcmp(rs[1], "point" )==0) { undo(0); point   (i, j, v); }   // Insere valores nas cordenadas na matriz
+        else if (strcmp(rs[1], "rand"  )==0) { undo(0); mrand      (i, j); }   // Preeche matriz com valores aleatórios nos detalhes especificos
+        else if (strcmp(rs[1], "tr"    )==0) { undo(0); transp         (); }   // Transpõe matriz
+        else if (strcmp(rs[1], "inv"   )==0) { undo(0); inv            (); }   // Inverte matriz
         
-        else if (strcmp(rs[1], "Flowey")==0) { flowey      (rs[2]); }   // Secret
+        else if (strcmp(rs[1], "clr"   )==0 && strcmp(rs[2], "-r")!=0) { undo(0); point (0, 0, 0); }   // Limpa valores da matriz
+        else if (strcmp(rs[1], "clr"   )==0 && strcmp(rs[2], "-r")==0) { undo(0); clr          (); }   // Reseta matriz
+        
+        else if (strcmp(rs[1], "Flowey")==0) { flowey      (rs[2]); }   // Logo
+        else { Box(0, 50,
+                   "ERRO! - Unknown command!\n"
+                   "Type help for command list\n"); }                   // Mensagem de ERRO
     }
     return 1;
 }
@@ -366,10 +371,10 @@ void    info                      (char func[10]) {
 }
 void    minfo                              (void) {
     
-    struct matrix x;
-    char stats[1000];
-    int mi1, mi2, mi3;
-    float det[4]; char form[10], type[100];
+    struct matrix x;                            // Corpo da matriz
+    char stats[1000];                           // Corpo para montar menu
+    int mi1, mi2, mi3;                          // Contadores
+    float det[4]; char form[10], type[100];     // Variantes do menu
     
     
     // Recupera dados da matriz:
@@ -377,17 +382,18 @@ void    minfo                              (void) {
     // Abre arquivo de memoria X
     FILE *X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r");
     
-    fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);  // Recupera numero de inicialização e dimensões da matriz
+    fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);  // Recupera numero de inicialização e dimensões da matriz
     
-    for (mi1=0; mi1<x.nlinhas; mi1++){ for (mi2=0; mi2<x.ncolunas-1; mi2++)
-    { fscanf(X, "%f ", &x.matriz[mi2][mi1]); } fscanf(X , "%f\n", &x.matriz[mi2][mi1]); }
+    if (x.ncolunas<=0 && x.nlinhas<=0) { sprintf(stats, "Matriz sem dimenções definidas!\n"); } else {
+        
+    for (mi1=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas-1; mi2++) {  // Coleta os valores da matriz
+        fscanf(X, "%f " , &x.matriz[mi2][mi1]); }
+        fscanf(X, "%f\n", &x.matriz[mi2][mi1]); }
     
-    fclose(X);
+    fclose(X);  // Encerra a coleta de dados
     
     
     // Prepara as estatisticas da matriz:
-    
-    if (x.verif==0) { sprintf(stats, "Matriz sem dimenções definidas!\n"); } else {
         
             // Tipo da matriz levando em conta a forma:
             
@@ -489,7 +495,6 @@ void    minfo                              (void) {
                     }
                 }
             }
-        }
             if (strcmp(form, "Quadrada")==0 && x.ncolunas<4) {
                 sprintf(stats,
                         "Matriz guardada na memória X:\n"
@@ -506,8 +511,8 @@ void    minfo                              (void) {
                         "Tipo         - %s\n"
                         , x.ncolunas, x.nlinhas, form, type);
             }
+    }
     Box(0, 43, stats);
-    
 }
 void    showhide           (int s, char func[10]) {
     
@@ -552,7 +557,7 @@ void    showhide           (int s, char func[10]) {
 void    sh_matriz                          (void) {
     
     FILE *MATRIX, *X;                   // Verificação se deve mostrar e guarda a matriz
-    int msh1=0, msh2, msh3, msh4;       // Contadores
+    int msh1=0, msh2, msh3;             // Contadores
     char line[50], func[10]="matrix";   // Guarda linhas e palavras para comparação
     struct matrix x;                    // Guarda de forma organizada os valores da matriz
     
@@ -580,14 +585,14 @@ void    sh_matriz                          (void) {
         
         X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r");
         
-        fscanf(X, "%d,(%d,%d)\n", &x.verif, &x.ncolunas, &x.nlinhas);
+        fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);
         
-        for (msh1=0; msh1<x.nlinhas; msh1++){ for (msh2=0; msh2<x.ncolunas-1; msh2++)
-        { fscanf(X, "%f " , &x.matriz[msh2][msh1]); } fscanf(X, "%f\n", &x.matriz[msh2][msh1]); }
-        
-        fclose(X);
-        
-        if (x.verif==1){
+        if (x.ncolunas>0 && x.nlinhas>0) {  // Verifica a existencia da matriz
+            
+            for (msh1=0; msh1<x.nlinhas; msh1++){ for (msh2=0; msh2<x.ncolunas-1; msh2++)
+            { fscanf(X, "%f " , &x.matriz[msh2][msh1]); } fscanf(X, "%f\n", &x.matriz[msh2][msh1]); }
+            
+            fclose(X);
             
             // Acha maior quantidade de digitos:
             int ch;
@@ -694,4 +699,141 @@ void    flowey                     (char acc[10]) {
         
     }
     fclose(FLOWEY);
+}
+void    undo                              (int s) {
+    
+    int un1, un2;           // Contadores
+    struct matrix m;        // Corpo das matrizes
+    FILE *M, *_M;           // Matrizes na memória
+    
+    switch (s) {
+        case 0: {           // Salva uma cópia da memória:
+            
+            // Salva X:
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_x.txt", "w");
+            
+            fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
+            fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {                                                          // Verificando existencia da matriz
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Salva valores da matriz
+                    fscanf(M, "%f " , &m.matriz[un2][un1]); fprintf(_M, "%f " , m.matriz[un2][un1]); }  // e os salva na matriz reserva
+                    fscanf(M, "%f\n", &m.matriz[un2][un1]); fprintf(_M, "%f\n", m.matriz[un2][un1]); }
+            }
+            
+            fclose(M); fclose(_M);  // Finaliza operação.
+            
+            // Salva Y:
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/y.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_y.txt", "w");
+            
+            fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
+            fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {                                                          // Verificando existencia da matriz
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Salva valores da matriz
+                    fscanf(M, "%f " , &m.matriz[un2][un1]); fprintf(_M, "%f " , m.matriz[un2][un1]); }  // e os salva na matriz reserva
+                    fscanf(M, "%f\n", &m.matriz[un2][un1]); fprintf(_M, "%f\n", m.matriz[un2][un1]); }
+            }
+            
+            fclose(M); fclose(_M);  // Finaliza operação.
+            
+            // Salva Z:
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/z.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_z.txt", "w");
+            
+            fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
+            fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {                                                          // Verificando existencia da matriz
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Salva valores da matriz
+                    fscanf(M, "%f " , &m.matriz[un2][un1]); fprintf(_M, "%f " , m.matriz[un2][un1]); }  // e os salva na matriz reserva
+                    fscanf(M, "%f\n", &m.matriz[un2][un1]); fprintf(_M, "%f\n", m.matriz[un2][un1]); }
+            }
+            
+            fclose(M); fclose(_M);  // Finaliza operação.
+            
+            // Salva W:
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/w.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_w.txt", "w");
+            
+            fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
+            fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {                                                          // Verificando existencia da matriz
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Salva valores da matriz
+                    fscanf(M, "%f " , &m.matriz[un2][un1]); fprintf(_M, "%f " , m.matriz[un2][un1]); }  // e os salva na matriz reserva
+                    fscanf(M, "%f\n", &m.matriz[un2][un1]); fprintf(_M, "%f\n", m.matriz[un2][un1]); }
+            }
+            
+            fclose(M); fclose(_M);  // Finaliza operação.
+            
+        } break;
+        case 1: {       // Recupera valores da matriz reserva na matriz original:
+            
+            // Recupera X:
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_x.txt", "r");
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "w");
+            
+            fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
+            fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Verificando existencia da matriz
+                    fscanf(_M, "%f " , &m.matriz[un2][un1]); fprintf(M, "%f " , m.matriz[un2][un1]); }  // Salva valores da matriz reserva
+                    fscanf(_M, "%f\n", &m.matriz[un2][un1]); fprintf(M, "%f\n", m.matriz[un2][un1]); }  // e os imprime na matriz original
+            }
+            
+            fclose(_M); fclose(M);  // Finaliza operação.
+            
+            // Recupera Y:
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_y.txt", "r");
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/y.txt", "w");
+            
+            fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
+            fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Verificando existencia da matriz
+                    fscanf(_M, "%f " , &m.matriz[un2][un1]); fprintf(M, "%f " , m.matriz[un2][un1]); }  // Salva valores da matriz reserva
+                    fscanf(_M, "%f\n", &m.matriz[un2][un1]); fprintf(M, "%f\n", m.matriz[un2][un1]); }  // e os imprime na matriz original
+            }
+            
+            fclose(_M); fclose(M);  // Finaliza operação.
+            
+            // Recupera Z:
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_z.txt", "r");
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/z.txt", "w");
+            
+            fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
+            fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Verificando existencia da matriz
+                    fscanf(_M, "%f " , &m.matriz[un2][un1]); fprintf(M, "%f " , m.matriz[un2][un1]); }  // Salva valores da matriz reserva
+                    fscanf(_M, "%f\n", &m.matriz[un2][un1]); fprintf(M, "%f\n", m.matriz[un2][un1]); }  // e os imprime na matriz original
+            }
+            
+            fclose(_M); fclose(M);  // Finaliza operação.
+            
+            // Recupera W:
+            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_w.txt", "r");
+            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/w.txt", "w");
+            
+            fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
+            fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original
+            
+            if (m.ncolunas>0 && m.nlinhas>0) {
+                for (un1=0; un1<m.nlinhas; un1++) { for (un2=0; un2<m.ncolunas-1; un2++) {              // Verificando existencia da matriz
+                    fscanf(_M, "%f " , &m.matriz[un2][un1]); fprintf(M, "%f " , m.matriz[un2][un1]); }  // Salva valores da matriz reserva
+                    fscanf(_M, "%f\n", &m.matriz[un2][un1]); fprintf(M, "%f\n", m.matriz[un2][un1]); }  // e os imprime na matriz original
+            }
+            
+            fclose(_M); fclose(M);  // Finaliza operação.
+            
+        } break;
+    }
+    
+    
 }

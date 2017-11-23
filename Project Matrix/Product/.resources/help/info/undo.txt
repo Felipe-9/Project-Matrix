@@ -1,0 +1,6 @@
+Info Undone - undo (void)         :
+
+Retorna memória de mátrizes para
+antes da ultima operação, desfazendo
+ultimo comando.
+

@@ -40,7 +40,7 @@ void    pbreak                            (int n);
  * @param path local onde se encontra o arquivo.
  * @see Box, command, main, info, sh_help.
  */
-void    interface                (char path[1000]);
+void    interface               (char path[1000]);
 /**
  * @brief Aloca funções do programa.
  * @details Recebe e interpreta o comando do usuário acionando as funções requeridas.
@@ -91,6 +91,8 @@ void    sh_help                            (void);
  * @see showhide.
  */
 void    initialise                         (void);
+/***/
+void    undo                              (int s);
 /**
  * @brief Logo
  * @details In this world is kill, or be killed.

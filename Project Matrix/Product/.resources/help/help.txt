@@ -5,6 +5,7 @@ clear                   - Limpa a tela
 show/hide *função*      - Deixa a mostra ou esconde a função inserida
 quit                    - Fecha programa
 intro                   - Re-mostra a intro
+undo                    - Desfaz ultima operação.
 
 Alocação de matrizes  | Operações               | Editar X
                       |                         | 

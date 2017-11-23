@@ -65,14 +65,6 @@ void    reset   (void);
  * @waring Perda da matriz localizada em X.
  * @see reset and clrv.
  */
-void    clrt    (void);
-/**
- * @brief Reseta os valores da matriz X.
- * @details Mantendo as dimensões originais,\n
- * todos os valores de X sao substituidos por 0.
- * @warning Perda dos valores de X!
- * @see reset and clrt.
- */
-void    clrv    (void);
+void    clr     (void);
 
 #endif /* memory_h */

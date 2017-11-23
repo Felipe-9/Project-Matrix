@@ -8,7 +8,7 @@
 
 #include "edit.h"
 
-void    size             (int c, int l) {
+void    size                    (int c, int l) {
     
     if (c>=0 && l>=0) {     // Verifica se o usuário inseriu a função corretamente
         
@@ -25,7 +25,7 @@ void    size             (int c, int l) {
         
         if (c>0 && l>0) {                                               // Procege apenas se as novas dimensões resultam em uma matriz
             
-            if (x.ncolunas!=0 && x.nlinhas!=0) {                        // Verifica a existencia de uma matriz
+            if (x.ncolunas>0 && x.nlinhas>0) {                        // Verifica a existencia de uma matriz
                 for (s1=0; s1<x.nlinhas; s1++) { for (s2=0; s2<x.ncolunas-1; s2++) {  // Recupera valores da matriz X
                     fscanf(X, "%f " , &x.matriz[s2][s1]); }
                     fscanf(X, "%f\n", &x.matriz[s2][s1]); }
@@ -50,7 +50,7 @@ void    size             (int c, int l) {
         
     } else { Box(0, 40, "ERRO! - Uso indevido da função!\n"); } // Mensagem de ERRO
 }
-void    choose                   (void) {
+void    choose                          (void) {
     
     int ch1, ch2, ch3, ch4, ch5;        // Contadores
     int c, l;                           // Recebe resposta do usuário
@@ -63,7 +63,7 @@ void    choose                   (void) {
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Coleta do N de inicialização em dimensões
     
-    if (x.ncolunas!=0 && x.nlinhas!=0) {   // Verifica existencia da matriz
+    if (x.ncolunas>0 && x.nlinhas>0) {   // Verifica existencia da matriz
         
         for (ch1=0; ch1<x.nlinhas; ch1++) { for (ch2=0; ch2<x.ncolunas-1; ch2++) {  // Recebe valores originais da matriz
             fscanf(X, "%f " , &x.matriz[ch2][ch1]); }
@@ -139,7 +139,7 @@ void    choose                   (void) {
     
     fclose(X);  // Finaliza função.
 }
-void    point   (int c, int l, float v) {
+void    point          (int c, int l, float v) {
     
     if (c>=0 && l>=0) {     // Verifica o uso correto da função
         
@@ -151,7 +151,7 @@ void    point   (int c, int l, float v) {
         
         fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Coleta N de inicialização e dimensões da matriz
         
-        if (x.ncolunas!=0 && x.nlinhas!=0) {        // Verifica existencia da matriz
+        if (x.ncolunas>0 && x.nlinhas>0) {        // Verifica existencia da matriz
             if (c<=x.ncolunas && l<=x.nlinhas) {    // Verifica se as coordenadas inseridas estao contidas na matriz
             
                 
@@ -187,7 +187,7 @@ void    point   (int c, int l, float v) {
         
     }         else { Box(0, 50, "ERRO! - Uso indevido da função!\n"                     ); }    // Mensagem de ERRO
 }
-void    transp                   (void) {
+void    transp                          (void) {
     
     int tr1, tr2;       // Contadores
     struct matrix x;    // Corpo da matriz
@@ -197,7 +197,7 @@ void    transp                   (void) {
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Recebe N de inicialização e dimensões
     
-    if (x.ncolunas!=0 && x.nlinhas!=0) {   // Verifica a existencia da matriz
+    if (x.ncolunas>0 && x.nlinhas>0) {   // Verifica a existencia da matriz
         
         for (tr1=0; tr1<x.nlinhas; tr1++) { for (tr2=0; tr2<x.ncolunas-1; tr2++) {    // Recebe valores da matriz
             fscanf(X, "%f " , &x.matriz[tr2][tr1]); }
@@ -208,7 +208,7 @@ void    transp                   (void) {
         // Recria a matriz de forma transposta:
         X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
         
-        fprintf(X, "(%d,%d)", x.nlinhas, x.ncolunas); // Insere trocado as dimensões da matriz
+        fprintf(X, "(%d,%d)\n", x.nlinhas, x.ncolunas); // Insere trocado as dimensões da matriz
         
         for (tr1=0; tr1<x.ncolunas; tr1++) { for (tr2=0; tr2<x.nlinhas-1; tr2++) {    // Insere de forma transposta os valores da matriz
             fprintf(X, "%f " , x.matriz[tr1][tr2]); }
@@ -218,14 +218,14 @@ void    transp                   (void) {
     
     fclose(X);  // Finaliza operação.
 }
-void    inv                      (void) {
+void    inv                             (void) {
     
 }
-void    mrand        (float i, float j) {
+void    mrand        (int s, float i, float j) {
     
-    if (i<j) {
+    if ((i==0 && j==0) || (i<j || (i==0 || j==0))) {    // Verifica se a função foi usada corretamente
         
-        int r1, r2;         // Contadores
+        int r1, r2, r3;     // Contadores
         struct matrix x;    // Corpo da matriz X
         
         // Coleta de dados
@@ -233,11 +233,34 @@ void    mrand        (float i, float j) {
         
         fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Coleta das e dimensões
         
-        fclose(X);
+        fclose(X);  // Finaliza coleta de dados
         
-        if (x.ncolunas!=0 && x.nlinhas!=0) {
+        if (x.ncolunas>0 && x.nlinhas>0) {  // Verifica a existencia da matriz
             
-            for (r1=0; r1<x.nlinhas; r1++) { for (r2=0; r2<x.ncolunas; r2++) { x.matriz[r2][r1] = rand(); } }
+            srand(time(0)); // Torna a função rand realmente aleatória
+            
+            if (s==0) { float I=i, J=j; // Caso o usuário deseje receber floats
+                for (r1=0; r1<x.nlinhas; r1++) { for (r2=0; r2<x.ncolunas; r2++) {
+                    if      (I==0 && J==0) { x.matriz[r2][r1] = ((rand()%(10000000))-(pow(10, 5)))/pow(10, 3); }
+                    else {
+                        if      (I==0 && J <0) { I =  -100; }
+                        else if (I >0 && J==0) { J = 10000; }
+                        r3 = (J-I) * pow(10, 3);
+                        x.matriz[r2][r1] = (rand()%r3 + (I * pow(10, 3)))/pow(10, 3);
+                       }
+                }
+                }
+            } else { int I=i, J=j;  // Caso o usuário deseje receber integros
+                for (r1=0; r1<x.nlinhas; r1++) { for (r2=0; r2<x.ncolunas; r2++) {
+                    if      (I==0 && J==0) { x.matriz[r2][r1] = rand()%10000-1000; }
+                    else {
+                        if      (I==0 && J <0) { I = -100; }
+                        else if (I >0 && J==0) { J = 1000; }
+                        do { x.matriz[r2][r1] = (rand()%J)+I; } while (x.matriz[r2][r1]>J);
+                    }
+                }
+                }
+            }
             
             X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
             
@@ -252,4 +275,4 @@ void    mrand        (float i, float j) {
         }   else { Box(0, 50, "ERRO! - Matriz sem dimensões definidas!\n"); }   // Mensagem de ERRO
     }       else { Box(0, 50, "ERRO! - Uso indevido da função!\n"); }           // Mensagem de ERRO
     
-}   // Terminar
+}

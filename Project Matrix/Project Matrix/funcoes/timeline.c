@@ -330,7 +330,10 @@ int     command                            (void) {
         else if (strcmp(rs[1], "size"  )==0) { undo(0); size       (i, j); }   // Edita dimensões da matriz
         else if (strcmp(rs[1], "choose")==0) { undo(0); choose         (); }   // Insere valores na matriz
         else if (strcmp(rs[1], "point" )==0) { undo(0); point   (i, j, v); }   // Insere valores nas cordenadas na matriz
-        else if (strcmp(rs[1], "rand"  )==0) { undo(0); mrand      (i, j); }   // Preeche matriz com valores aleatórios nos detalhes especificos
+        
+        else if (strcmp(rs[1], "irand"  )==0) { undo(0); mrand   (1, i, j); }
+        else if (strcmp(rs[1], "frand"  )==0) { undo(0); mrand   (0, i, j); }
+        
         else if (strcmp(rs[1], "tr"    )==0) { undo(0); transp         (); }   // Transpõe matriz
         else if (strcmp(rs[1], "inv"   )==0) { undo(0); inv            (); }   // Inverte matriz
         

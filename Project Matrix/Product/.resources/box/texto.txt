@@ -1,5 +1,2 @@
-Matriz guardada na memória X:
-Dimensões    - (1, 1)
-Formato      - Quadrada
-Tipo         - Matriz triangular inferior
-Determinante - 1
+ERRO! - Unknown command!
+Type help for command list

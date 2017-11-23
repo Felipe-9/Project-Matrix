@@ -68,7 +68,7 @@ void    inv                      (void);
  * @warning Matriz de X deve ter suas dimenções definidas!
  * @see sizen choose and point.
  */
-void    mrand        (float i, float j);
+void    mrand (int s, float i, float j);
 
 /** @brief Modelo de matriz. */
 struct matrix {

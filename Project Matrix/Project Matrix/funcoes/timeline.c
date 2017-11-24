@@ -18,7 +18,7 @@ void    Box         (int h,int l, char menu[100]) {
     
     // Guarda texto inserido em um arquivo:
     
-    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/box/texto.txt", "w");
+    box = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/box/texto.txt", "w");
     
     fprintf(box, "%s", menu); // Imprime o texto inserino no arquivo texto.txt
     
@@ -27,7 +27,7 @@ void    Box         (int h,int l, char menu[100]) {
     
     // Imprime texto dentro de uma caixa:
     
-    box = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/box/texto.txt", "r");
+    box = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/box/texto.txt", "r");
     
     rewind(box);
     
@@ -160,7 +160,7 @@ int     command                            (void) {
             
             // Execulta commando do usuário:
         
-        if      (strcmp(rs[1], "help"  )==0) { interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/help.txt");     }   // Mostra tela de ajuda
+        if      (strcmp(rs[1], "help"  )==0) { interface("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/help.txt");     }   // Mostra tela de ajuda
         
         else if (strcmp(rs[1], "info"  )==0) { info               (rs[2]); }   // Mostra ajuda da função
         else if (strcmp(rs[1], "minfo" )==0) { minfo                   (); }   // Mostra detalhes da matriz
@@ -170,7 +170,7 @@ int     command                            (void) {
         else if (strcmp(rs[1], "quit"  )==0) { return                   0; }   // Encerra programa
         else if (strcmp(rs[1], "Flowey")==0) { flowey             (rs[2]); }   // Logo
         
-        else if (strcmp(rs[1], "intro" )==0) { interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/intro/logo.txt")   ; }   // Mostra tela intro
+        else if (strcmp(rs[1], "intro" )==0) { interface("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/intro/logo.txt")   ; }   // Mostra tela intro
         
         else if (strcmp(rs[1], "undo"  )==0) { undo                   (1); }   // Reverte ultima operação na memória
         
@@ -211,7 +211,7 @@ void    info                      (char func[10]) {
     
     int in1;                // Contador
     char term[5] = " txt";  // Finaliza path
-    char path[1000]=("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/info/");    // Base para procurar arquivo .txt
+    char path[1000]=("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/info/");    // Base para procurar arquivo .txt
     
     term[4]='\0';   // Finaliza char da terminação
     
@@ -219,12 +219,12 @@ void    info                      (char func[10]) {
     // Prepara o caminho para achar arquivo:
     
     for (in1=0;in1<strlen(func)+4;in1++){   // Copia função inserida no final de path
-        path[in1+strlen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/info/")]=func[in1];
+        path[in1+strlen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/info/")]=func[in1];
         if (in1>strlen(func)){  // Finaliza função com a terminação .txt
-            path[in1+strlen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/info/")]=term[in1-strlen(func)];
+            path[in1+strlen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/info/")]=term[in1-strlen(func)];
         }
     }
-    path[in1+strlen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/info/")-4]='.';  // Corrige '.' não inserido
+    path[in1+strlen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/info/")-4]='.';  // Corrige '.' não inserido
     
     
     // Recupera e imprime arquivo:
@@ -243,7 +243,7 @@ void    minfo                              (void) {
     // Recupera dados da matriz:
     
     // Abre arquivo de memoria X
-    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r");
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);  // Recupera numero de inicialização e dimensões da matriz
     
@@ -374,7 +374,7 @@ void    sh_matriz                          (void) {
     
     // Verifica se deve imprimir a matriz:
     
-    MATRIX = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/switch.txt", "r");
+    MATRIX = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/switch.txt", "r");
     
     rewind(MATRIX);
     while (fgets(line, sizeof(line), MATRIX)){  // Acha os valores atribuidos a esta função na memória
@@ -394,7 +394,7 @@ void    sh_matriz                          (void) {
         
         // Recupera dados da matriz:
         
-        X = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r");
+        X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
         
         fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);
         
@@ -448,7 +448,7 @@ void    sh_help                            (void) {
     int h1;
     char line[50], func[]="help";
     
-    HELP = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/switch.txt", "r");
+    HELP = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/switch.txt", "r");
     
     rewind(HELP);
     while (fgets(line, sizeof(line), HELP)){  // Acha os valores atribuidos a esta função na memória
@@ -463,7 +463,7 @@ void    sh_help                            (void) {
     }
     
     if (h1==1){
-        interface("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/help/help.txt");
+        interface("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/help/help.txt");
     }
     fclose(HELP);
 }
@@ -521,8 +521,8 @@ void    undo                              (int s) {
         case 0: {           // Salva uma cópia da memória:
             
             // Salva X:
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "r");
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_x.txt", "w");
+            M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_x.txt", "w");
             
             fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
             fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
@@ -536,8 +536,8 @@ void    undo                              (int s) {
             fclose(M); fclose(_M);  // Finaliza operação.
             
             // Salva Y:
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/y.txt", "r");
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_y.txt", "w");
+            M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_y.txt", "w");
             
             fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
             fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
@@ -551,8 +551,8 @@ void    undo                              (int s) {
             fclose(M); fclose(_M);  // Finaliza operação.
             
             // Salva Z:
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/z.txt", "r");
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_z.txt", "w");
+            M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_z.txt", "w");
             
             fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
             fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
@@ -566,8 +566,8 @@ void    undo                              (int s) {
             fclose(M); fclose(_M);  // Finaliza operação.
             
             // Salva W:
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/w.txt", "r");
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_w.txt", "w");
+            M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "r");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_w.txt", "w");
             
             fscanf (M,  "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe dimensões da matriz
             fprintf(_M, "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Salva  dimensões na matriz reserva
@@ -584,8 +584,8 @@ void    undo                              (int s) {
         case 1: {       // Recupera valores da matriz reserva na matriz original:
             
             // Recupera X:
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_x.txt", "r");
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/x.txt", "w");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_x.txt", "r");
+            M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
             
             fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
             fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original
@@ -599,8 +599,8 @@ void    undo                              (int s) {
             fclose(_M); fclose(M);  // Finaliza operação.
             
             // Recupera Y:
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_y.txt", "r");
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/y.txt", "w");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_y.txt", "r");
+            M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
             
             fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
             fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original
@@ -614,8 +614,8 @@ void    undo                              (int s) {
             fclose(_M); fclose(M);  // Finaliza operação.
             
             // Recupera Z:
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_z.txt", "r");
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/z.txt", "w");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_z.txt", "r");
+            M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
             
             fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
             fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original
@@ -629,8 +629,8 @@ void    undo                              (int s) {
             fclose(_M); fclose(M);  // Finaliza operação.
             
             // Recupera W:
-            _M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/_w.txt", "r");
-            M = fopen("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/memory/w.txt", "w");
+            _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/_w.txt", "r");
+            M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "w");
             
             fscanf (_M, "(%d,%d)\n", &m.ncolunas, &m.nlinhas); // Recebe  dimensões da matriz reserva
             fprintf(M,  "(%d,%d)\n",  m.ncolunas,  m.nlinhas); // Reverte dimensões na matriz original

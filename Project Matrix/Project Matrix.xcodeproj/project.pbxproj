@@ -54,8 +54,8 @@
 			isa = PBXGroup;
 			children = (
 				814A28381FA7BBF900485E6D /* timeline.c */,
-				81AD456A1F91A12E00D8FAA6 /* operacoes.c */,
 				814CE57E1FA89DDD000F883B /* edit.c */,
+				81AD456A1F91A12E00D8FAA6 /* operacoes.c */,
 				814CE5811FA89E6F000F883B /* memory.c */,
 			);
 			path = funcoes;

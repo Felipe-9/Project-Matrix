@@ -8,7 +8,7 @@
 
 #include "operacoes.h"
 
-void    sum      (void) {
+void    sum                                  (void) {
     
     FILE *X, *Y;            // Recupera matrizes guardadas na memória
     struct matrix x,y;      // Recebe dados das matrizes
@@ -72,7 +72,7 @@ void    sum      (void) {
     }         else { Box(0, 50, "ERRO! - Matriz X sem dimensões definidas\n"); }
     fclose(X); fclose(Y);   // Finaliza operação
 }
-void    sub      (void) {
+void    sub                                  (void) {
     
     FILE *X, *Y;    // Recupera matrizes guardadas na memória
     struct matrix x,y;      // Recebe dados das matrizes
@@ -136,7 +136,7 @@ void    sub      (void) {
     }         else { Box(0, 50, "ERRO! - Matriz X sem dimensões definidas\n"); }
     fclose(X); fclose(Y);
 }
-void    mtim     (void) {
+void    mtim                                 (void) {
     
     FILE *X, *Y;
     struct matrix x,y,r;
@@ -199,12 +199,14 @@ void    mtim     (void) {
     }         else { Box(0, 50, "ERRO! - Matriz X sem dimensões definidas\n"); }
     fclose(X); fclose(Y);   // Finaliza operação
 }
-void    vtim  (float v) {
+void    vtim                              (float v) {
     
     int vt1,vt2;        // Contadores
     struct matrix x;    // Guarda valores da matriz X
     
     FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r+");
+    
+    rewind(X);
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Recebe numero de colunas e linhas da matriz
     
@@ -221,11 +223,11 @@ void    vtim  (float v) {
             fprintf (X, "%f\n", v * x.matriz[vt2][vt1]); }
     }
     
-    else { Box(0, 40, "ERRO! - Matriz incompleta!\n"); }  // Mensagem de ERRO
+    else { Box(0, 50, "ERRO! - Matriz incompleta!\n"); }  // Mensagem de ERRO
     
     fclose(X);  // Finaliza operação
 }
-void    mpow    (int v) {
+void    mpow                                (int v) {
     
     int pow1, pow2, pow3, pow4; float rs;   // Contadores
     struct matrix x1, x2, r;                // Matrizes
@@ -268,4 +270,62 @@ void    mpow    (int v) {
     }     else { Box(0, 40, "ERRO! - Matriz não quadrada!\n"); }
     
     fclose(X);  // Encerra toda a operação.
+}
+float   mdet    (float m[100][100], int dc, int dl) {
+    
+    int md1, md2;               // Contadores
+    float det[4];               // Guarda os determinantes
+    
+    if (dc==dl && dc<4)  {     // Verifica se a matriz é quadrada e sua compatibilidade da matriz
+            
+            switch (dc) {
+                case 1: { det[0] = m[0][0]; } break;
+                case 2: { det[0] = (m[0][0]*m[1][1]) - (m[1][0]*m[0][1]); } break;
+                case 3: {
+                    
+                    // Diagonais positivas:
+                    
+                    // 1a Diagonal positiva:
+                    for (md1=0, det[1]=1; md1<3; md1++) { det[1] = det[1] * m[md1][md1]; }
+                    
+                    // 2a Diagonal positiva:
+                    for (md1=0, det[2]=1; md1<3; md1++) { for (md2=0; md2<3; md2++) { if (md2+1==md1||md2==md1+2) {
+                        det[2] = det[2] * m[md2][md1]; }
+                    }
+                    }
+                    
+                    // 3a Diagonal positiva:
+                    for (md1=0, det[3]=1; md1<3; md1++) { for (md2=0; md2<3; md2++) { if (md2==md1+1||md2+2==md1) {
+                        det[3] = det[3] * m[md2][md1]; }
+                    }
+                    }
+                    
+                    // Soma diagonais positivas:
+                    for (md1=1, det[0]=0; md1<4; md1++) { det[0] = det[0] + det[md1]; }
+                    
+                    // Diagonais negativas:
+                    
+                    // 1a Diagonal negativa:
+                    for (md1=0, md2=2, det[1]=1; md1<3; md1++, md2--) { det[1] = det[1] * m[md2][md1]; }
+                    
+                    // 2a Diagonal negativa:
+                    for (md1=0, det[2]=1; md1<3; md1++){ for (md2=0; md2<3; md2++) { if ((md2+md1)==1 || (md2==2 && md1==2) ) {
+                        det[2] = det[2]*m[md2][md1]; }
+                    }
+                    }
+                    
+                    // 3a Diagonal negativa:
+                    for (md1=0, det[3]=1; md1<3; md1++) { for (md2=0; md2<3; md2++) { if (md2+md1==3 || (md2==0 && md1==0) ) {
+                        det[3] = det[3] * m[md2][md1]; }
+                    }
+                    }
+                    
+                    // Subtrai diagonais negativas:
+                    for (md1=1; md1<4; md1++) { det[0] = det[0] - det[md1]; }
+                    
+                } break;
+            }
+        } else { Box(0, 50, "ERRO! - Matriz incompativel!\n"); }
+    
+    return det[0];
 }

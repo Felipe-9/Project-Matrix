@@ -91,7 +91,11 @@ void    sh_help                            (void);
  * @see showhide.
  */
 void    initialise                         (void);
-/***/
+/**
+ * @brief Desfáz ultima alteração na memória.
+ * @details Salva uma cópia da memoria e quando solicitado imprime na memoria original.
+ * @param s Ação da função (0 salva cópia 1 recupera cópia.
+ */
 void    undo                              (int s);
 /**
  * @brief Logo

@@ -20,7 +20,7 @@
  * @warning Os espaços X e Y devem conter matrizes.
  * @see sub, mtim, vtim, mpow.
  */
-void    sum     (void);
+void    sum                                  (void);
 /**
  * @brief Subtração de Matrizes ( Y - X ).
  * @details Verifica a existencia e subtrai da matriz localizada em Y a matriz localizada em X.
@@ -28,7 +28,7 @@ void    sum     (void);
  * @warning X e Y devem conter matrizes!
  * @see sum, mtim, vtim, mpow.
  */
-void    sub     (void);
+void    sub                                  (void);
 /**
  * @brief Multiplicação de Matrizes ( Y * X ).
  * @details Verifica a existencia e multiplica as matrizes localizadas em X e Y.
@@ -36,7 +36,7 @@ void    sub     (void);
  * @warning X e Y devem conter matrizes.
  * @see sum, sub, vtim, mpow.
  */
-void    mtim    (void);
+void    mtim                                 (void);
 /**
  * @brief Multiplica matriz por um escalar
  * @details Multiplica cada valor da matriz de X por um escalar do tipo float
@@ -44,15 +44,24 @@ void    mtim    (void);
  * @warning X deve conter uma matriz
  * @see sum, sub, mtim, mpow.
  */
-void    vtim (float v);
+void    vtim                              (float v);
 /**
  * @brief Eleva X á potencia
- * @detais Multiplica X * X => salva resultado em R =>\n
- * => Multiplica R * X => repete N vezes =>\n
+ * @detais Multiplica X * X =>\n\t=> salva resultado em R =>\n
+ * \t=> Multiplica R * X =>\n\t=> repete N vezes =>\n\t
  * => Salva resultado final em X.
  * @param v Potencia a ser elevadad de X.
  * @see sum, sub, mtim, vtim.
  */
-void    mpow   (int v);
+void    mpow                                (int v);
+/**
+ * @brief Calcula o determinante de uma matriz.
+ * @param x Matriz para calcular o determinante.
+ * @param dc Numero de colunas da matriz.
+ * @param dl Numero de linhas  da matriz.
+ * @return Retorna o determiante da matriz.
+ * @see minfo and inv.
+ */
+float   mdet    (float x[100][100], int dc, int dl);
 
 #endif /* operacoes_h */

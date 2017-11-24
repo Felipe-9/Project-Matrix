@@ -41,11 +41,11 @@ void    size             (int c, int l);
 void    choose                   (void);
 /**
  * @brief Altera um valor em uma coordenada especifica em X
- * @details Insere diretamente o valor fornecido pelo usuário as coordenadas selecionadas por ele.
+ * @details Insere diretamente o valor fornecido pelo usuário as coordenadas selecionadas por ele.\n
  * Caso selecione uma coluna o valor é inserido sobre todas as linhas da mesma,\n
- * o contrário trocando linha por coluna tambem é verdadeiro.
+ * o contrário trocando linha por coluna tambem é verdadeiro,\n e se nao inserir nenhuma coordenada a matriz é preechida\n completamente com o valor inserido.
  * @see size, choose and mrand.
- * @warning Não inicializa completamente a matriz caso tal não tenha valores previamente definidos!
+ * @warning Matriz precisa ser inicializada!
  */
 void    point   (int c, int l, float v);
 /**
@@ -59,14 +59,19 @@ void    transp                   (void);
  * @brief Inversão de matriz.
  * @details Inverte a matriz localizada em X.
  * @warning X deve conter uma matriz!
+ * @warning Determinante de X != 0!
  * @see transp.
  */
 void    inv                      (void);
 /**
  * @brief Insere sobre a matriz valore aleatórios.
- * @detals Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.
+ * @details Insere valores aleatorios dentro de um leque escolhido pelo usuário para cada cordenada da matriz.\n
+ * O usuário pode escolher denter inserir valores inteiros ou floats dentro dos limites inseridos pelo mesmo tambem.
+ * @param s Seleção de numeros inteiros ou floats.
+ * @param i Limite inferior para os valores aleatórios.
+ * @param j Limite superior para os valores aleatórios.
  * @warning Matriz de X deve ter suas dimenções definidas!
- * @see sizen choose and point.
+ * @see size, choose and point.
  */
 void    mrand (int s, float i, float j);
 

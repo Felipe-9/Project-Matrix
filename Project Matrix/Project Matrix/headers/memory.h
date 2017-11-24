@@ -55,7 +55,7 @@ void    roll    (void);
  * @brief Reseta memória.
  * @details Reseta todas as matrizes na mémoria.
  * @warnig Todas as matrizes são perdidas!
- * @see clrt and clrv.
+ * @see clr.
  */
 void    reset   (void);
 /**
@@ -63,7 +63,7 @@ void    reset   (void);
  * @details Reseta completamente a matriz localizada em X.\n
  * Zera numero de inicialização e dimensões.
  * @waring Perda da matriz localizada em X.
- * @see reset and clrv.
+ * @see reset.
  */
 void    clr     (void);
 

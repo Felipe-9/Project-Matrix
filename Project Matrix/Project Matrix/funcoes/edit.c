@@ -153,7 +153,7 @@ void    point          (int c, int l, float v) {
         
         if (x.ncolunas>0 && x.nlinhas>0) {        // Verifica existencia da matriz
             if (c<=x.ncolunas && l<=x.nlinhas) {    // Verifica se as coordenadas inseridas estao contidas na matriz
-            
+                
                 
                 for (p1=0; p1<x.nlinhas; p1++) { for (p2=0; p2<x.ncolunas-1; p2++) {    // Coleta dos valores da matriz X
                     fscanf(X, "%f " , &x.matriz[p2][p1]); }
@@ -220,6 +220,49 @@ void    transp                          (void) {
 }
 void    inv                             (void) {
     
+    int i1, i2;             // Contadores
+    struct matrix x;        // Corpo da matriz
+    
+    // Coleta de dados da memória:
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    
+    fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);    // Coleta dimensões da matrix
+    
+    if (x.ncolunas>0 && x.nlinhas>0) {  // Verifica a existencia da matriz
+        if (x.ncolunas==x.nlinhas && x.nlinhas<3) { // Verifica compatibilidade da matriz
+            
+            for (i1=0; i1<x.nlinhas; i1++) { for (i2=0; i2<x.ncolunas-1; i2++) {    // Recupera os valores da matriz
+                fscanf(X, "%f " , &x.matriz[i2][i1]); }
+                fscanf(X, "%f\n", &x.matriz[i2][i1]); }
+            
+            float det = mdet(x.matriz, x.ncolunas, x.nlinhas);  // Calcula o determinante
+            
+            if (det!=0) {   // Verifica se é possivel inverter a matriz
+                
+                fclose(X);  // Finaliza coleta de dados
+                
+                struct matrix inv;  // Guara a matriz invérsa
+                
+                for (i1=0; i1<x.nlinhas; i1++) { for (i2=0; i2<x.ncolunas; i2++) {
+                    if (i1==i2) { inv.matriz[i2][i1] = x.matriz[(x.ncolunas-i2)-1][(x.nlinhas-i1)-1] * (1/det); }   // Inverte a diagonal principal
+                    else { inv.matriz[i2][i1] = -x.matriz[i2][i1] * (1/det); }                                      // Deixa negativo o resto dos numeros
+                }
+                }
+                
+                // Cria nova matriz:
+                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+                
+                fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas); // Imprime as dimensões originais
+                
+                for (i1=0; i1<x.nlinhas; i1++) { for (i2=0; i2<x.ncolunas-1; i2++) {    // Imprime os novos valores da matriiz
+                    fprintf(X, "%f " , inv.matriz[i2][i1]); }
+                    fprintf(X, "%f\n", inv.matriz[i2][i1]); }
+                
+            } else { Box(0, 50, "ERRO! - Deteterminante da matriz = 0!\n"); }   // Mensagem de ERRO
+        }     else { Box(0, 50, "ERRO! - Matriz incompativel!\n"); }            // Mensagem de ERRO
+    }         else { Box(0, 50, "ERRO! - Matriz sem dimesões definidas!\n"); }  // Mensagem de ERRO
+    
+    fclose(X);  // Finaliza operação
 }
 void    mrand        (int s, float i, float j) {
     
@@ -247,7 +290,7 @@ void    mrand        (int s, float i, float j) {
                         else if (I >0 && J==0) { J = 10000; }
                         r3 = (J-I) * pow(10, 3);
                         x.matriz[r2][r1] = (rand()%r3 + (I * pow(10, 3)))/pow(10, 3);
-                       }
+                    }
                 }
                 }
             } else { int I=i, J=j;  // Caso o usuário deseje receber integros
@@ -276,3 +319,4 @@ void    mrand        (int s, float i, float j) {
     }       else { Box(0, 50, "ERRO! - Uso indevido da função!\n"); }           // Mensagem de ERRO
     
 }
+

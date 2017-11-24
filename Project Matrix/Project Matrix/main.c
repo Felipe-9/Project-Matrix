@@ -1,6 +1,6 @@
 //
 //  main.c
-//  Project Matrix V5.4.5
+//  Project Matrix V6
 //
 //  Created by Felipe Alexandre de Barros Pinto on 13/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
@@ -13,21 +13,10 @@
 #include "memory.h"
 
 
-
 /**
  * @brief Timeline do programa.
  * @details Permuta as funcoes do programa.
- * @see interface.
- * @see sum.
- * @see sub.
- * @see tim.
- * @see show.
- * @see size.
- * @see choose.
- * @see point.
- * @see inv.
- * @see transp.
- * @see subst.
+ * @see initialize, pbreak, interface and command.
  **/
 int main() {
     initialise();

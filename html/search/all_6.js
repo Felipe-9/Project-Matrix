@@ -4,6 +4,7 @@ var searchData=
   ['main_2ec',['main.c',['../main_8c.html',1,'']]],
   ['matrix',['matrix',['../structmatrix.html',1,'']]],
   ['matriz',['matriz',['../structmatrix.html#acdb509ce8c286aacfc541089c47c52eb',1,'matrix']]],
+  ['mdet',['mdet',['../operacoes_8c.html#a1ea23f27b5ddd276aeee0abca8cd2a9f',1,'mdet(float m[100][100], int dc, int dl):&#160;operacoes.c'],['../operacoes_8h.html#af066a19e557632617de9992fd57700bd',1,'mdet(float x[100][100], int dc, int dl):&#160;operacoes.c']]],
   ['memory_2ec',['memory.c',['../memory_8c.html',1,'']]],
   ['memory_2eh',['memory.h',['../memory_8h.html',1,'']]],
   ['minfo',['minfo',['../timeline_8c.html#a1863da15492dfbd7e56bbcabb1c3fd12',1,'minfo(void):&#160;timeline.c'],['../timeline_8h.html#a1863da15492dfbd7e56bbcabb1c3fd12',1,'minfo(void):&#160;timeline.c']]],

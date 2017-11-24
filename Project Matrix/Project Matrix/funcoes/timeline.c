@@ -8,146 +8,6 @@
 
 #include "timeline.h"
 
-// Interface
-/*
- int     interface                         (int rs) {
- 
- #define H 10
- #define L 66
- 
- int r=1;                        //  Cond. de Saida
- FILE *txt;                      //  Guarda arquivo.txt
- int i,j=0;                      //  Contadores
- char linha[100], texto[2000];   //  Grava recupera arquivo.txt
- 
- switch (rs) {
- case 1: {   // Pagina de Inicialisacao
- 
- txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/intro/m1.txt", "r");
- 
- while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
- for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
- texto[i+j]=linha[i];
- }
- texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
- j=j+i;
- }
- texto[j]='\0';
- 
- fclose(txt);
- 
- pbreak(50);
- Box(0,103,texto);   //  Imprime a intro
- 
- //  Espera resposta do usuário
- printf("\n                             Press Enter to initialize the program");
- getchar();
- 
- pbreak(50);
- 
- } break;
- case 2: {   // Menu principal
- 
- txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/menu/m2.txt", "r");
- 
- while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
- for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
- texto[i+j]=linha[i];
- }
- texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
- j=j+i;
- }
- texto[j]='\0';
- fclose(txt);
- 
- do{
- pbreak(50);
- Box (H,L,texto);
- 
- printf("\n$ ");
- scanf("%c",&rs);
- 
- switch (rs){ // Define qual ação realizar
- case 'E': rs =  1; r=0; break;
- case 'D': rs =  2; r=0; break;
- case 'S': rs =  3; r=0; break;
- case 'R': rs =  4; r=0; break;
- case 'e': rs = interface(3); r=0; break;
- case 'o': rs = interface(4); r=0; break;
- case 'q': rs = 0; r=0; break;
- }
- } while (r!=0);
- } break;
- case 3: {   // Menu de Edicao
- 
- r=1;
- 
- txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/menu/m3.txt", "r");
- 
- while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
- for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
- texto[i+j]=linha[i];
- }
- texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
- j=j+i;
- }
- texto[j]='\0';
- fclose(txt);
- 
- do{
- pbreak(50);
- Box (H,L,texto);
- 
- printf("\n$ ");
- scanf("%c",&rs);
- 
- switch (rs) { // Define qual ação realizar
- case 's': rs =  5; r=0; break;
- case 'c': rs =  6; r=0; break;
- case 'p': rs =  7; r=0; break;
- case 'r': rs =  8; r=0; break;
- case 'i': rs =  9; r=0; break;
- case 't': rs = 10; r=0; break;
- case 'q': rs = interface(2); r=0; break;
- }
- } while (r!=0);
- } break;
- case 4: {   // Menu de Operacoes
- 
- txt = fopen ("/Users/felipepinto/Documents/Engenharia\ Eletrica/A\&L\ Prog/FelipePint0.github.io/Project-Matrix/Project\ Matrix/Product/.resources/interface/menu/m4.txt", "r");
- 
- while(fgets(linha, sizeof(linha), txt)){ //   Guarda cada linha do arquivo .txt em linha
- for (i=0;i<strlen(linha);i++){       //  Guarda em sequencia cada linha em intro
- texto[i+j]=linha[i];
- }
- texto[i+j]='\n';    //  Marca fim de cada linha de do arquivo .txt
- j=j+i;
- }
- texto[j]='\0';
- fclose(txt);
- 
- r=1;
- do{
- pbreak(50);
- Box(H,L,texto);
- printf("\n$ ");
- scanf("%c",&rs);
- 
- switch (rs) { // Define qual ação realizar
- case 'S': rs = 11; r=0; break;
- case 's': rs = 12; r=0; break;
- case 'm': rs = 13; r=0; break;
- case 'q': interface(2); r=0; break;
- }
- } while (r!=0);
- } break;
- }
- 
- return rs;
- 
- }
- */
-
 void    Box         (int h,int l, char menu[100]) {
     
     int b1,b2,b3;       // Contadores
@@ -377,7 +237,7 @@ void    minfo                              (void) {
     struct matrix x;                            // Corpo da matriz
     char stats[1000];                           // Corpo para montar menu
     int mi1, mi2, mi3;                          // Contadores
-    float det[4]; char form[10], type[100];     // Variantes do menu
+    float det; char form[10], type[100];        // Variantes do menu
     
     
     // Recupera dados da matriz:
@@ -389,131 +249,79 @@ void    minfo                              (void) {
     
     if (x.ncolunas<=0 && x.nlinhas<=0) { sprintf(stats, "Matriz sem dimenções definidas!\n"); } else {
         
-    for (mi1=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas-1; mi2++) {  // Coleta os valores da matriz
-        fscanf(X, "%f " , &x.matriz[mi2][mi1]); }
-        fscanf(X, "%f\n", &x.matriz[mi2][mi1]); }
-    
-    fclose(X);  // Encerra a coleta de dados
-    
-    
-    // Prepara as estatisticas da matriz:
+        for (mi1=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas-1; mi2++) {  // Coleta os valores da matriz
+            fscanf(X, "%f " , &x.matriz[mi2][mi1]); }
+            fscanf(X, "%f\n", &x.matriz[mi2][mi1]); }
         
-            // Tipo da matriz levando em conta a forma:
+        fclose(X);  // Encerra a coleta de dados
+        
+        
+        // Prepara as estatisticas da matriz:
+        
+        // Tipo da matriz levando em conta a forma:
+        
+        if (x.nlinhas==x.ncolunas){
+            sprintf(form, "Quadrada");
+        } else if (x.ncolunas==1) {
+            sprintf(form, ("Linear"));
+        } else if (x.nlinhas==1) {
+            sprintf(form, ("Coluna"));
+        } else {
+            sprintf(form, ("Comum"));
+        }
+        
+        // Achar (se for quadrada e de ordem menor ou igual a 3) o determinante:
+        
+        if (x.nlinhas==x.ncolunas && x.ncolunas<4) { det = mdet(x.matriz, x.ncolunas, x.nlinhas); }
+        
+        // Determinar tipo de matriz:
+        
+        for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) { if (x.matriz[mi2][mi2]!=0) { mi3++; } } }
+        if (mi3==0) { sprintf(type, "Matriz nula"); } else {
             
-            if (x.nlinhas==x.ncolunas){
-                sprintf(form, "Quadrada");
-            } else if (x.ncolunas==1) {
-                sprintf(form, ("Linear"));
-            } else if (x.nlinhas==1) {
-                sprintf(form, ("Coluna"));
-            } else {
-                sprintf(form, ("Comum"));
+            for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++){ for (mi2=0; mi2<x.ncolunas; mi2++){
+                if ( ((mi2>mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2<=mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
             }
-            
-            // Achar (se for quadrada e de ordem menor ou igual a 3) o determinante:
-            
-            if (x.nlinhas==x.ncolunas){
-                switch (x.ncolunas) {
-                    case 1: { det[0] = x.matriz[0][0]; } break;
-                    case 2: { det[0] = (x.matriz[0][0]*x.matriz[1][1]) - (x.matriz[1][0]*x.matriz[0][1]); } break;
-                    case 3: {
-                        
-                        // Diagonais positivas:
-                        
-                        // 1a Diagonal positiva:
-                        for (mi1=0, det[1]=1; mi1<3; mi1++){ det[1] = det[1] * x.matriz[mi1][mi1]; }
-                        
-                        // 2a Diagonal positiva:
-                        for (mi1=0, det[2]=1; mi1<3; mi1++) { for (mi2=0; mi2<3; mi2++) { if (mi2+1==mi1||mi2==mi1+2) {
-                                    det[2] = det[2] * x.matriz[mi2][mi1];
-                                }
-                            }
-                        }
-                        
-                        // 3a Diagonal positiva:
-                        for (mi1=0, det[3]=1; mi1<3; mi1++) { for (mi2=0; mi2<3; mi2++) { if (mi2==mi1+1||mi2+2==mi1) {
-                                    det[3] = det[3] * x.matriz[mi2][mi1];
-                                }
-                            }
-                        }
-                        
-                        // Soma diagonais positivas:
-                        for (mi1=1, det[0]=0; mi1<4; mi1++) { det[0] = det[0] + det[mi1]; }
-                        
-                        // Diagonais negativas:
-                        
-                        // 1a Diagonal negativa:
-                        for (mi1=0, mi2=2, det[1]=1; mi1<3; mi1++, mi2--) { det[1] = det[1] * x.matriz[mi2][mi1]; }
-                        
-                        // 2a Diagonal negativa:
-                        for (mi1=0, det[2]=1; mi1<3; mi1++){ for (mi2=0; mi2<3; mi2++){ if ((mi2+mi1)==1 || (mi2==2 && mi1==2) ) {
-                                    det[2] = det[2]*x.matriz[mi2][mi1];
-                                }
-                            }
-                        }
-                        
-                        // 3a Diagonal negativa:
-                        for (mi1=0, det[3]=1; mi1<3; mi1++) { for (mi2=0; mi2<3; mi2++){ if (mi2+mi1==3 || (mi2==0 && mi1==0) ) {
-                                    det[3] = det[3] * x.matriz[mi2][mi1];
-                                }
-                            }
-                        }
-                        
-                        // Subtrai diagonais negativas:
-                        for (mi1=1; mi1<4; mi1++) { det[0] = det[0] - det[mi1]; }
-                        
-                    } break;
-                }
             }
-            
-            // Determinar tipo de matriz:
-            
-            for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) { if (x.matriz[mi2][mi2]!=0) { mi3++; } } }
-            if (mi3==0) { sprintf(type, "Matriz nula"); } else {
+            if (mi3==0) { sprintf(type, "Matriz triangular inferior"); } else {
                 
-                for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++){ for (mi2=0; mi2<x.ncolunas; mi2++){
-                        if ( ((mi2>mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2<=mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
-                    }
+                for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) {
+                    if ( ((mi2<mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2<=mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
                 }
-                if (mi3==0) { sprintf(type, "Matriz triangular inferior"); } else {
+                }
+                if (mi3==0) { sprintf(type, "Matriz triangular superior"); } else {
                     
-                    for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) {
-                            if ( ((mi2<mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2<=mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
-                        }
+                    for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++){
+                        if ( ((mi2!=mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2==mi1) && (x.matriz[mi2][mi1]!=1)) ) { mi3++; }
                     }
-                    if (mi3==0) { sprintf(type, "Matriz triangular superior"); } else {
+                    }
+                    if (mi3==0) { sprintf(type, "Matriz identidade e diagonal"); } else {
                         
-                        for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++){
-                                if ( ((mi2!=mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2==mi1) && (x.matriz[mi2][mi1]!=1)) ) { mi3++; }
-                            }
+                        for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) {
+                            if ( ((mi2!=mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2==mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
                         }
-                        if (mi3==0) { sprintf(type, "Matriz identidade e diagonal"); } else {
-                            
-                            for (mi1=0, mi3=0; mi1<x.nlinhas; mi1++) { for (mi2=0; mi2<x.ncolunas; mi2++) {
-                                    if ( ((mi2!=mi1) && (x.matriz[mi2][mi1]!=0)) || ((mi2==mi1) && (x.matriz[mi2][mi1]==0)) ) { mi3++; }
-                                }
-                            }
-                            if (mi3==0) { sprintf(type, "Matriz diagonal"); } else { sprintf(type, "Comum"); }
                         }
+                        if (mi3==0) { sprintf(type, "Matriz diagonal"); } else { sprintf(type, "Comum"); }
                     }
                 }
             }
-            if (strcmp(form, "Quadrada")==0 && x.ncolunas<4) {
-                sprintf(stats,
-                        "Matriz guardada na memória X:\n"
-                        "Dimensões    - (%d, %d)\n"
-                        "Formato      - %s\n"
-                        "Tipo         - %s\n"
-                        "Determinante - %g\n"
-                        , x.ncolunas, x.nlinhas, form, type, det[0]);
-            } else {
-                sprintf(stats,
-                        "Matriz guardada na memória X:\n"
-                        "Dimensões    - (%d, %d)\n"
-                        "Formato      - %s\n"
-                        "Tipo         - %s\n"
-                        , x.ncolunas, x.nlinhas, form, type);
-            }
+        }
+        if (strcmp(form, "Quadrada")==0 && x.ncolunas<4) {
+            sprintf(stats,
+                    "Matriz guardada na memória X:\n"
+                    "Dimensões    - (%d, %d)\n"
+                    "Formato      - %s\n"
+                    "Tipo         - %s\n"
+                    "Determinante - %g\n"
+                    , x.ncolunas, x.nlinhas, form, type, det);
+        } else {
+            sprintf(stats,
+                    "Matriz guardada na memória X:\n"
+                    "Dimensões    - (%d, %d)\n"
+                    "Formato      - %s\n"
+                    "Tipo         - %s\n"
+                    , x.ncolunas, x.nlinhas, form, type);
+        }
     }
     Box(0, 43, stats);
 }

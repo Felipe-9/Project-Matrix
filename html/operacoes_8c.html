@@ -30,7 +30,7 @@
   <td id="projectlogo"><img alt="Logo" src="flowey.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Project Matrix
-   &#160;<span id="projectnumber">V5.4.5</span>
+   &#160;<span id="projectnumber">V6</span>
    </div>
    <div id="projectbrief">A program to work with matrix</div>
   </td>
@@ -107,12 +107,65 @@ Functions</h2></td></tr>
 <tr class="memdesc:a15ff6c51cc1cf4f9f24753a7157aca9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplica matriz por um escalar.  <a href="#a15ff6c51cc1cf4f9f24753a7157aca9a">More...</a><br /></td></tr>
 <tr class="separator:a15ff6c51cc1cf4f9f24753a7157aca9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb9239c19c4c62a297c772dfe18f9466"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8c.html#aeb9239c19c4c62a297c772dfe18f9466">mpow</a> (int v)</td></tr>
-<tr class="memdesc:aeb9239c19c4c62a297c772dfe18f9466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eleva X á potencia  Multiplica X * X =&gt; salva resultado em R =&gt;<br />
-=&gt; Multiplica R * X =&gt; repete N vezes =&gt;<br />
-=&gt; Salva resultado final em X.  <a href="#aeb9239c19c4c62a297c772dfe18f9466">More...</a><br /></td></tr>
+<tr class="memdesc:aeb9239c19c4c62a297c772dfe18f9466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Eleva X á potencia  Multiplica X * X =&gt;<br />
+=&gt; salva resultado em R =&gt;<br />
+=&gt; Multiplica R * X =&gt;<br />
+=&gt; repete N vezes =&gt;<br />
+ =&gt; Salva resultado final em X.  <a href="#aeb9239c19c4c62a297c772dfe18f9466">More...</a><br /></td></tr>
 <tr class="separator:aeb9239c19c4c62a297c772dfe18f9466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea23f27b5ddd276aeee0abca8cd2a9f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="operacoes_8c.html#a1ea23f27b5ddd276aeee0abca8cd2a9f">mdet</a> (float m[100][100], int dc, int dl)</td></tr>
+<tr class="memdesc:a1ea23f27b5ddd276aeee0abca8cd2a9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula o determinante de uma matriz.  <a href="#a1ea23f27b5ddd276aeee0abca8cd2a9f">More...</a><br /></td></tr>
+<tr class="separator:a1ea23f27b5ddd276aeee0abca8cd2a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a1ea23f27b5ddd276aeee0abca8cd2a9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea23f27b5ddd276aeee0abca8cd2a9f">&#9670;&nbsp;</a></span>mdet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mdet </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>[100][100], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calcula o determinante de uma matriz. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>Matriz para calcular o determinante. </td></tr>
+    <tr><td class="paramname">dc</td><td>Numero de colunas da matriz. </td></tr>
+    <tr><td class="paramname">dl</td><td>Numero de linhas da matriz. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna o determiante da matriz. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="timeline_8h.html#a1863da15492dfbd7e56bbcabb1c3fd12" title="Mostra detalhes sobre a matriz. ">minfo</a> and <a class="el" href="edit_8h.html#a0d8e16387ddcc0f978ec2dc0238fcf82" title="Inversão de matriz. ">inv</a>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="operacoes_8c_source.html#l00274">274</a> of file <a class="el" href="operacoes_8c_source.html">operacoes.c</a>.</p>
+
+</div>
+</div>
 <a id="aeb9239c19c4c62a297c772dfe18f9466"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb9239c19c4c62a297c772dfe18f9466">&#9670;&nbsp;</a></span>mpow()</h2>
 
@@ -129,9 +182,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Eleva X á potencia  Multiplica X * X =&gt; salva resultado em R =&gt;<br />
-=&gt; Multiplica R * X =&gt; repete N vezes =&gt;<br />
-=&gt; Salva resultado final em X. </p>
+<p>Eleva X á potencia  Multiplica X * X =&gt;<br />
+=&gt; salva resultado em R =&gt;<br />
+=&gt; Multiplica R * X =&gt;<br />
+=&gt; repete N vezes =&gt;<br />
+ =&gt; Salva resultado final em X. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>Potencia a ser elevadad de X. </td></tr>
@@ -140,7 +195,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>, <a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>, <a class="el" href="operacoes_8h.html#afcb2053d6f4a592ad799aded507f4c58" title="Multiplicação de Matrizes ( Y * X ). ">mtim</a>, <a class="el" href="operacoes_8h.html#a15ff6c51cc1cf4f9f24753a7157aca9a" title="Multiplica matriz por um escalar. ">vtim</a>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="operacoes_8c_source.html#l00228">228</a> of file <a class="el" href="operacoes_8c_source.html">operacoes.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="operacoes_8c_source.html#l00230">230</a> of file <a class="el" href="operacoes_8c_source.html">operacoes.c</a>.</p>
 
 </div>
 </div>
@@ -162,7 +217,7 @@ Functions</h2></td></tr>
 
 <p>Multiplicação de Matrizes ( Y * X ). </p>
 <p>Verifica a existencia e multiplica as matrizes localizadas em X e Y. Guardando o resultado em X e alocando coluna de matrizes para baixo. </p><dl class="section warning"><dt>Warning</dt><dd>X e Y devem conter matrizes. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>, <a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>, <a class="el" href="operacoes_8h.html#a15ff6c51cc1cf4f9f24753a7157aca9a" title="Multiplica matriz por um escalar. ">vtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; repete N vezes...">mpow</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>, <a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>, <a class="el" href="operacoes_8h.html#a15ff6c51cc1cf4f9f24753a7157aca9a" title="Multiplica matriz por um escalar. ">vtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; =&gt; repete N...">mpow</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operacoes_8c_source.html#l00139">139</a> of file <a class="el" href="operacoes_8c_source.html">operacoes.c</a>.</p>
 
@@ -186,7 +241,7 @@ Functions</h2></td></tr>
 
 <p>Subtração de Matrizes ( Y - X ). </p>
 <p>Verifica a existencia e subtrai da matriz localizada em Y a matriz localizada em X. Guardando o resultado em X e alocando coluna de matrizes para baixo. </p><dl class="section warning"><dt>Warning</dt><dd>X e Y devem conter matrizes! </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>, <a class="el" href="operacoes_8h.html#afcb2053d6f4a592ad799aded507f4c58" title="Multiplicação de Matrizes ( Y * X ). ">mtim</a>, <a class="el" href="operacoes_8h.html#a15ff6c51cc1cf4f9f24753a7157aca9a" title="Multiplica matriz por um escalar. ">vtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; repete N vezes...">mpow</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>, <a class="el" href="operacoes_8h.html#afcb2053d6f4a592ad799aded507f4c58" title="Multiplicação de Matrizes ( Y * X ). ">mtim</a>, <a class="el" href="operacoes_8h.html#a15ff6c51cc1cf4f9f24753a7157aca9a" title="Multiplica matriz por um escalar. ">vtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; =&gt; repete N...">mpow</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operacoes_8c_source.html#l00075">75</a> of file <a class="el" href="operacoes_8c_source.html">operacoes.c</a>.</p>
 
@@ -210,7 +265,7 @@ Functions</h2></td></tr>
 
 <p>Soma de Matrizes ( Y + X ). </p>
 <p>Verifica a existencia e soma as matrizes localizadas em X e Y. Guardando o resultado em X e alocando coluna de matrizes para baixo. </p><dl class="section warning"><dt>Warning</dt><dd>Os espaços X e Y devem conter matrizes. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>, <a class="el" href="operacoes_8h.html#afcb2053d6f4a592ad799aded507f4c58" title="Multiplicação de Matrizes ( Y * X ). ">mtim</a>, <a class="el" href="operacoes_8h.html#a15ff6c51cc1cf4f9f24753a7157aca9a" title="Multiplica matriz por um escalar. ">vtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; repete N vezes...">mpow</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>, <a class="el" href="operacoes_8h.html#afcb2053d6f4a592ad799aded507f4c58" title="Multiplicação de Matrizes ( Y * X ). ">mtim</a>, <a class="el" href="operacoes_8h.html#a15ff6c51cc1cf4f9f24753a7157aca9a" title="Multiplica matriz por um escalar. ">vtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; =&gt; repete N...">mpow</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operacoes_8c_source.html#l00011">11</a> of file <a class="el" href="operacoes_8c_source.html">operacoes.c</a>.</p>
 
@@ -240,7 +295,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>X deve conter uma matriz </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>, <a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>, <a class="el" href="operacoes_8h.html#afcb2053d6f4a592ad799aded507f4c58" title="Multiplicação de Matrizes ( Y * X ). ">mtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; repete N vezes...">mpow</a>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="operacoes_8h.html#a5bcafc75025e47668ebd2cd587d06826" title="Soma de Matrizes ( Y + X ). ">sum</a>, <a class="el" href="operacoes_8h.html#ab09a6457a19510670b369271b988cd8c" title="Subtração de Matrizes ( Y - X ). ">sub</a>, <a class="el" href="operacoes_8h.html#afcb2053d6f4a592ad799aded507f4c58" title="Multiplicação de Matrizes ( Y * X ). ">mtim</a>, <a class="el" href="operacoes_8h.html#aeb9239c19c4c62a297c772dfe18f9466" title="Eleva X á potencia  Multiplica X * X =&gt; =&gt; salva resultado em R =&gt; =&gt; Multiplica R * X =&gt; =&gt; repete N...">mpow</a>. </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="operacoes_8c_source.html#l00202">202</a> of file <a class="el" href="operacoes_8c_source.html">operacoes.c</a>.</p>
 

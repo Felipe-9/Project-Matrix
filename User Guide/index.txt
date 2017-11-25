@@ -1,0 +1,24 @@
+= Project Matrix - User Guide
+:title-logo-image: image::Project-Matrix/blob/master/Project%20Matrix/Product/.resources/.flowey/Flowey.jpg[Flowey,100,100]
+:title-separator: -
+:revnumber: v6.0
+:revdate: 24/11, 2017
+:author: Felipe Alexandre Pinto
+:email: felipealexandrepinto@gmail.com
+:toc: left
+
+image::https://github.com/FelipePint0/Project-Matrix/blob/master/Project%20Matrix/Product/.resources/.flowey/Flowey.jpg[Flowey,100,100]
+
+== Sobre o Projeto
+Project Matrix é uma calculadora para operações com marizes que roda no terminal.
+Utilisa varias funções no modelo do terminal que podem ser dificeis de se trabalhar quando desconhecidas.
+
+
+== Funções
+.Os comandos deste programa se dividem em 4: +
+[horizontal]
+Funcoes de Memória::: Onde o usuário irá alocar a coluna de memória das matrizes. Exemplo Enter ou Drop.
+Funções de Operação::: Onde o Usuário irá realizar operácoes entre as matrizes guardadas na memória. Exemplo Somar e Subtrair.
+Funções de Edição::: Onde o usuário irá editar as matrizes. Exemplo Choose e Point.
+Funções de Interface e Miselaneous::: As quais criam uma interfáce e ajudam o usuário a operar o programa. Exemplo Help.
+

@@ -11,7 +11,7 @@
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
 /* Remove comment around @import statement below when using as a custom stylesheet */
-/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+/*@import "hdttps://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
@@ -439,6 +439,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_sobre_o_projeto">Sobre o Projeto</a></li>
+<li><a href="#_funcionamento">Funcionamento</a></li>
 <li><a href="#_funções">Funções</a></li>
 </ul>
 </div>
@@ -448,8 +449,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_sobre_o_projeto">Sobre o Projeto</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><span class="color(0000000)">Project Matrix é uma calculadora para operações com marizes que roda no terminal.
-Utilisa varias funções no modelo do terminal que podem ser dificeis de se trabalhar quando desconhecidas.</span></p>
+<p>Project Matrix é uma calculadora RPN que opera com marizes.<br>
+Utilisa varias funções no modelo do terminal que podem ser dificeis de se trabalhar quando desconhecidas.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_funcionamento">Funcionamento</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Antes de irmos direto para as funções existentes é necessário que o usuário entenda aonde tais são aplicadas.<br>
+Este Progrmama roda no modo RPN (Reverse Polish Notation), modo o qual de forma altomatica guarda os valores gerados na memória e os opera com bastante destresa.<br>
+Dessa forma a memória deste programa apresenta quatro casas, denominadas em sequencia de: X, Y, Z e W, onde a unica casa onde se pode gerar ou editar matrizes é a X.
+<strong>Porem</strong> as matrizes guardadas na memória <strong>não</strong> são fixas nas próprias, por exemplo se for gerada a matriz A na memória X, esta pode ser alocada para outras casas de memória,
+ deixando X livre para gerar uma nova matriz.</p>
+</div>
+<div class="paragraph">
+<p>Esta é a forma que o programa opera: gerando e editando matrizes em X e alocando memória para poder realizar as operações. Todas as funções trabalham sobre a matriz localizada em X e Y,
+se for usado uma função de edição a matriz a ser editada deve se encontrar em X, se for realizada uma operação esta sera feita sobre a matriz Y com a matriz X, e assim por diante.</p>
 </div>
 </div>
 </div>
@@ -457,11 +474,11 @@ Utilisa varias funções no modelo do terminal que podem ser dificeis de se trab
 <h2 id="_funções">Funções</h2>
 <div class="sectionbody">
 <div class="hdlist">
-<div class="title">Os comandos deste programa se dividem em 4 tipos:</div>
+<div class="title"><span class="maroon">Os comandos deste programa se dividem em 4 tipos:</span></div>
 <table>
 <tr>
 <td class="hdlist1">
-Funcoes de Memória
+<span class="blue">Funcoes de Memória</span>
 </td>
 <td class="hdlist2">
 <p>Onde o usuário irá alocar a coluna de memória das matrizes. Exemplo Enter ou Drop.</p>
@@ -469,7 +486,7 @@ Funcoes de Memória
 </tr>
 <tr>
 <td class="hdlist1">
-Funções de Operação
+<span class="blue">Funções de Operação</span>
 </td>
 <td class="hdlist2">
 <p>Onde o Usuário irá realizar operácoes entre as matrizes guardadas na memória. Exemplo Somar e Subtrair.</p>
@@ -477,7 +494,7 @@ Funções de Operação
 </tr>
 <tr>
 <td class="hdlist1">
-Funções de Edição
+<span class="blue">Funções de Edição</span>
 </td>
 <td class="hdlist2">
 <p>Onde o usuário irá editar as matrizes. Exemplo Choose e Point.</p>
@@ -485,7 +502,7 @@ Funções de Edição
 </tr>
 <tr>
 <td class="hdlist1">
-Funções de Interface e Miselaneous
+<span class="blue">Funções de Interface e Miselaneous</span>
 </td>
 <td class="hdlist2">
 <p>As quais criam uma interfáce e ajudam o usuário a operar o programa. Exemplo Help.</p>
@@ -499,7 +516,7 @@ Funções de Interface e Miselaneous
 <div id="footer">
 <div id="footer-text">
 Version v6.0<br>
-Last updated 2017-11-25 12:40:32 -03
+Last updated 2017-11-26 09:47:49 -03
 </div>
 </div>
 </body>

@@ -4,7 +4,6 @@
 :author: Felipe Alexandre Pinto
 :email: felipealexandrepinto@gmail.com
 :toc: left
-:toc-color: yellow
 
 == Sobre o Projeto
 Project Matrix é uma calculadora RPN que opera com marizes. +
@@ -28,3 +27,11 @@ se for usado uma função de edição a matriz a ser editada deve se encontrar e
 [blue]#Funções de Edição#:: Onde o usuário irá editar as matrizes. Exemplo Choose e Point.
 [blue]#Funções de Interface e Miselaneous#:: As quais criam uma interfáce e ajudam o usuário a operar o programa. Exemplo Help.
 
+
+== Funções de Interface e miscelaneous:
+Tais funções tem o objetivo de auxiliar o usuário para operar o programa. Tem como principais comandos: help e info, que mostram as funções existentes na matrix e explicam o funcionamento de cada.
+.[maroon]#Os comandos de interface e miscelaneous são:#
+[blue]#help (void)#:: Mostra na tela todas as funções existentes na matriz e uma descrição basica de cada.
+[blue]#info (func)#:: Mostra uma descrição detalhada da **funç**ão inserida.
+[blue]#clear (void)#:: Limpa a tela.
+[blue]##::

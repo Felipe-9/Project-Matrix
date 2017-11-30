@@ -1,1 +1,2 @@
-ERRO! - Deteterminante da matriz = 0!
+ERRO! - Unknown command!
+Type help for command list

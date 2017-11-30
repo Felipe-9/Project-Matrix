@@ -9,10 +9,10 @@ undo                    - Desfaz ultima operação.
 
 Alocação de matrizes  | Operações               | Editar X
                       |                         | 
-E  - Enter            | sum - Somar       (Y+X) | size   - Dimensões da matriz
-D  - Drop             | sub - Subtrair    (Y-X) | choose - Inserir valores em sequencia
-S  - Swap             | tim - multiplicar       | point  - Inserir valores em coordenadas
-R  - Roll             | pow - Elevar            | rand   - Inserir valores aleatórios
-AC - Reseta memória   |                         | tr     - Transpor matriz
-                      |                         | inv    - Inverter matriz
-                      |                         | clr    - Reseta matriz
+E  - Enter            | sum - Somar       (Y+X) | size          - Dimensões da matriz
+D  - Drop             | sub - Subtrair    (Y-X) | choose        - Inserir valores em sequencia
+S  - Swap             | tim - multiplicar       | point         - Inserir valores em coordenadas
+R  - Roll             | pow - Elevar            | irand/frand   - Inserir valores aleatórios
+AC - Reseta memória   |                         | tr            - Transpor matriz
+                      |                         | inv           - Inverter matriz
+                      |                         | clr           - Reseta matriz

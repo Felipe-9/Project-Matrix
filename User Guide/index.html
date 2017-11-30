@@ -425,6 +425,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -440,8 +441,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_sobre_o_projeto">Sobre o Projeto</a></li>
 <li><a href="#_funcionamento">Funcionamento</a></li>
-<li><a href="#_funções">Funções</a></li>
-<li><a href="#_funções_de_interface_e_miscelaneous">Funções de Interface e miscelaneous:</a></li>
+<li><a href="#_funções">Funções</a>
+<ul class="sectlevel2">
+<li><a href="#_funções_de_interface_e_miscelaneous">Funções de Interface e miscelaneous</a></li>
+<li><a href="#_funções_de_memória">Funções de Memória</a></li>
+<li><a href="#_funções_de_operações">Funções de Operações</a></li>
+<li><a href="#_funções_de_edição">Funções de Edição</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -452,6 +459,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Project Matrix é uma calculadora RPN que opera com marizes.<br>
 Utilisa varias funções no modelo do terminal que podem ser dificeis de se trabalhar quando desconhecidas.</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">Links Importantes</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Documentação
+</td>
+<td class="hdlist2">
+<p><a href="https://FelipePint0.github.io/Project-Matrix/Documentation/html/index.html" class="bare">https://FelipePint0.github.io/Project-Matrix/Documentation/html/index.html</a></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Github
+</td>
+<td class="hdlist2">
+<p><a href="https://github.com/FelipePint0/Project-Matrix" class="bare">https://github.com/FelipePint0/Project-Matrix</a></p>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -474,56 +506,835 @@ se for usado uma função de edição a matriz a ser editada deve se encontrar e
 <div class="sect1">
 <h2 id="_funções">Funções</h2>
 <div class="sectionbody">
-<div class="hdlist">
-<div class="title"><span class="maroon">Os comandos deste programa se dividem em 4 tipos:</span></div>
+<div class="paragraph">
+<p>Os comandos deste programa se dividem em 4 tipos:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Functions</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_funções_de_memória">Funções de Memória</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Onde o usuário irá alocar a coluna de memória das matrizes.<br>
+Exemplo <a href="#Enter">Enter</a> ou <a href="#Drop">Drop</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_funções_de_operações">Funções de Operações</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Onde o Usuário irá realizar operácoes entre as matrizes guardadas na memória.<br>
+Exemplo <a href="#Somar">Somar</a> ou <a href="#Subtrair">Subtrair</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_funções_de_edição">Funções de Edição</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Onde o usuário irá editar as matrizes.<br>
+Exemplo <a href="#Choose">Choose</a> ou <a href="#Point">Point</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_funções_de_interface_e_miscelaneous">Funções de Interface e miscelaneous</a></strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">As quais criam uma interfáce e ajudam o usuário a operar o programa.<br>
+Exemplo <a href="#Help">Help</a> ou <a href="#Info">Info</a>.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_funções_de_interface_e_miscelaneous">Funções de Interface e miscelaneous</h3>
+<div class="paragraph">
+<p>Tais funções tem o objetivo de auxiliar o usuário para operar o programa. Tem como principais comandos: help e info, que mostram as funções existentes na matrix e explicam o funcionamento de cada. <span class="maroon"><strong><em>Os comandos de interface e miscelaneous são:</em></strong></span></p>
+</div>
+<div id="Help" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>help</strong> <strong>*void</strong>* - Ajuda</span></div>
+<div class="paragraph">
+<p>Mostra na tela todas as funções existentes na matriz e uma descrição basica de cada.</p>
+</div>
+</div>
+</div>
+<div id="Info" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>info</strong> <strong>*func</strong>* - Informação</span></div>
+<div class="paragraph">
+<p>Mostra uma descrição detalhada da <strong>funç</strong>ão inserida.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>clear</strong> <strong>*void</strong>* - Limpar</span></div>
+<div class="paragraph">
+<p>Limpa a tela.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>intro</strong> <strong>*void</strong>* - Introdução</span></div>
+<div class="paragraph">
+<p>Re-mostra a tela de introdução.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>show/hide</strong> <strong>*func</strong>* - Mostrar ou Esconder</span></div>
+<div class="paragraph">
+<p>Digitanto show <strong>ou</strong> hide, o programa passará a mostrar na tela o menu das funções inseridas.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 2. Funções:</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>matrix</strong></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mostra ou escode a matriz alocada na memória X.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>help</strong></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mostra ou esconde o menu help.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>quit</strong> <strong>*void</strong>* - Sair</span></div>
+<div class="paragraph">
+<p>Encerra o programa.</p>
+</div>
+<div class="admonitionblock important">
 <table>
 <tr>
-<td class="hdlist1">
-<span class="blue">Funcoes de Memória</span>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
 </td>
-<td class="hdlist2">
-<p>Onde o usuário irá alocar a coluna de memória das matrizes. Exemplo Enter ou Drop.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<span class="blue">Funções de Operação</span>
-</td>
-<td class="hdlist2">
-<p>Onde o Usuário irá realizar operácoes entre as matrizes guardadas na memória. Exemplo Somar e Subtrair.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<span class="blue">Funções de Edição</span>
-</td>
-<td class="hdlist2">
-<p>Onde o usuário irá editar as matrizes. Exemplo Choose e Point.</p>
-</td>
-</tr>
-<tr>
-<td class="hdlist1">
-<span class="blue">Funções de Interface e Miselaneous</span>
-</td>
-<td class="hdlist2">
-<p>As quais criam uma interfáce e ajudam o usuário a operar o programa. Exemplo Help.</p>
+<td class="content">
+Encerrar o Programa não irá resetar a memória (para tal veja <a href="#AC">Resetar Memória</a> )!
 </td>
 </tr>
 </table>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_funções_de_interface_e_miscelaneous">Funções de Interface e miscelaneous:</h2>
-<div class="sectionbody">
-
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>minfo</strong> <strong>*void</strong>* - Informação da matriz</span></div>
+<div class="paragraph">
+<p>Mostra detalhes referentes a matriz alocada em X.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Os detalhes mostrados são:</div>
+<ol class="arabic">
+<li>
+<p>Dimensões;</p>
+</li>
+<li>
+<p>Forma da matriz;</p>
+</li>
+<li>
+<p>Tipo de matriz;</p>
+</li>
+<li>
+<p>Determinante.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Só são mostradas as estatisticas referentes a matriz em X!</p>
+</li>
+<li>
+<p>Se esta não tiver dimensões definidas o unico retorno da função é uma mensagem informando tal informação!</p>
+</li>
+<li>
+<p>Se a matriz não for quadrada não pode ter determinante então essa estatistica não é mostrada!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>undo</strong> <strong>*void</strong>* - Desfazer</span></div>
+<div class="paragraph">
+<p>Reverte ultimo comando inserido pelo usuário que altere a memória de matrizes.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+So reverte o ultimo comando inserido!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_funções_de_memória">Funções de Memória</h3>
+<div class="paragraph">
+<p>De forma completa são as Funções de <strong>alocação</strong> de memória. Tais funções auxiliam o usuário a manipular as matrizes sem as alterar ou realizar operações,
+simplesmente alocando e as posições das matrizes na memória permitindo maior controle sobre as matrizes. <span class="maroon"><strong><em>Os comandos de Memória são:</em></strong></span></p>
+</div>
+<div id="Enter" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>E</strong> <strong>*void</strong>* - Enter</span></div>
+<div class="paragraph">
+<p>Aloca coluna de matrizes para cima.</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Copia
+</td>
+<td class="hdlist2">
+<p>Z em W;<br>
+Y em Z;<br>
+X em Y;</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+A matriz localizada em W é <span class="red">perdida!</span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="Drop" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>D</strong> <strong>*void</strong>* - Drop</span></div>
+<div class="paragraph">
+<p>Aloca coluna de matrizes para baixo.</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Copia
+</td>
+<td class="hdlist2">
+<p>Y em X;<br>
+Z em Y;<br>
+W em Z;</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+A matriz localizada em X é <span class="red">perdida</span>!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>S</strong> <strong>*void</strong>* - Swap</span></div>
+<div class="paragraph">
+<p>Troca de posição as matrizes localizadas em X e Y.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>R</strong> <strong>*void</strong>* - Roll</span></div>
+<div class="paragraph">
+<p>Aloca a coluna de matrizes para baixo sem que haja deleções. Igual a "Drop" porem copiando X em W.</p>
+</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+Salva
+</td>
+<td class="hdlist2">
+<p>X;</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Copia
+</td>
+<td class="hdlist2">
+<p>Y em X;<br>
+Z em Y;<br>
+W em Z;</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+Imprime
+</td>
+<td class="hdlist2">
+<p>Cópia de X em W.</p>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Nenhuma matriz é perdida.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="AC" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>AC</strong> <strong>*void</strong>* - Resetar memória</span></div>
+<div class="paragraph">
+<p>Remove todas as matrizes das casas de memória.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Undo pode <strong>reverter</strong> esse comando!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_funções_de_operações">Funções de Operações</h3>
+<div class="paragraph">
+<p>Tais funções realizaram operações entre as matrizes e sobre as matrizes. <span class="maroon"><strong><em>As funções de operação são:</em></strong></span></p>
+</div>
+<div id="Somar" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>sum</strong> <strong>*void</strong>* - Somar</span></div>
+<div class="paragraph">
+<p>Soma a matriz Y com a matriz X (Y + X).</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Matrizes X e Y devem ter as <span class="red">mesmas dimensões!</span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="Subtrair" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>sub</strong> <strong>*void</strong>* - Subtrair</span></div>
+<div class="paragraph">
+<p>Subtrai da matriz Y a matrix X (Y - X).</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Matrizes X e Y devem ter as <span class="red">mesmas dimensões!</span>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>tim</strong> <strong>*command</strong>* - Multiplicar</span></div>
+<div class="paragraph">
+<p>Comando com função dupla, ou multiplica X por um escalar ou multiplica matrizes.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. Comandos:</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inserir a função <strong>Times</strong> vazia multiplica a matriz Y pela matriz X.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-v</strong> <strong>*float</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Multiplica a matriz X por um valor escalar.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A matriz X deve ter o numero de linhas igual ao numero de colunas que a matriz Y<br>
+e o numero de colunas igual ao numero de linhas da matriz Y.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>pow</strong> <strong>*command</strong>* - Potencia</span></div>
+<div class="paragraph">
+<p>Salva uma cópia da matriz X e multiplica a matriz X pela cópia o numero de vezes que o usuário tiver comandado.<br></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 4. Comandos:</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-v</strong> <strong>*int</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numero de veses que X será multiplicado por sua cópia.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inserir a função pow vazia eleva a matriz em X ao quadrado.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_funções_de_edição">Funções de Edição</h3>
+<div class="paragraph">
+<p>Tais funções só são aplicáveis sobre a matriz X, e apenás irá alterar suas dimensões e valores.<span class="maroon"><strong><em>As funções de edição são:</em></strong></span></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>size</strong> <strong>*command</strong>* - Dimensões</span></div>
+<div class="paragraph">
+<p>Altea as dimensões da matriz localizada em X.<br>
+.Comandos</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-i</strong> <strong>*int</strong>* &#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Altera numero de colunas de X.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-j</strong> <strong>*int</strong>* &#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Altera numero de linhas de X.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Os comandos dessa função podem ser usados de forma independente: isolados ou ao mesmo tempo, como preferir.</p>
+</li>
+<li>
+<p>Tal função não deleta os valores existentes dentro das novas dimensões da matriz.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Uso indevido da função, exemplo dimenções negativas, são bloqueados com uma mensagem de erro.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="Choose" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>choose</strong> <strong>*void</strong>* - Escolher</span></div>
+<div class="paragraph">
+<p>Insere valores recebidos pelo usuário na matriz em sequencia das coordenadas.</p>
+</div>
+<div class="paragraph">
+<p>Ao inserir a função choose no programa, será aberto a interfáce da função choose</p>
+</div>
+<div class="listingblock text-center">
+<div class="title">Interfáce</div>
+<div class="content">
+<pre>(*coordenadas*) --&gt; $ *Linha de comando*</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ao se iniciar a interfáce da função choose o usuário possui novos comandos para serem inseridos na função, Dando a função choose a capacidade de alem de inserir valores
+na sequencia de coordenadas da matriz, mudar de posição o ponteiro, atualização direta sobre a matriz, mostrar a matriz que está sendo editada e ser finalizada a qualquer instante.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 5. Comandos</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>*float</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Insere sobre as coordenadas mostradas ná interfáce o valor inserido.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-mv</strong> <strong>*subcommand</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Move - Móve ponteiro de leitura da matriz para as coordenadas inseridas.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-fw</strong> <strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Forward - Pulá incerção de valores para a proxima coordenada.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-bw</strong> <strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Backward - Retorna uma coordenada.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>end</strong> <strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Finalizar - Finaliza a função <strong>Choose</strong>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>show/hide</strong> <strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mostrar ou Esconder - Mostra ou esconde a matrix localizada em X.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>clear</strong> <strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limpar - Limpa a tela.</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 6. Subcommands</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-i</strong> <strong>*int</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordenada de coluna</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-j</strong> <strong>*int</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Coordenada de linhas</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Os Subcomandos Podem ser usadas de forma independente: isolados ou juntos como preferir.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div id="Point" class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>point</strong> <strong>*command</strong>* - Apontar</span></div>
+<div class="paragraph">
+<p>A função choose não possui interfáce, por isso é direta. Esta insere sobre as coordenadas inseridas o valor especificado.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 7. Commands</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><strong>-v</strong> <strong>*float</strong>* &#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Valor a ser inserido sobre as coordenadas.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><strong>-i</strong> <strong>*int</strong>* &#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Coordenada de coluna.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><code><strong>-j</strong> <strong>*int</strong>* &#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-middle"><div><div class="paragraph">
+<p>Coordenada de linha.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Não se prenda a inserir em coordenadas especificas de linhas e colunas, inserindo por exemplo apenas a coordenada da linha e um valor, a linha selecionada sera preenchida com o valor inserido.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">Examples</div>
+<div class="content">
+<pre>---     ---
+|   0 0   |
+|   0 0   |
+---     ---
+Project Matrix $ point -v 1 -i 1 -j 1
+---     ---
+|   1 0   |
+|   0 0   |
+---     ---
+Project Matrix $ point -v 2 -i 2
+---     ---
+|   1 0   |
+|   2 2   |
+---     ---
+Project Matrix $ point -v 3
+---     ---
+|   3 3   |
+|   3 3   |
+---     ---
+Project Matrix $_</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>irand</strong> <strong>*command</strong>* - Integer Random</span></div>
+<div class="paragraph">
+<p>Insere sobre a matrix X valores inteiros aleátórios seguindo as especificações inseridas pelo usuário.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Por defealt são inseridos valores de (-1000, 10000).
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 8. Commands:</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-min</strong> <strong>*int</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delimita menor valor para se gerar numeros aleatórios.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-max</strong> <strong>*int</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delimita maior valor para se gerar valores aleatórios</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red"><strong>NÃO</strong></span> é reconhecido a incerção de maximos e minimos inválidos!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>frand</strong> <strong>*command</strong>* - Floats Random</span></div>
+<div class="paragraph">
+<p>Insere sobre a matrix X valores floats aleatórios seguindo as especificações inseridas pelo usuário.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Por defealt são inseridos valores de (-1000.000, 10000.000).
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 9. Commands:</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-min</strong> <strong>*float</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delimita menor valor para se gerar numeros aleatórios.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-max</strong> <strong>*float</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delimita maior valor para se gerar valores aleatórios</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<span class="red"><strong>NÃO</strong></span> é reconhecido a incerção de maximos e minimos inválidos!
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>tr</strong> <strong>*void</strong>* - Transpor</span></div>
+<div class="paragraph">
+<p>Transpõe a matriz localizada em X.</p>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>inv</strong> <strong>*void</strong>* - Invérsão</span></div>
+<div class="paragraph">
+<p>Invérte a matriz localizada em X.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Este programa apenas suporta o calculo do determinante de matrizes de ordem 3. Logo matrizes de ordem maior são <strong>inválidas</strong> nesta função.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title"><span class="red"><strong>clr</strong> <strong>*command</strong>* - Clear</span></div>
+<div class="paragraph">
+<p>Esse commando possui duas funções:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 10. commands</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>*void</strong>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inserindo apenas <strong>clr</strong> a os válores da matrix X são resetados permanecendo apenas as dimensões.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><strong>-r</strong></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reset - Deleta por completo a matriz localizada na memória X, a resetando.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
 Version v6.0<br>
-Last updated 2017-11-28 12:16:22 -03
+Last updated 2017-11-30 18:35:55 -03
 </div>
 </div>
 </body>

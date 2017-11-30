@@ -1,0 +1,20 @@
+Info Integer Random - irand *commad*          :
+
+Insere valores inteiros aleatórios á matriz.
+Por defealt são iseridos valores de 
+(-1000, 10000)
+
+Comandos:
+-min *int* - Limita menor valor a ser
+               posto.
+-max *int* - Limita maior valor a ser
+               posto
+
+EX1: Project Matrix $ rand -min 10 -max 99   - Insere valores
+                                               aleatórios de 10
+                                               a 99
+EX2: Project Matrix $ rand -max 10 -min 15   - Retorna ERRO
+     ----------------------------------------
+     |  ERRO! - conjunto de valores vazio!  |
+     ----------------------------------------
+     Project Matrix $ _

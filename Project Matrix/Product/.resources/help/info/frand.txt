@@ -1,0 +1,22 @@
+Info Float Random - frand *command*            :
+
+Insere valores floats aleatórios sobre a matriz
+localizada em X.
+Por defealt são inseridos valores aleatórios de
+(-1000.00, 10000,00)
+
+Comandos:
+-min *float* - Limita menor valor a ser
+               posto.
+-max *float* - Limita maior valor a ser
+               posto
+
+EX1: Project Matrix $ rand -min 1.1 -max 9.9   - Insere valores
+                                                 aleatórios de 1.1
+                                                 a 9.9
+EX2: Project Matrix $ rand -max 1.0 -min 1.5   - Retorna ERRO
+     ----------------------------------------
+     |  ERRO! - conjunto de valores vazio!  |
+     ----------------------------------------
+     Project Matrix $ _
+

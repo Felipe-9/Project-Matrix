@@ -4,10 +4,18 @@
 :author: Felipe Alexandre Pinto
 :email: felipealexandrepinto@gmail.com
 :toc: left
+:icons: font
 
 == Sobre o Projeto
 Project Matrix é uma calculadora RPN que opera com marizes. +
 Utilisa varias funções no modelo do terminal que podem ser dificeis de se trabalhar quando desconhecidas.
+
+.Links Importantes
+****
+[horizontal]
+Documentação:: https://FelipePint0.github.io/Project-Matrix/Documentation/html/index.html
+Github:: https://github.com/FelipePint0/Project-Matrix
+****
 
 == Funcionamento
 Antes de irmos direto para as funções existentes é necessário que o usuário entenda aonde tais são aplicadas. +
@@ -20,18 +28,377 @@ Esta é a forma que o programa opera: gerando e editando matrizes em X e alocand
 se for usado uma função de edição a matriz a ser editada deve se encontrar em X, se for realizada uma operação esta sera feita sobre a matriz Y com a matriz X, e assim por diante.
 
 == Funções
-.[maroon]#Os comandos deste programa se dividem em 4 tipos:#
+Os comandos deste programa se dividem em 4 tipos:
+
+.Functions
+[cols=".^25s,75"]
+|===
+
+|<<Funções de Memória>> 
+|Onde o usuário irá alocar a coluna de memória das matrizes. +
+Exemplo <<Enter, Enter>> ou <<Drop, Drop>>.
+
+|<<Funções de Operações>> 
+|Onde o Usuário irá realizar operácoes entre as matrizes guardadas na memória. +
+Exemplo <<Somar, Somar>> ou <<Subtrair, Subtrair>>.
+
+|<<Funções de Edição>> 
+|Onde o usuário irá editar as matrizes. +
+Exemplo <<Choose, Choose>> ou <<Point, Point>>.
+
+|<<Funções de Interface e miscelaneous>> 
+|As quais criam uma interfáce e ajudam o usuário a operar o programa. +
+Exemplo <<Help, Help>> ou <<Info, Info>>.
+
+|===
+=== Funções de Interface e miscelaneous
+Tais funções tem o objetivo de auxiliar o usuário para operar o programa. Tem como principais comandos: help e info, que mostram as funções existentes na matrix e explicam o funcionamento de cada. [maroon]#*_Os comandos de interface e miscelaneous são:_*#
+
+[[Help]]
+.[red]#*help* \**void** - Ajuda#
+****
+Mostra na tela todas as funções existentes na matriz e uma descrição basica de cada.
+****
+
+[[Info]]
+.[red]#*info* \**func** - Informação#
+****
+Mostra uma descrição detalhada da **funç**ão inserida.
+****
+
+.[red]#*clear* \**void** - Limpar#
+****
+Limpa a tela.
+****
+
+.[red]#*intro* \**void** - Introdução#
+****
+Re-mostra a tela de introdução.
+****
+
+.[red]#*show/hide* \**func** - Mostrar ou Esconder#
+****
+Digitanto show *ou* hide, o programa passará a mostrar na tela o menu das funções inseridas.
+
+.Funções:
+[cols="25m, 75"]
+|=== 
+|*matrix* |Mostra ou escode a matriz alocada na memória X.
+|*help* |Mostra ou esconde o menu help.
+|===
+****
+
+.[red]#*quit* \**void** - Sair#
+****
+Encerra o programa.
+
+IMPORTANT: Encerrar o Programa não irá resetar a memória (para tal veja <<AC, Resetar Memória>> )!
+****
+
+.[red]#*minfo* \**void** - Informação da matriz#
+****
+Mostra detalhes referentes a matriz alocada em X.
+
+.Os detalhes mostrados são:
+. Dimensões;
+. Forma da matriz;
+. Tipo de matriz;
+. Determinante.
+
+[IMPORTANT]
+====
+- Só são mostradas as estatisticas referentes a matriz em X!
+- Se esta não tiver dimensões definidas o unico retorno da função é uma mensagem informando tal informação!
+- Se a matriz não for quadrada não pode ter determinante então essa estatistica não é mostrada!
+====
+****
+
+.[red]#*undo* \**void** - Desfazer#
+****
+Reverte ultimo comando inserido pelo usuário que altere a memória de matrizes.
+
+IMPORTANT: So reverte o ultimo comando inserido!
+****
+
+=== Funções de Memória
+De forma completa são as Funções de *alocação* de memória. Tais funções auxiliam o usuário a manipular as matrizes sem as alterar ou realizar operações,
+simplesmente alocando e as posições das matrizes na memória permitindo maior controle sobre as matrizes. [maroon]#*_Os comandos de Memória são:_*#
+
+[[Enter]]
+.[red]#*E* \**void** - Enter#
+****
+Aloca coluna de matrizes para cima.
 [horizontal]
-[blue]#Funcoes de Memória#:: Onde o usuário irá alocar a coluna de memória das matrizes. Exemplo Enter ou Drop.
-[blue]#Funções de Operação#:: Onde o Usuário irá realizar operácoes entre as matrizes guardadas na memória. Exemplo Somar e Subtrair.
-[blue]#Funções de Edição#:: Onde o usuário irá editar as matrizes. Exemplo Choose e Point.
-[blue]#Funções de Interface e Miselaneous#:: As quais criam uma interfáce e ajudam o usuário a operar o programa. Exemplo Help.
+Copia:: Z em W; +
+	Y em Z; +
+	X em Y;
 
+WARNING: A matriz localizada em W é [red]#perdida!#
+****
 
-== Funções de Interface e miscelaneous:
-Tais funções tem o objetivo de auxiliar o usuário para operar o programa. Tem como principais comandos: help e info, que mostram as funções existentes na matrix e explicam o funcionamento de cada.
-.[maroon]#Os comandos de interface e miscelaneous são:#
-[blue]#help (void)#:: Mostra na tela todas as funções existentes na matriz e uma descrição basica de cada.
-[blue]#info (func)#:: Mostra uma descrição detalhada da **funç**ão inserida.
-[blue]#clear (void)#:: Limpa a tela.
-[blue]##::
+[[Drop]]
+.[red]#*D* \**void** - Drop#
+****
+Aloca coluna de matrizes para baixo.
+[horizontal]
+Copia:: Y em X; +
+	Z em Y; +
+	W em Z;
+
+WARNING: A matriz localizada em X é [red]#perdida#!
+****
+
+.[red]#*S* \**void** - Swap#
+****
+Troca de posição as matrizes localizadas em X e Y.
+****
+
+.[red]#*R* \**void** - Roll#
+****
+Aloca a coluna de matrizes para baixo sem que haja deleções. Igual a "Drop" porem copiando X em W.
+[horizontal]
+Salva:: X;
+Copia:: Y em X; +
+	Z em Y; +
+	W em Z;
+Imprime:: Cópia de X em W.
+
+IMPORTANT: Nenhuma matriz é perdida.
+****
+
+[[AC]]
+.[red]#*AC* \**void** - Resetar memória#
+****
+Remove todas as matrizes das casas de memória.
+
+IMPORTANT: Undo pode *reverter* esse comando!
+****
+
+=== Funções de Operações
+Tais funções realizaram operações entre as matrizes e sobre as matrizes. [maroon]#*_As funções de operação são:_*#
+
+[[Somar]]
+.[red]#*sum* \**void** - Somar#
+****
+Soma a matriz Y com a matriz X (Y + X).
+
+WARNING: Matrizes X e Y devem ter as [red]#mesmas dimensões!#
+****
+
+[[Subtrair]]
+.[red]#*sub* \**void** - Subtrair#
+****
+Subtrai da matriz Y a matrix X (Y - X).
+
+WARNING: Matrizes X e Y devem ter as [red]#mesmas dimensões!#
+****
+
+.[red]#*tim* \**command** - Multiplicar#
+****
+Comando com função dupla, ou multiplica X por um escalar ou multiplica matrizes.
+
+.Comandos:
+[cols="25m, 75"]
+|===
+|\**void** |Inserir a função *Times* vazia multiplica a matriz Y pela matriz X.
+|*-v* \**float** |Multiplica a matriz X por um valor escalar.
+|===
+
+[WARNING]
+====
+A matriz X deve ter o numero de linhas igual ao numero de colunas que a matriz Y +
+e o numero de colunas igual ao numero de linhas da matriz Y.
+====
+****
+
+.[red]#*pow* \**command** - Potencia#
+****
+Salva uma cópia da matriz X e multiplica a matriz X pela cópia o numero de vezes que o usuário tiver comandado. +
+
+.Comandos:
+[cols="25m, 75"]
+|===
+|*-v* \**int** |Numero de veses que X será multiplicado por sua cópia.
+|\**void** |Inserir a função pow vazia eleva a matriz em X ao quadrado.
+|===
+****
+
+=== Funções de Edição
+Tais funções só são aplicáveis sobre a matriz X, e apenás irá alterar suas dimensões e valores.[maroon]#*_As funções de edição são:_*#
+
+.[red]#*size* \**command** - Dimensões#
+****
+Altea as dimensões da matriz localizada em X. +
+.Comandos
+[cols="25m, 75"]
+|===
+|*-i* \**int** ... |Altera numero de colunas de X.
+|*-j* \**int** ... |Altera numero de linhas de X.
+|===
+
+[NOTE]
+====
+. Os comandos dessa função podem ser usados de forma independente: isolados ou ao mesmo tempo, como preferir.
+. Tal função não deleta os valores existentes dentro das novas dimensões da matriz.
+====
+
+WARNING: Uso indevido da função, exemplo dimenções negativas, são bloqueados com uma mensagem de erro.
+****
+
+[[Choose]]
+.[red]#*choose* \**void** - Escolher#
+****
+Insere valores recebidos pelo usuário na matriz em sequencia das coordenadas.
+
+Ao inserir a função choose no programa, será aberto a interfáce da função choose
+
+.Interfáce
+[.text-center]
+----
+(*coordenadas*) --> $ *Linha de comando*
+----
+
+Ao se iniciar a interfáce da função choose o usuário possui novos comandos para serem inseridos na função, Dando a função choose a capacidade de alem de inserir valores 
+na sequencia de coordenadas da matriz, mudar de posição o ponteiro, atualização direta sobre a matriz, mostrar a matriz que está sendo editada e ser finalizada a qualquer instante.
+
+.Comandos
+[cols="25m,75"]
+|===
+
+|\**float** |Insere sobre as coordenadas mostradas ná interfáce o valor inserido.
+
+|*-mv* \**subcommand** |Move - Móve ponteiro de leitura da matriz para as coordenadas inseridas.
+
+|*-fw* \**void** |Forward - Pulá incerção de valores para a proxima coordenada.
+
+|*-bw* \**void** |Backward - Retorna uma coordenada.
+
+|*end* \**void** |Finalizar - Finaliza a função *Choose*.
+
+|*show/hide* \**void** |Mostrar ou Esconder - Mostra ou esconde a matrix localizada em X.
+
+|*clear* \**void** |Limpar - Limpa a tela.
+
+|===
+
+.Subcommands
+[cols="25m,75"]
+|===
+
+|*-i* \**int** |Coordenada de coluna
+
+|*-j* \**int** |Coordenada de linhas
+|===
+
+NOTE: Os Subcomandos Podem ser usadas de forma independente: isolados ou juntos como preferir.
+****
+
+[[Point]]
+.[red]#*point* \**command** - Apontar#
+****
+A função choose não possui interfáce, por isso é direta. Esta insere sobre as coordenadas inseridas o valor especificado.
+
+.Commands
+[cols=".^25m,.^75a"]
+|===
+
+|*-v* \**float** ... |Valor a ser inserido sobre as coordenadas.
+
+|*-i* \**int** ... |Coordenada de coluna.
+
+|*-j* \**int** ... |Coordenada de linha.
+
+|===
+
+NOTE: Não se prenda a inserir em coordenadas especificas de linhas e colunas, inserindo por exemplo apenas a coordenada da linha e um valor, a linha selecionada sera preenchida com o valor inserido.
+
+.Examples
+----
+---     --- 
+|   0 0   | 
+|   0 0   | 
+---     --- 
+Project Matrix $ point -v 1 -i 1 -j 1 
+---     --- 
+|   1 0   | 
+|   0 0   | 
+---     --- 
+Project Matrix $ point -v 2 -i 2 
+---     --- 
+|   1 0   | 
+|   2 2   | 
+---     --- 
+Project Matrix $ point -v 3 
+---     --- 
+|   3 3   | 
+|   3 3   | 
+---     --- 
+Project Matrix $_
+----
+****
+
+.[red]#*irand* \**command** - Integer Random#
+****
+Insere sobre a matrix X valores inteiros aleátórios seguindo as especificações inseridas pelo usuário.
+
+NOTE: Por defealt são inseridos valores de (-1000, 10000).
+
+.Commands:
+[cols="25m, 75"]
+|===
+
+|*-min* \**int** |Delimita menor valor para se gerar numeros aleatórios.
+
+|*-max* \**int** |Delimita maior valor para se gerar valores aleatórios
+
+|===
+
+WARNING: [red]#*NÃO*# é reconhecido a incerção de maximos e minimos inválidos!
+****
+
+.[red]#*frand* \**command** - Floats Random#
+****
+Insere sobre a matrix X valores floats aleatórios seguindo as especificações inseridas pelo usuário.
+
+NOTE: Por defealt são inseridos valores de (-1000.000, 10000.000).
+
+.Commands:
+[cols="25m, 75"]
+|===
+
+|*-min* \**float** |Delimita menor valor para se gerar numeros aleatórios.
+
+|*-max* \**float** |Delimita maior valor para se gerar valores aleatórios
+
+|===
+
+WARNING: [red]#*NÃO*# é reconhecido a incerção de maximos e minimos inválidos!
+****
+
+.[red]#*tr* \**void** - Transpor#
+****
+Transpõe a matriz localizada em X.
+****
+
+.[red]#*inv* \**void** - Invérsão#
+****
+Invérte a matriz localizada em X.
+
+WARNING: Este programa apenas suporta o calculo do determinante de matrizes de ordem 3. Logo matrizes de ordem maior são *inválidas* nesta função.
+****
+
+.[red]#*clr* \**command** - Clear#
+****
+Esse commando possui duas funções:
+
+.commands
+[cols="25m, 75"]
+|===
+
+|\**void** |Inserindo apenas *clr* a os válores da matrix X são resetados permanecendo apenas as dimensões.
+
+|*-r* |Reset - Deleta por completo a matriz localizada na memória X, a resetando.
+
+|===
+
+****

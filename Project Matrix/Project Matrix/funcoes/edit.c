@@ -63,6 +63,7 @@ void    choose                          (void) {
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Coleta do N de inicialização em dimensões
     
+    
     if (x.ncolunas>0 && x.nlinhas>0) {   // Verifica existencia da matriz
         
         for (ch1=0; ch1<x.nlinhas; ch1++) { for (ch2=0; ch2<x.ncolunas-1; ch2++) {  // Recebe valores originais da matriz
@@ -135,9 +136,7 @@ void    choose                          (void) {
             }     else { Box(0, 50, "ERRO! - Funções repetidas!\n"); ch2--; }
         }
         }
-    }             else { Box(0, 40, "ERRO! - Matrix sem dimensões definidas!\n"); }
-    
-    fclose(X);  // Finaliza função.
+    }             else { Box(0, 40, "ERRO! - Matrix sem dimensões definidas!\n"); fclose(X); }
 }
 void    point          (int c, int l, float v) {
     

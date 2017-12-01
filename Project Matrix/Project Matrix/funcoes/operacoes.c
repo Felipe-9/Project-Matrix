@@ -186,11 +186,11 @@ void    mtim                                 (void) {
                 // Salva X:
                 X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
                 
-                fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas);   // Imprime valores para N de inicialização e dimensões da matriz
+                fprintf(X, "(%d,%d)\n", x.ncolunas, y.nlinhas);   // Imprime valores para N de inicialização e dimensões da matriz
                 
-                for (mt1=0; mt1<x.nlinhas; mt1++){ for (mt2=0; mt2<x.ncolunas-1; mt2++){  // Imprime os valores de X
-                    fprintf(X, "%f " , x.matriz[mt2][mt1]); }
-                    fprintf(X, "%f\n", x.matriz[mt2][mt1]); }
+                for (mt1=0; mt1<y.nlinhas; mt1++){ for (mt2=0; mt2<x.ncolunas-1; mt2++){  // Imprime os valores de X
+                    fprintf(X, "%f " , r.matriz[mt2][mt1]); }
+                    fprintf(X, "%f\n", r.matriz[mt2][mt1]); }
                 
                 
                 // Mensagens de ERRO!:

@@ -17,7 +17,7 @@ void    swap    (void) {
     // 1a Etapa: Recolhimento de dados:
     
     // Recebe dados para a matriz localizada em X:
-    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
@@ -32,7 +32,7 @@ void    swap    (void) {
     fclose(X);  // Finaliza recolhimento de dados de X
     
     // Recebe dados para a matriz localizada em Y:
-    Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+    Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
     
     fscanf(Y, "(%d,%d)\n", &y.ncolunas, &y.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
@@ -49,7 +49,7 @@ void    swap    (void) {
     // 2a Etapa: Troca de dados:
     
     // Imprime dados para a matriz localizada em X:
-    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
     
     fprintf(X, "(%d,%d)\n", y.ncolunas, y.nlinhas);   // Imprime valores para N de inicialização e dimensões da matriz
     
@@ -63,7 +63,7 @@ void    swap    (void) {
     fclose(X);  // Finaliza inserção de Y em X
     
     // Recebe dados para a matriz localizada em Y:
-    Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
+    Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
     
     fprintf(Y, "(%d,%d)\n", x.ncolunas, x.nlinhas);   // Imprime os valores de X em Y
     
@@ -83,8 +83,8 @@ void    enter   (void) {
     struct matrix a;
     
     // Copia Z em W:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -97,8 +97,8 @@ void    enter   (void) {
     fclose(M); fclose(_M);
     
     // Copia Y em Z:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -111,8 +111,8 @@ void    enter   (void) {
     fclose(M); fclose(_M);
     
     // Copia X em Y:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -131,8 +131,8 @@ void    drop    (void) {
     struct matrix a;
     
     // Copia Y em X:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -145,8 +145,8 @@ void    drop    (void) {
     fclose(M); fclose(_M);
     
     // Copia Z em Y:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -159,8 +159,8 @@ void    drop    (void) {
     fclose(M); fclose(_M);
     
     // Copia W em Z:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -180,7 +180,7 @@ void    roll    (void) {
     struct matrix a,x;
     
     // Salva X:
-    M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(M, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);
     
@@ -194,8 +194,8 @@ void    roll    (void) {
     fclose(M);
     
     // Copia Y em X:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -208,8 +208,8 @@ void    roll    (void) {
     fclose(M); fclose(_M);
     
     // Copia Z em Y:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -222,8 +222,8 @@ void    roll    (void) {
     fclose(M); fclose(_M);
     
     // Copia W em Z:
-    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "r");
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
+    M  = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "r");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
     
     fscanf(M, "(%d,%d)\n", &a.ncolunas, &a.nlinhas); fprintf(_M, "(%d,%d)\n", a.ncolunas, a.nlinhas);
     
@@ -236,7 +236,7 @@ void    roll    (void) {
     fclose(M); fclose(_M);
     
     // Copia X em W:
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "w");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "w");
     
     fprintf(_M, "(%d,%d)\n", x.ncolunas, x.nlinhas);
     
@@ -253,26 +253,26 @@ void    reset   (void) {
     
     FILE *_M;   // Corpo para resetar matrizes
     
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
     
     fprintf(_M, "(%d,%d)\n", 0, 0); fclose(_M);
     
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "w");
     
     fprintf(_M, "(%d,%d)\n", 0, 0); fclose(_M);
     
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/z.txt", "w");
     
     fprintf(_M, "(%d,%d)\n", 0, 0); fclose(_M);
     
-    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "w");
+    _M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/w.txt", "w");
     
     fprintf(_M, "(%d,%d)\n", 0, 0); fclose(_M);
     
 }
 void    clr     (void) {
     
-    FILE *_M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+    FILE *_M = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
     
     fprintf(_M, "(%d,%d)\n", 0, 0); fclose(_M);
 }

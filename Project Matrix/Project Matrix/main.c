@@ -1,6 +1,6 @@
 //
 //  main.c
-//  Project Matrix V6
+//  Project Matrix V6.3
 //
 //  Created by Felipe Alexandre de Barros Pinto on 13/10/17.
 //  Copyright © 2017 Felipe Alexandre de Barros Pinto. All rights reserved.
@@ -21,7 +21,7 @@
 int main() {
     initialise();
     pbreak(50);
-    interface("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/intro/logo.txt");           // Mostra página de inicializacao
+    interface("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/intro/logo.txt");           // Mostra página de inicializacao
     while (command()!=0);                               // Interpreta imput do usuário
     return 0;
 }

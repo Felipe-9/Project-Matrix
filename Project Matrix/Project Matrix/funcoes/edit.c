@@ -17,7 +17,7 @@ void    size                    (int c, int l) {
         
         // Recupera dados da matrix X:
         
-        FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+        FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
         
         fscanf (X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);  // Recupera N de inicialização e dimensões da matriz
         
@@ -36,7 +36,7 @@ void    size                    (int c, int l) {
             
             // Impreção da matriz com as novas dimenções:
             
-            X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+            X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
             
             fprintf(X, "(%d,%d)\n", c, l);    // Imprime novas dimensões e inicializa a matriz
             
@@ -59,7 +59,7 @@ void    choose                          (void) {
     
     
     // Recebe dados de X:
-    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Coleta do N de inicialização em dimensões
     
@@ -121,7 +121,7 @@ void    choose                          (void) {
                     x.matriz[ch2][ch1] = atof(rs[1]);
                     
                     // Recria matriz X com o novo valor:
-                    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+                    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
                     
                     fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas);   // Reinsere as dimensões
                     
@@ -146,7 +146,7 @@ void    point          (int c, int l, float v) {
         struct matrix x;    // Corpo da matriz X
         
         // Coleta de dados:
-        FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+        FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
         
         fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Coleta N de inicialização e dimensões da matriz
         
@@ -171,7 +171,7 @@ void    point          (int c, int l, float v) {
                 
                 // Cria nova matriz com os novos valores:
                 
-                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
                 
                 fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas);   // Insere N de inicialização e dimensões da matriz
                 
@@ -192,7 +192,7 @@ void    transp                          (void) {
     struct matrix x;    // Corpo da matriz
     
     // Colhe dados da matriz:
-    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Recebe N de inicialização e dimensões
     
@@ -205,7 +205,7 @@ void    transp                          (void) {
         fclose(X);  // Encerra colheita de dados
         
         // Recria a matriz de forma transposta:
-        X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+        X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
         
         fprintf(X, "(%d,%d)\n", x.nlinhas, x.ncolunas); // Insere trocado as dimensões da matriz
         
@@ -223,7 +223,7 @@ void    inv                             (void) {
     struct matrix x;        // Corpo da matriz
     
     // Coleta de dados da memória:
-    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);    // Coleta dimensões da matrix
     
@@ -249,7 +249,7 @@ void    inv                             (void) {
                 }
                 
                 // Cria nova matriz:
-                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
                 
                 fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas); // Imprime as dimensões originais
                 
@@ -271,7 +271,7 @@ void    mrand        (int s, float i, float j) {
         struct matrix x;    // Corpo da matriz X
         
         // Coleta de dados
-        FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+        FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
         
         fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Coleta das e dimensões
         
@@ -304,7 +304,7 @@ void    mrand        (int s, float i, float j) {
                 }
             }
             
-            X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+            X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
             
             fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas); // Insere as dimensões
             

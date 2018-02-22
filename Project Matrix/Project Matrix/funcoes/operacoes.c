@@ -17,7 +17,7 @@ void    sum                                  (void) {
     // 1a Etapa: Recolhimento de dados:
     
     // Recebe dados para a matriz localizada em X:
-    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
@@ -31,7 +31,7 @@ void    sum                                  (void) {
     fclose(X);  // Finaliza recolhimento de dados de X
     
     // Recebe dados para a matriz localizada em Y:
-    Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+    Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
     
     fscanf(Y, "(%d,%d)\n", &y.ncolunas, &y.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
@@ -57,7 +57,7 @@ void    sum                                  (void) {
         drop(); // Aloca memória
         
         // Salva X:
-        X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+        X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
         
         fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas);   // Imprime valores para N de inicialização e dimensões da matriz
         
@@ -81,7 +81,7 @@ void    sub                                  (void) {
     // 1a Etapa: Recolhimento de dados:
     
     // Recebe dados para a matriz localizada em X:
-    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
@@ -95,7 +95,7 @@ void    sub                                  (void) {
         fclose(X);  // Finaliza recolhimento de dados de X
         
         // Recebe dados para a matriz localizada em Y:
-        Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+        Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
         
         fscanf(Y, "(%d,%d)\n", &y.ncolunas, &y.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
         
@@ -121,7 +121,7 @@ void    sub                                  (void) {
                 drop(); // Aloca memória
                 
                 // Salva X:
-                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
                 
                 fprintf(X, "(%d,%d)\n", x.ncolunas, x.nlinhas);   // Imprime valores para N de inicialização e dimensões da matriz
                 
@@ -145,7 +145,7 @@ void    mtim                                 (void) {
     // 1a Etapa: Recolhimento de dados:
     
     // Recebe dados para a matriz localizada em X:
-    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x.ncolunas, &x.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
     
@@ -159,13 +159,13 @@ void    mtim                                 (void) {
         fclose(X);  // Finaliza recolhimento de dados de X
         
         // Recebe dados para a matriz localizada em Y:
-        Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
+        Y = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/y.txt", "r");
         
         fscanf(Y, "(%d,%d)\n", &y.ncolunas, &y.nlinhas);   // Recolhe valores para N de inicialização e dimensões da matriz
         
         if (y.ncolunas>0 && y.nlinhas>0) {    // Verifica se a matriz está completa antes de receber seus valores
             
-            if (x.ncolunas == y.nlinhas && x.nlinhas == y.ncolunas) {   // Verifica se as matrizes são compativeis
+            if (x.nlinhas == y.ncolunas) {   // Verifica se as matrizes são compativeis
                 
                 for (mt1=0; mt1<y.nlinhas; mt1++) { for (mt2=0; mt2<y.ncolunas-1; mt2++) {  // Recebe os valores de Y em um array
                     fscanf(X, "%f " , &y.matriz[mt2][mt1]); }
@@ -173,10 +173,8 @@ void    mtim                                 (void) {
         
         // 2a Etapa - Multiplicar:
         
-                for (mt1=0; mt1<y.nlinhas; mt1++) { for (mt2=0; mt2<x.ncolunas; mt2++) { for (mt3=0, mt4=0; mt3<y.ncolunas; mt3++) {
-                    mt4 = mt4 + y.matriz[mt3][mt1] * x.matriz[mt2][mt3]; }
-                    r.matriz[mt2][mt1] = mt4; }
-                }
+                for (mt1=0; mt1<y.nlinhas; mt1++) { for (mt2=0; mt2<x.ncolunas; mt2++) { for (mt3=0, mt4=0; mt3<y.ncolunas; mt3++)
+                { mt4 = mt4 + y.matriz[mt3][mt1] * x.matriz[mt2][mt3]; } r.matriz[mt2][mt1] = mt4; } }
         
         
                 // 3a Etapa - Salvar resultados e alocar memória:
@@ -184,7 +182,7 @@ void    mtim                                 (void) {
                 drop(); // Aloca memória
                 
                 // Salva X:
-                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+                X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
                 
                 fprintf(X, "(%d,%d)\n", x.ncolunas, y.nlinhas);   // Imprime valores para N de inicialização e dimensões da matriz
                 
@@ -204,7 +202,7 @@ void    vtim                              (float v) {
     int vt1,vt2;        // Contadores
     struct matrix x;    // Guarda valores da matriz X
     
-    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r+");
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r+");
     
     rewind(X);
     
@@ -231,7 +229,7 @@ void    mpow                                (int v) {
     
     int pow1, pow2, pow3, pow4; float rs;   // Contadores
     struct matrix x1, x2, r;                // Matrizes
-    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
+    FILE *X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "r");
     
     fscanf(X, "(%d,%d)\n", &x1.ncolunas, &x1.nlinhas);    // Recebe dados de X
     
@@ -257,7 +255,7 @@ void    mpow                                (int v) {
         }
         
         // Salva resultado na memória:
-        X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/A&L Prog/FelipePint0.github.io/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
+        X = fopen("/Users/felipepinto/Documents/Engenharia Eletrica/UFRN/1o Semestre 2017.2/A&L Prog/Project-Matrix/Project Matrix/Product/.resources/memory/x.txt", "w");
         
         fprintf(X, "(%d,%d)\n", x1.ncolunas, x1.nlinhas);                      // Imprime dados de N de inicialização e dimensões
         
